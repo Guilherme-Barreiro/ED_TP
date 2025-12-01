@@ -1,7 +1,7 @@
 package Colecoes.Estruturas;
 
-import Excecoes.EmptyCollectionException;
-import interfaces.HeapADT;
+import Colecoes.Excecoes.EmptyCollectionException;
+import Colecoes.interfaces.HeapADT;
 
 /**
  * ArrayHeap provides an array implementation of a minheap.

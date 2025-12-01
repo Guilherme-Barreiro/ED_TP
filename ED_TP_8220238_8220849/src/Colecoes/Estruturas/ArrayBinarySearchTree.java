@@ -1,6 +1,6 @@
 package Colecoes.Estruturas;
 
-import interfaces.BinarySearchTreeADT;
+import Colecoes.interfaces.BinarySearchTreeADT;
 
 import java.util.NoSuchElementException;
 

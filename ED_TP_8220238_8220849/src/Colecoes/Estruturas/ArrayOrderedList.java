@@ -1,6 +1,6 @@
 package Colecoes.Estruturas;
 
-import interfaces.ArrayOrderedListADT;
+import Colecoes.interfaces.ArrayOrderedListADT;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;

@@ -1,7 +1,7 @@
 package Colecoes.Estruturas;
 
-import Excecoes.EmptyCollectionException;
-import interfaces.ArrayOrderedListADT;
+import Colecoes.Excecoes.EmptyCollectionException;
+import Colecoes.interfaces.ArrayOrderedListADT;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;

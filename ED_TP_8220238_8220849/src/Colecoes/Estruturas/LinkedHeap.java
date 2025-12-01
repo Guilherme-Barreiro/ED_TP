@@ -1,7 +1,7 @@
 package Colecoes.Estruturas;
 
-import Excecoes.EmptyCollectionException;
-import interfaces.HeapADT;
+import Colecoes.Excecoes.EmptyCollectionException;
+import Colecoes.interfaces.HeapADT;
 
 public class LinkedHeap<T> extends LinkedBinaryTree<T> implements HeapADT<T> {
     protected HeapNode<T> lastNode;

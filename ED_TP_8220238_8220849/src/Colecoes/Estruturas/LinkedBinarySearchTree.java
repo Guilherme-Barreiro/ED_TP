@@ -1,7 +1,7 @@
 package Colecoes.Estruturas;
 
-import Excecoes.ElementNotFoundException;
-import interfaces.BinarySearchTreeADT;
+import Colecoes.Excecoes.ElementNotFoundException;
+import Colecoes.interfaces.BinarySearchTreeADT;
 
 import java.util.NoSuchElementException;
 

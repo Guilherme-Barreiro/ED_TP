@@ -1,7 +1,7 @@
 package Colecoes.Estruturas;
 
-import interfaces.ArrayOrderedListADT;
-import interfaces.BinarySearchTreeADT;
+import Colecoes.interfaces.ArrayOrderedListADT;
+import Colecoes.interfaces.BinarySearchTreeADT;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

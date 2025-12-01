@@ -1,6 +1,6 @@
 package Colecoes.Estruturas;
 
-import interfaces.ListADT;
+import Colecoes.interfaces.ListADT;
 
 import java.util.Iterator;
 

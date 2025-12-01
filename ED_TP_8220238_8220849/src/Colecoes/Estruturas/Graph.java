@@ -1,6 +1,6 @@
 package Colecoes.Estruturas;
 
-import interfaces.GraphADT;
+import Colecoes.interfaces.GraphADT;
 
 import java.util.Iterator;
 

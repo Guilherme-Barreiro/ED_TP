@@ -1,6 +1,6 @@
 package Colecoes.Estruturas;
 
-import interfaces.NetworkADT;
+import Colecoes.interfaces.NetworkADT;
 
 import java.util.Iterator;
 

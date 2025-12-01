@@ -1,6 +1,6 @@
 package Colecoes.Estruturas;
 
-import interfaces.StackADT;
+import Colecoes.interfaces.StackADT;
 
 import java.util.EmptyStackException;
 

@@ -1,7 +1,7 @@
 package Colecoes.Estruturas;
 
-import Excecoes.EmptyCollectionException;
-import interfaces.StackADT;
+import Colecoes.Excecoes.EmptyCollectionException;
+import Colecoes.interfaces.StackADT;
 
 public class ArrayStack<T> implements StackADT<T> {
     private static final int maxSize = 100;

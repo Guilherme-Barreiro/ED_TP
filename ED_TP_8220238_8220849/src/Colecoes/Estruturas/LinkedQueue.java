@@ -1,6 +1,6 @@
 package Colecoes.Estruturas;
 
-import interfaces.QueueADT;
+import Colecoes.interfaces.QueueADT;
 
 public class LinkedQueue<T> implements QueueADT<T> {
     private Node<T> head;

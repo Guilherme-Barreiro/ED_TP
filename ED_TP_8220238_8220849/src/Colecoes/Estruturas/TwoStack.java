@@ -1,6 +1,6 @@
 package Colecoes.Estruturas;
 
-import interfaces.QueueADT;
+import Colecoes.interfaces.QueueADT;
 
 import java.util.EmptyStackException;
 
