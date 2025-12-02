@@ -19,7 +19,6 @@ public class Player {
         this.blockedTurns = 0;
         this.stats = new PlayerStats();
 
-        // regista a sala inicial no percurso
         this.stats.addRoom(startRoom);
     }
 

@@ -1,6 +1,7 @@
 package Trabalho.Players;
 
 import Colecoes.Estruturas.ArrayUnorderedList;
+import Trabalho.Events.EventLogEntry;
 import Trabalho.Map.Room;
 
 import java.util.Iterator;
@@ -9,11 +10,11 @@ public class PlayerStats {
     private final ArrayUnorderedList<Room> path;
     private int correctRiddles;
     private int wrongRiddles;
-    //private final ArrayUnorderedList<EventLogEntry> events;
+    private final ArrayUnorderedList<EventLogEntry> events;
 
     public PlayerStats() {
         this.path = new ArrayUnorderedList<Room>();
-        //this.events = new ArrayUnorderedList<EventLogEntry>();
+        this.events = new ArrayUnorderedList<EventLogEntry>();
         this.correctRiddles = 0;
         this.wrongRiddles = 0;
     }
@@ -24,9 +25,9 @@ public class PlayerStats {
         }
     }
 
-    //public void addEvent(EventLogEntry event) {
-        //events.addToRear(event);
-    //}
+    public void addEvent(EventLogEntry event) {
+        events.addToRear(event);
+    }
 
     public void incCorrectRiddles() {
         correctRiddles++;
@@ -48,9 +49,9 @@ public class PlayerStats {
         return path;
     }
 
-    //public ArrayUnorderedList<EventLogEntry> getEvents() {
-        //return events;
-    //}
+    public ArrayUnorderedList<EventLogEntry> getEvents() {
+        return events;
+    }
 
     @Override
     public String toString() {

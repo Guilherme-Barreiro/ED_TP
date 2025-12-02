@@ -55,7 +55,7 @@ public class Question {
             }
             i++;
         }
-        return null;
+        throw new IllegalStateException("Estado inconsistente em Question.getOption");
     }
 
     public int getCorrectIndex() {
