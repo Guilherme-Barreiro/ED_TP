@@ -158,6 +158,24 @@ public class ArrayUnorderedList<T> implements UnorderedListADT<T> {
         array = newArray;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+
+        Iterator<T> it = this.iterator();
+        while (it.hasNext()) {
+            T elem = it.next();
+            sb.append(elem);
+            if (it.hasNext()) {
+                sb.append(", ");
+            }
+        }
+
+        sb.append("]");
+        return sb.toString();
+    }
+
     private class MyIterator implements Iterator<T> {
         private int current = 0;
         private int expectedMod = modCount;
