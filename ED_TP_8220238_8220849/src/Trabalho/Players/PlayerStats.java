@@ -26,7 +26,9 @@ public class PlayerStats {
     }
 
     public void addEvent(EventLogEntry event) {
-        events.addToRear(event);
+        if (event != null) {
+            events.addToRear(event);
+        }
     }
 
     public void incCorrectRiddles() {

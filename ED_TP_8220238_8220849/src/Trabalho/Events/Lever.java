@@ -14,7 +14,7 @@ public class Lever {
     }
 
     public boolean tryActivate(Player p) {
-        if (activated == false) {
+        if (!activated) {
             activated = true;
             return true;
         }

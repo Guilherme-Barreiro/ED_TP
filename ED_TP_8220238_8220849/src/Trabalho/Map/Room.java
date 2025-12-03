@@ -37,11 +37,9 @@ public class Room {
         this.lever = lever;
     }
 
-    public boolean hasLever() {
-        return lever != null;
-    }
+    public boolean hasLever() { return lever != null; }
 
-    //public boolean hasEnigma() {}
+    public boolean hasEnigma() { return hasRiddle; }
 
     public void setHasRiddle(boolean hasRiddle) {
         this.hasRiddle = hasRiddle;
