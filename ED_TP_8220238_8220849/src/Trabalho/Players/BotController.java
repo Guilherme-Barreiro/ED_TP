@@ -1,11 +1,13 @@
 package Trabalho.Players;
 
+import Colecoes.Estruturas.ArrayUnorderedList;
 import Trabalho.Events.Question;
 import Trabalho.Game.GameState;
 import Trabalho.Map.Labyrinth;
 import Trabalho.Map.Room;
 import Trabalho.interfacesTrabalho.PlayerController;
 
+import java.util.Iterator;
 import java.util.Random;
 
 public class BotController implements PlayerController {
@@ -17,28 +19,22 @@ public class BotController implements PlayerController {
 
     @Override
     public Room chooseMove(Player player, Labyrinth labyrinth, GameState state) {
-        /**
-        // obtém as salas vizinhas da sala atual do jogador
         ArrayUnorderedList<Room> neighbors =
                 labyrinth.getNeighbors(player.getCurrentRoom());
 
         Iterator<Room> it = neighbors.iterator();
         if (!it.hasNext()) {
-            // sem movimentos possíveis, fica onde está
             return player.getCurrentRoom();
         }
 
-        // copiar vizinhos para uma lista "options"
         ArrayUnorderedList<Room> options = new ArrayUnorderedList<>();
         while (it.hasNext()) {
             options.addToRear(it.next());
         }
 
-        // escolher índice aleatório
         int size = options.size();
         int choiceIndex = random.nextInt(size);
 
-        // devolver a room correspondente ao índice escolhido
         int idx = 0;
         it = options.iterator();
         while (it.hasNext()) {
@@ -48,9 +44,6 @@ public class BotController implements PlayerController {
             }
             idx++;
         }
-
-        // fallback (não deve acontecer)
-         */
         return player.getCurrentRoom();
     }
 

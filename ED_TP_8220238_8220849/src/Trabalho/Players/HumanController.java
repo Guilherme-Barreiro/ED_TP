@@ -1,11 +1,13 @@
 package Trabalho.Players;
 
+import Colecoes.Estruturas.ArrayUnorderedList;
 import Trabalho.Events.Question;
 import Trabalho.Game.GameState;
 import Trabalho.Map.Labyrinth;
 import Trabalho.Map.Room;
 import Trabalho.interfacesTrabalho.PlayerController;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class HumanController implements PlayerController {
@@ -17,7 +19,6 @@ public class HumanController implements PlayerController {
 
     @Override
     public Room chooseMove(Player player, Labyrinth labyrinth, GameState state) {
-        /**
         ArrayUnorderedList<Room> neighbors =
                 labyrinth.getNeighbors(player.getCurrentRoom());
 
@@ -57,7 +58,6 @@ public class HumanController implements PlayerController {
             }
         }
 
-        // ir buscar a sala escolhida
         index = 0;
         it = options.iterator();
         while (it.hasNext()) {
@@ -67,9 +67,6 @@ public class HumanController implements PlayerController {
             }
             index++;
         }
-        // fallback (não devia acontecer)
-        return player.getCurrentRoom();
-         */
         return player.getCurrentRoom();
     }
 
