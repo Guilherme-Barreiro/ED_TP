@@ -95,4 +95,33 @@ public class HumanController implements PlayerController {
         }
         return choice;
     }
+
+    @Override
+    public int chooseLever(Room room, int leverCount) {
+        System.out.println("Estás na sala: " + room.getName());
+        System.out.println("Há " + leverCount + " alavancas. Escolhe uma:");
+
+        for (int i = 0; i < leverCount; i++) {
+            System.out.println("  " + i + " - Alavanca " + (i + 1));
+        }
+
+        int choice = -1;
+        boolean valid = false;
+        while (!valid) {
+            System.out.print("Escolhe o índice da alavanca (0-" + (leverCount - 1) + "): ");
+            String line = in.nextLine();
+            try {
+                choice = Integer.parseInt(line);
+                if (choice >= 0 && choice < leverCount) {
+                    valid = true;
+                } else {
+                    System.out.println("Índice inválido.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Valor inválido.");
+            }
+        }
+        return choice;
+    }
+
 }

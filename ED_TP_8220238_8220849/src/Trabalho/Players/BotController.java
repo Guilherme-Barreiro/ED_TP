@@ -55,4 +55,10 @@ public class BotController implements PlayerController {
         }
         return random.nextInt(options);
     }
+
+    @Override
+    public int chooseLever(Room room, int leverCount) {
+        return random.nextInt(leverCount);
+    }
+
 }

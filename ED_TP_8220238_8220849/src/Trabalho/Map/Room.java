@@ -1,6 +1,7 @@
 package Trabalho.Map;
 
 import Trabalho.Events.Lever;
+import Trabalho.Events.LeverPuzzle;
 
 public class Room {
     private int id;
@@ -8,12 +9,15 @@ public class Room {
     private RoomType type;
     private Lever lever;
     private boolean hasRiddle;
+    private LeverPuzzle leverPuzzle;
+
 
     public Room(int id, String name, RoomType type) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.lever = null;
+        this.leverPuzzle = null;
         this.hasRiddle = false;
     }
 

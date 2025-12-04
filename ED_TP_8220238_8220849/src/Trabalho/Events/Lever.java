@@ -5,6 +5,7 @@ import Trabalho.Players.Player;
 public class Lever {
     private boolean activated;
 
+
     public Lever() {
         this.activated = false;
     }

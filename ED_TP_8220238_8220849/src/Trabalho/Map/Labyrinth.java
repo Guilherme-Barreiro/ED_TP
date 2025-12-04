@@ -1,21 +1,22 @@
 package Trabalho.Map;
 
 import Colecoes.Estruturas.ArrayUnorderedList;
-import Colecoes.Estruturas.Network;
+import Colecoes.Estruturas.NetworkList;
+import Colecoes.interfaces.NetworkADT;
 import Trabalho.Events.Event;
 import Trabalho.Events.EventFactory;
 
 import java.util.Iterator;
 
 public class Labyrinth {
-    private Network<Room> map;
+    private NetworkADT<Room> map;
     private ArrayUnorderedList<Room> rooms;
     private ArrayUnorderedList<Room> entryRooms;
     private ArrayUnorderedList<Corridor> corridors;
     private Room centerRoom;
 
     public Labyrinth() {
-        this.map = new Network<>();
+        this.map = new NetworkList<>();
         this.rooms = new ArrayUnorderedList<>();
         this.entryRooms = new ArrayUnorderedList<>();
         this.corridors = new ArrayUnorderedList<>();

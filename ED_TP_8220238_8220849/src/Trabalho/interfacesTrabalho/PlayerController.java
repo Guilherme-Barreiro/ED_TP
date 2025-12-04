@@ -17,4 +17,5 @@ public interface PlayerController {
      * @return índice da opção escolhida (0, 1, 2, ...)
      */
     int answerQuestion(Question question);
+    int chooseLever(Room room, int leverCount);
 }
