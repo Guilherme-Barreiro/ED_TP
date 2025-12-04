@@ -1,6 +1,7 @@
 package Trabalho.Players;
 
 import Colecoes.Estruturas.ArrayUnorderedList;
+import Colecoes.interfaces.UnorderedListADT;
 import Trabalho.Events.Question;
 import Trabalho.Game.GameState;
 import Trabalho.Map.Labyrinth;
@@ -59,6 +60,36 @@ public class BotController implements PlayerController {
     @Override
     public int chooseLever(Room room, int leverCount) {
         return random.nextInt(leverCount);
+    }
+
+    @Override
+    public Player chooseSwapTarget(Player current, UnorderedListADT<Player> allPlayers, GameState state) {
+        int count = 0;
+        Iterator<Player> itCount = allPlayers.iterator();
+        while (itCount.hasNext()) {
+            Player p = itCount.next();
+            if (p != current) {
+                count++;
+            }
+        }
+
+        if (count == 0) {
+            return current;
+        }
+
+        Player[] candidates = new Player[count];
+        int idx = 0;
+        Iterator<Player> it = allPlayers.iterator();
+        while (it.hasNext()) {
+            Player p = it.next();
+            if (p != current) {
+                candidates[idx] = p;
+                idx++;
+            }
+        }
+
+        int choice = random.nextInt(count);
+        return candidates[choice];
     }
 
 }

@@ -1,5 +1,7 @@
 package Trabalho.Players;
 
+import Colecoes.Estruturas.LinkedStack;
+import Colecoes.interfaces.StackADT;
 import Trabalho.Game.GameState;
 import Trabalho.Map.Labyrinth;
 import Trabalho.Map.Room;
@@ -11,6 +13,7 @@ public class Player {
     private final PlayerController controller;
     private int blockedTurns;
     private final PlayerStats stats;
+    private final StackADT<Room> moveStack;
 
     public Player(String name, Room startRoom, PlayerController controller) {
         this.name = name;
@@ -20,6 +23,9 @@ public class Player {
         this.stats = new PlayerStats();
 
         this.stats.addRoom(startRoom);
+
+        this.moveStack = new LinkedStack<>();
+        this.moveStack.push(startRoom);
     }
 
     public String getName() {
@@ -33,6 +39,7 @@ public class Player {
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
         this.stats.addRoom(currentRoom);
+        this.moveStack.push(currentRoom);
     }
 
     public PlayerController getController() {
@@ -70,6 +77,26 @@ public class Player {
 
     public boolean isBot() {
         return !(controller instanceof HumanController);
+    }
+
+    /**
+     * Usado pelo evento MOVE_BACK: recua 'steps' passos no caminho.
+     * Mantemos sempre pelo menos uma sala na stack (a inicial).
+     */
+    public void moveBack(int steps) {
+        if (steps <= 0) {
+            return;
+        }
+
+        int pops = 0;
+        while (pops < steps && moveStack.size() > 1) {
+            moveStack.pop();
+            pops++;
+        }
+
+        Room newTop = moveStack.peek();
+        this.currentRoom = newTop;
+        this.stats.addRoom(newTop);
     }
 
     @Override

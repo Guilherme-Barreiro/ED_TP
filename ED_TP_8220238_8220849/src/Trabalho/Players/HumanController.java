@@ -1,6 +1,7 @@
 package Trabalho.Players;
 
 import Colecoes.Estruturas.ArrayUnorderedList;
+import Colecoes.interfaces.UnorderedListADT;
 import Trabalho.Events.Question;
 import Trabalho.Game.GameState;
 import Trabalho.Map.Labyrinth;
@@ -122,6 +123,60 @@ public class HumanController implements PlayerController {
             }
         }
         return choice;
+    }
+
+    @Override
+    public Player chooseSwapTarget(Player current, UnorderedListADT<Player> allPlayers, GameState state) {
+        int count = 0;
+        Iterator<Player> itCount = allPlayers.iterator();
+        while (itCount.hasNext()) {
+            Player p = itCount.next();
+            if (p != current) {
+                count++;
+            }
+        }
+
+        if (count == 0) {
+            System.out.println("Não há outros jogadores para trocar.");
+            return current;
+        }
+
+        Player[] candidates = new Player[count];
+        int idx = 0;
+        Iterator<Player> it = allPlayers.iterator();
+        while (it.hasNext()) {
+            Player p = it.next();
+            if (p != current) {
+                candidates[idx] = p;
+                idx++;
+            }
+        }
+
+        System.out.println("Escolhe um jogador para trocar de posição:");
+        for (int i = 0; i < candidates.length; i++) {
+            Player p = candidates[i];
+            System.out.println("  " + i + " - " + p.getName() +
+                    " (sala " + (p.getCurrentRoom() != null ? p.getCurrentRoom().getId() : "null") + ")");
+        }
+
+        int choice = -1;
+        boolean valid = false;
+        while (!valid) {
+            System.out.print("Índice do jogador: ");
+            String line = in.nextLine();
+            try {
+                choice = Integer.parseInt(line);
+                if (choice >= 0 && choice < candidates.length) {
+                    valid = true;
+                } else {
+                    System.out.println("Índice inválido.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Valor inválido.");
+            }
+        }
+
+        return candidates[choice];
     }
 
 }

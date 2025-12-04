@@ -1,5 +1,6 @@
 package Trabalho.interfacesTrabalho;
 
+import Colecoes.interfaces.UnorderedListADT;
 import Trabalho.Events.Question;
 import Trabalho.Game.GameState;
 import Trabalho.Map.Labyrinth;
@@ -14,8 +15,12 @@ public interface PlayerController {
 
     /**
      * Responde a uma pergunta de enigma.
+     *
      * @return índice da opção escolhida (0, 1, 2, ...)
      */
     int answerQuestion(Question question);
+
     int chooseLever(Room room, int leverCount);
+
+    Player chooseSwapTarget(Player current, UnorderedListADT<Player> allPlayers, GameState state);
 }
