@@ -1,12 +1,13 @@
 package Trabalho.Events;
 
 import Colecoes.Estruturas.ArrayUnorderedList;
+import Colecoes.interfaces.UnorderedListADT;
 
 import java.util.Iterator;
 
 public class Question {
     private String text;
-    private ArrayUnorderedList<String> options;
+    private UnorderedListADT<String> options;
     private int correctIndex;
 
     /**

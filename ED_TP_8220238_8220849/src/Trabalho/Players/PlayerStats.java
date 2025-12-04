@@ -1,16 +1,17 @@
 package Trabalho.Players;
 
 import Colecoes.Estruturas.ArrayUnorderedList;
+import Colecoes.interfaces.UnorderedListADT;
 import Trabalho.Events.EventLogEntry;
 import Trabalho.Map.Room;
 
 import java.util.Iterator;
 
 public class PlayerStats {
-    private final ArrayUnorderedList<Room> path;
+    private final UnorderedListADT<Room> path;
     private int correctRiddles;
     private int wrongRiddles;
-    private final ArrayUnorderedList<EventLogEntry> events;
+    private final UnorderedListADT<EventLogEntry> events;
 
     public PlayerStats() {
         this.path = new ArrayUnorderedList<Room>();
@@ -47,11 +48,11 @@ public class PlayerStats {
         return wrongRiddles;
     }
 
-    public ArrayUnorderedList<Room> getPath() {
+    public UnorderedListADT<Room> getPath() {
         return path;
     }
 
-    public ArrayUnorderedList<EventLogEntry> getEvents() {
+    public UnorderedListADT<EventLogEntry> getEvents() {
         return events;
     }
 

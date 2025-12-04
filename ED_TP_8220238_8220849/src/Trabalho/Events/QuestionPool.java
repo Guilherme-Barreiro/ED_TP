@@ -1,10 +1,11 @@
 package Trabalho.Events;
 
 import Colecoes.Estruturas.LinkedQueue;
+import Colecoes.interfaces.QueueADT;
 
 public class QuestionPool {
-    private LinkedQueue<Question> available;
-    private LinkedQueue<Question> used;
+    private QueueADT<Question> available;
+    private QueueADT<Question> used;
 
     public QuestionPool() {
         this.available = new LinkedQueue<>();
