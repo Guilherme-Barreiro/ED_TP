@@ -26,7 +26,7 @@ public class MapWriter {
             jr.put("id", r.getId());
             jr.put("name", r.getName());
             jr.put("type", r.getType().name());
-            jr.put("hasRiddle", r.hasEnigma());
+            jr.put("hasRiddle", r.hasRiddle());
 
             if (r.hasLever() && r.getLever() != null && r.getLever().getPuzzle() != null) {
                 Lever lever = r.getLever();

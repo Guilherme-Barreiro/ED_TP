@@ -369,7 +369,7 @@ public class GameState {
     }
 
     private void handleRiddleIfAny(Player current, Room room) {
-        if (room == null || !room.hasEnigma()) {
+        if (room == null || !room.hasRiddle()) {
             return;
         }
 

@@ -1,14 +1,22 @@
 
 package Trabalho.View;
 
+import Trabalho.Events.Lever;
+import Trabalho.Events.LeverPuzzle;
 import Trabalho.Events.Question;
 import Trabalho.Events.QuestionPool;
+
+import Trabalho.IO.QuestionLoader;
+import java.io.IOException;
+
 import Trabalho.Map.*;
+
 import javax.swing.SwingUtilities;
 import java.awt.Point;
+import org.json.simple.parser.ParseException;
 
 public class Testar {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ParseException {
         Labyrinth lab = new Labyrinth();
 
         Room E1  = new Room(1, "Entrada 1", RoomType.ENTRY);
@@ -94,69 +102,39 @@ public class Testar {
         SwingUtilities.invokeLater(() -> LabyrinthViewer.show(lab, rooms, positions));
 
 
-        //Criar enigmas
-        QuestionPool pool = new QuestionPool();
-        if(true){
-            pool.addQuestion(new Question("Quem foi o primeiro Presidente da República Portuguesa?", new String[]{"Teófilo Braga","Manuel de Arriaga","Sidónio Pais"}, 1));
-            pool.addQuestion(new Question("Em que ano ocorreu a Revolução de 25 de Abril em Portugal?", new String[]{"1968","1974","1982"}, 1));
-            pool.addQuestion(new Question("Qual é a capital do Canadá?", new String[]{"Toronto","Ottawa","Vancouver"}, 1));
-            pool.addQuestion(new Question("Qual é o maior oceano da Terra?", new String[]{"Atlântico","Pacífico","Índico"}, 1));
-            pool.addQuestion(new Question("Qual é o símbolo químico do ouro?", new String[]{"Ag","Au","Pt"}, 1));
-            pool.addQuestion(new Question("Quem escreveu \"Os Lusíadas\"?", new String[]{"Camilo Castelo Branco","Eça de Queirós","Luís de Camões"}, 2));
-            pool.addQuestion(new Question("Qual é o planeta com mais luas conhecidas no Sistema Solar?", new String[]{"Júpiter","Saturno","Urano"}, 0));
-            pool.addQuestion(new Question("Qual é o maior rio da Europa?", new String[]{"Danúbio","Volga","Reno"}, 1));
-            pool.addQuestion(new Question("Qual é o maior órgão interno do corpo humano?", new String[]{"Fígado","Pulmão","Coração"}, 0));
-            pool.addQuestion(new Question("Qual é a língua oficial de Angola?", new String[]{"Português","Inglês","Francês"}, 0));
+        //criar questions -----------------------------------------------------------------------------------------------------------
+        QuestionPool pool = null;
+        try {
+            pool = QuestionLoader.loadFromJson("resources/questions.json");
+            System.out.println("QuestionPool carregado com sucesso.");
 
-            pool.addQuestion(new Question("Em que país se originou o sushi?", new String[]{"China","Japão","Coreia do Sul"}, 1));
-            pool.addQuestion(new Question("Quem foi o primeiro homem a pisar a Lua?", new String[]{"Buzz Aldrin","Yuri Gagarin","Neil Armstrong"}, 2));
-            pool.addQuestion(new Question("A unidade 'newton' mede que grandeza física?", new String[]{"Energia","Força","Pressão"}, 1));
-            pool.addQuestion(new Question("Quantos jogadores de cada equipa estão em campo num jogo oficial de futebol?", new String[]{"9","10","11"}, 2));
-            pool.addQuestion(new Question("Quem pintou a Mona Lisa?", new String[]{"Leonardo da Vinci","Michelangelo","Rafael"}, 0));
-            pool.addQuestion(new Question("Qual é o menor número primo?", new String[]{"1","2","3"}, 1));
-            pool.addQuestion(new Question("Que continente tem mais países reconhecidos?", new String[]{"África","Ásia","Europa"}, 0));
-            pool.addQuestion(new Question("Quem escreveu \"Ensaio sobre a Cegueira\"?", new String[]{"José Saramago","Miguel Torga","Fernando Pessoa"}, 0));
-            pool.addQuestion(new Question("Qual é o gás mais abundante na atmosfera terrestre?", new String[]{"Oxigénio","Azoto (Nitrogénio)","Dióxido de carbono"}, 1));
-            pool.addQuestion(new Question("Qual é o maior deserto quente do mundo?", new String[]{"Deserto de Gobi","Deserto do Saara","Deserto de Kalahari"}, 1));
-
-            pool.addQuestion(new Question("Qual destes instrumentos tem teclas, pedais e cordas?", new String[]{"Violino","Piano","Flauta"}, 1));
-            pool.addQuestion(new Question("Como se chama o principal osso do braço, entre o ombro e o cotovelo?", new String[]{"Fémur","Úmero","Tíbia"}, 1));
-            pool.addQuestion(new Question("Qual é a moeda oficial do Japão?", new String[]{"Yuan","Won","Iene"}, 2));
-            pool.addQuestion(new Question("Qual é a capital de Moçambique?", new String[]{"Beira","Maputo","Luanda"}, 1));
-            pool.addQuestion(new Question("Que cientista formulou a teoria da relatividade geral?", new String[]{"Isaac Newton","Albert Einstein","Niels Bohr"}, 1));
-            pool.addQuestion(new Question("Qual é a fórmula química da água?", new String[]{"H2O","CO2","O2"}, 0));
-            pool.addQuestion(new Question("Que gás é o principal responsável pelo aquecimento global devido à atividade humana?", new String[]{"Oxigénio","Dióxido de carbono","Hélio"}, 1));
-            pool.addQuestion(new Question("Quem escreveu \"Dom Quixote\"?", new String[]{"Miguel de Cervantes","Gabriel García Márquez","Jorge Luis Borges"}, 0));
-            pool.addQuestion(new Question("Qual destes países NÃO pertence à União Europeia?", new String[]{"Noruega","Espanha","Polónia"}, 0));
-            pool.addQuestion(new Question("Em que cidade se encontra a Torre Eiffel?", new String[]{"Roma","Paris","Londres"}, 1));
-
-            pool.addQuestion(new Question("O número romano XIV corresponde a que número decimal?", new String[]{"12","14","16"}, 1));
-            pool.addQuestion(new Question("Quem é tradicionalmente considerado o inventor do telefone?", new String[]{"Alexander Graham Bell","Nikola Tesla","Thomas Edison"}, 0));
-            pool.addQuestion(new Question("Qual é o maior planeta do Sistema Solar?", new String[]{"Júpiter","Saturno","Neptuno"}, 0));
-            pool.addQuestion(new Question("Em música ocidental, quantos semitons (meios tons) há numa oitava?", new String[]{"7","8","12"}, 2));
-            pool.addQuestion(new Question("Que cordilheira separa a França de Espanha?", new String[]{"Alpes","Apeninos","Pirenéus"}, 2));
-            pool.addQuestion(new Question("Que órgão é responsável por bombear o sangue pelo corpo?", new String[]{"Coração","Pulmão","Rim"}, 0));
-            pool.addQuestion(new Question("Como se chama o processo pelo qual as plantas produzem alimento usando luz solar?", new String[]{"Respiração","Fotossíntese","Fermentação"}, 1));
-            pool.addQuestion(new Question("Em que país se encontra a cidade de Marraquexe?", new String[]{"Tunísia","Marrocos","Argélia"}, 1));
-            pool.addQuestion(new Question("Qual é o nome da teoria mais famosa de Charles Darwin?", new String[]{"Evolução das espécies","Relatividade","Heliocentrismo"}, 0));
-            pool.addQuestion(new Question("Qual é o número atómico do carbono?", new String[]{"4","6","12"}, 1));
-
-            pool.addQuestion(new Question("Qual é a língua oficial predominante no Brasil?", new String[]{"Português","Espanhol","Inglês"}, 0));
-            pool.addQuestion(new Question("Em informática, o que significa a sigla CPU?", new String[]{"Central Processing Unit","Computer Personal Unit","Control Program Utility"}, 0));
-            pool.addQuestion(new Question("Quem escreveu o romance \"1984\"?", new String[]{"Aldous Huxley","George Orwell","Ray Bradbury"}, 1));
-            pool.addQuestion(new Question("O símbolo químico Na corresponde a que elemento?", new String[]{"Sódio","Prata","Nitrogénio"}, 0));
-            pool.addQuestion(new Question("Que desporto está associado ao torneio de Wimbledon?", new String[]{"Rugby","Ténis","Críquete"}, 1));
-            pool.addQuestion(new Question("Que mar separa o sul da Europa do norte de África?", new String[]{"Mar do Norte","Mar Mediterrâneo","Mar Báltico"}, 1));
-            pool.addQuestion(new Question("Que elemento químico é essencial na hemoglobina para o transporte de oxigénio?", new String[]{"Cálcio","Ferro","Potássio"}, 1));
-            pool.addQuestion(new Question("Qual é a unidade de medida da resistência eléctrica no SI?", new String[]{"Volt","Ampere","Ohm"}, 2));
-            pool.addQuestion(new Question("Que império construiu o Coliseu em Roma?", new String[]{"Império Romano","Império Otomano","Império Bizantino"}, 0));
-            pool.addQuestion(new Question("Qual é a capital da República Checa?", new String[]{"Bratislava","Praga","Budapeste"}, 1));
-
+            Question q = pool.getRandomQuestion();
+            System.out.println("Exemplo de pergunta: " + q.getText());
+        } catch (IOException | ParseException e) {
+            System.out.println("Erro ao carregar resources/questions.json: " + e.getMessage());
+            e.printStackTrace();
         }
 
-        //Criar enigmas
-        if(true) {
+        if (pool != null) {
+            Question riddleR5 = pool.getRandomQuestion();
+            r5.setRiddle(riddleR5);
 
+            System.out.println("Sala com enigma: " + r5.getName());
+            System.out.println("hasEnigma = " + r5.hasRiddle());
+            System.out.println("Texto do enigma: " + r5.getRiddle().getText());
         }
+
+
+
+        //criar levers -----------------------------------------------------------------------------------------------------------
+        LeverPuzzle puzzle = new LeverPuzzle(1);
+        Lever lever = new Lever(puzzle);
+        r8.setLever(lever);
+
+        System.out.println("Sala com alavanca: " + r8.getName());
+        System.out.println("hasLever = " + r8.hasLever());
+        System.out.println("Lever correta = " + r8.getLever().getPuzzle().getCorrectIndex());
+
+
     }
 }

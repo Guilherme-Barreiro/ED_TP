@@ -29,11 +29,12 @@ public class QuestionPool {
     }
 
     /**
-     * Devolve a próxima pergunta da fila.
-     * Quando esgotar as disponíveis, faz reset (volta a meter as usadas na fila)
-     * e continua.
+     * Devolve uma pergunta aleatória do conjunto de disponíveis.
+     * Quando esgotar as disponíveis, faz reset (move todas as usadas de volta para a fila de disponíveis)
+     * e continua a sortear.
      *
-     * O nome fica "getRandomQuestion" para bater com o UML, mas aqui a ordem é FIFO.
+     * Cada pergunta escolhida é removida de 'available' e colocada em 'used',
+     * garantindo que não se repete até acabar o ciclo atual.
      */
     public Question getRandomQuestion() {
         if (available.isEmpty()) {
@@ -43,11 +44,34 @@ public class QuestionPool {
             return null;
         }
 
-        Question q = available.dequeue();
-        used.enqueue(q);
+        QueueADT<Question> temp = new LinkedQueue<>();
+        int size = 0;
 
-        return q;
+        while (!available.isEmpty()) {
+            Question q = available.dequeue();
+            temp.enqueue(q);
+            size++;
+        }
+
+        int randomIndex = (int) (Math.random() * size);
+
+        Question selected = null;
+        int i = 0;
+
+        while (!temp.isEmpty()) {
+            Question q = temp.dequeue();
+            if (i == randomIndex) {
+                selected = q;
+                used.enqueue(q);
+            } else {
+                available.enqueue(q);
+            }
+            i++;
+        }
+
+        return selected;
     }
+
 
     /**
      * Volta a pôr todas as perguntas usadas na fila de disponíveis.

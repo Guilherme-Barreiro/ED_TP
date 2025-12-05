@@ -1,0 +1,258 @@
+{
+  "questions": [
+    {
+      "text": "Quem foi o primeiro Presidente da República Portuguesa?",
+      "options": ["Teófilo Braga", "Manuel de Arriaga", "Sidónio Pais"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Em que ano ocorreu a Revolução de 25 de Abril em Portugal?",
+      "options": ["1968", "1974", "1982"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a capital do Canadá?",
+      "options": ["Toronto", "Ottawa", "Vancouver"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é o maior oceano da Terra?",
+      "options": ["Atlântico", "Pacífico", "Índico"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é o símbolo químico do ouro?",
+      "options": ["Ag", "Au", "Pt"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Quem escreveu \"Os Lusíadas\"?",
+      "options": ["Camilo Castelo Branco", "Eça de Queirós", "Luís de Camões"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Qual é o planeta com mais luas conhecidas no Sistema Solar?",
+      "options": ["Júpiter", "Saturno", "Urano"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é o maior rio da Europa?",
+      "options": ["Danúbio", "Volga", "Reno"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é o maior órgão interno do corpo humano?",
+      "options": ["Fígado", "Pulmão", "Coração"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é a língua oficial de Angola?",
+      "options": ["Português", "Inglês", "Francês"],
+      "correctIndex": 0
+    },
+
+    {
+      "text": "Em que país se originou o sushi?",
+      "options": ["China", "Japão", "Coreia do Sul"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Quem foi o primeiro homem a pisar a Lua?",
+      "options": ["Buzz Aldrin", "Yuri Gagarin", "Neil Armstrong"],
+      "correctIndex": 2
+    },
+    {
+      "text": "A unidade 'newton' mede que grandeza física?",
+      "options": ["Energia", "Força", "Pressão"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Quantos jogadores de cada equipa estão em campo num jogo oficial de futebol?",
+      "options": ["9", "10", "11"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Quem pintou a Mona Lisa?",
+      "options": ["Leonardo da Vinci", "Michelangelo", "Rafael"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é o menor número primo?",
+      "options": ["1", "2", "3"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que continente tem mais países reconhecidos?",
+      "options": ["África", "Ásia", "Europa"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Quem escreveu \"Ensaio sobre a Cegueira\"?",
+      "options": ["José Saramago", "Miguel Torga", "Fernando Pessoa"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é o gás mais abundante na atmosfera terrestre?",
+      "options": ["Oxigénio", "Azoto (Nitrogénio)", "Dióxido de carbono"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é o maior deserto quente do mundo?",
+      "options": ["Deserto de Gobi", "Deserto do Saara", "Deserto de Kalahari"],
+      "correctIndex": 1
+    },
+
+    {
+      "text": "Qual destes instrumentos tem teclas, pedais e cordas?",
+      "options": ["Violino", "Piano", "Flauta"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Como se chama o principal osso do braço, entre o ombro e o cotovelo?",
+      "options": ["Fémur", "Úmero", "Tíbia"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a moeda oficial do Japão?",
+      "options": ["Yuan", "Won", "Iene"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Qual é a capital de Moçambique?",
+      "options": ["Beira", "Maputo", "Luanda"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que cientista formulou a teoria da relatividade geral?",
+      "options": ["Isaac Newton", "Albert Einstein", "Niels Bohr"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a fórmula química da água?",
+      "options": ["H2O", "CO2", "O2"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que gás é o principal responsável pelo aquecimento global devido à atividade humana?",
+      "options": ["Oxigénio", "Dióxido de carbono", "Hélio"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Quem escreveu \"Dom Quixote\"?",
+      "options": ["Miguel de Cervantes", "Gabriel García Márquez", "Jorge Luis Borges"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destes países NÃO pertence à União Europeia?",
+      "options": ["Noruega", "Espanha", "Polónia"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Em que cidade se encontra a Torre Eiffel?",
+      "options": ["Roma", "Paris", "Londres"],
+      "correctIndex": 1
+    },
+
+    {
+      "text": "O número romano XIV corresponde a que número decimal?",
+      "options": ["12", "14", "16"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Quem é tradicionalmente considerado o inventor do telefone?",
+      "options": ["Alexander Graham Bell", "Nikola Tesla", "Thomas Edison"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é o maior planeta do Sistema Solar?",
+      "options": ["Júpiter", "Saturno", "Neptuno"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Em música ocidental, quantos semitons (meios tons) há numa oitava?",
+      "options": ["7", "8", "12"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Que cordilheira separa a França de Espanha?",
+      "options": ["Alpes", "Apeninos", "Pirenéus"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Que órgão é responsável por bombear o sangue pelo corpo?",
+      "options": ["Coração", "Pulmão", "Rim"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Como se chama o processo pelo qual as plantas produzem alimento usando luz solar?",
+      "options": ["Respiração", "Fotossíntese", "Fermentação"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Em que país se encontra a cidade de Marraquexe?",
+      "options": ["Tunísia", "Marrocos", "Argélia"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é o nome da teoria mais famosa de Charles Darwin?",
+      "options": ["Evolução das espécies", "Relatividade", "Heliocentrismo"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é o número atómico do carbono?",
+      "options": ["4", "6", "12"],
+      "correctIndex": 1
+    },
+
+    {
+      "text": "Qual é a língua oficial predominante no Brasil?",
+      "options": ["Português", "Espanhol", "Inglês"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Em informática, o que significa a sigla CPU?",
+      "options": ["Central Processing Unit", "Computer Personal Unit", "Control Program Utility"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Quem escreveu o romance \"1984\"?",
+      "options": ["Aldous Huxley", "George Orwell", "Ray Bradbury"],
+      "correctIndex": 1
+    },
+    {
+      "text": "O símbolo químico Na corresponde a que elemento?",
+      "options": ["Sódio", "Prata", "Nitrogénio"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que desporto está associado ao torneio de Wimbledon?",
+      "options": ["Rugby", "Ténis", "Críquete"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que mar separa o sul da Europa do norte de África?",
+      "options": ["Mar do Norte", "Mar Mediterrâneo", "Mar Báltico"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que elemento químico é essencial na hemoglobina para o transporte de oxigénio?",
+      "options": ["Cálcio", "Ferro", "Potássio"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a unidade de medida da resistência eléctrica no SI?",
+      "options": ["Volt", "Ampere", "Ohm"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Que império construiu o Coliseu em Roma?",
+      "options": ["Império Romano", "Império Otomano", "Império Bizantino"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é a capital da República Checa?",
+      "options": ["Bratislava", "Praga", "Budapeste"],
+      "correctIndex": 1
+    }
+  ]
+}
