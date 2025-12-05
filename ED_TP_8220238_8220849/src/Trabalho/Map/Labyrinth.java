@@ -123,4 +123,29 @@ public class Labyrinth {
     public UnorderedListADT<Corridor> getCorridors() {
         return corridors;
     }
+
+    public int getEntryRoomCount() {
+        int count = 0;
+        Iterator<Room> it = entryRooms.iterator();
+        while (it.hasNext()) {
+            it.next();
+            count++;
+        }
+        return count;
+    }
+
+    /**
+     * Procura uma sala pelo id, percorrendo a lista de rooms do Labyrinth.
+     */
+    public Room findRoomById(int id) {
+        Iterator<Room> it = rooms.iterator();
+        while (it.hasNext()) {
+            Room r = it.next();
+            if (r.getId() == id) {
+                return r;
+            }
+        }
+        throw new IllegalArgumentException("Não foi encontrada sala com id " + id + " no labirinto.");
+    }
+
 }

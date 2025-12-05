@@ -17,24 +17,24 @@ import java.util.Iterator;
 /**
  * Lê um ficheiro JSON e constrói um Labyrinth
  * com salas, corredores e (opcionalmente) alavancas.
- *
+ * <p>
  * Formato esperado:
- *
+ * <p>
  * {
- *   "rooms": [
- *     {
- *       "id": 1,
- *       "name": "Entrada 1",
- *       "type": "ENTRY",
- *       "hasRiddle": false,
- *       "lever": { "correctIndex": 1 } // ou null
- *     },
- *     ...
- *   ],
- *   "corridors": [
- *     { "from": 1, "to": 2, "weight": 1.0, "locked": false },
- *     ...
- *   ]
+ * "rooms": [
+ * {
+ * "id": 1,
+ * "name": "Entrada 1",
+ * "type": "ENTRY",
+ * "hasRiddle": false,
+ * "lever": { "correctIndex": 1 } // ou null
+ * },
+ * ...
+ * ],
+ * "corridors": [
+ * { "from": 1, "to": 2, "weight": 1.0, "locked": false },
+ * ...
+ * ]
  * }
  */
 public class MapLoader {
@@ -59,6 +59,9 @@ public class MapLoader {
                 throw new IllegalArgumentException("\"rooms\" não é um array no ficheiro de mapa.");
             }
             JSONArray roomsArray = (JSONArray) roomsRaw;
+
+            int entryCount = 0;
+            int centerCount = 0;
 
             for (int i = 0; i < roomsArray.size(); i++) {
                 Object rRaw = roomsArray.get(i);
@@ -88,6 +91,12 @@ public class MapLoader {
 
                 Room room = new Room(id, name, type);
 
+                if (type == RoomType.ENTRY) {
+                    entryCount++;
+                } else if (type == RoomType.CENTER) {
+                    centerCount++;
+                }
+
                 Object riddleRaw = rObj.get("hasRiddle");
                 boolean hasRiddle = false;
                 if (riddleRaw instanceof Boolean) {
@@ -109,7 +118,15 @@ public class MapLoader {
 
                 lab.addRoom(room);
             }
+            if (centerCount != 1) {
+                throw new IllegalArgumentException(
+                        "O mapa tem de ter exatamente uma sala CENTER, mas tem " + centerCount);
+            }
 
+            if (entryCount == 0) {
+                throw new IllegalArgumentException(
+                        "O mapa tem de ter pelo menos uma sala ENTRY.");
+            }
             Object corridorsRaw = root.get("corridors");
             if (corridorsRaw instanceof JSONArray) {
                 JSONArray corridorsArray = (JSONArray) corridorsRaw;
@@ -142,10 +159,17 @@ public class MapLoader {
                         locked = (Boolean) lockedRaw;
                     }
 
-                    Room fromRoom = findRoomById(lab, fromId);
-                    Room toRoom = findRoomById(lab, toId);
+                    Room fromRoom = lab.findRoomById(fromId);
+                    Room toRoom = lab.findRoomById(toId);
+
+                    if (fromRoom == null || toRoom == null) {
+                        throw new IllegalArgumentException(
+                                "Corridor [" + i + "] refere salas inexistentes: from=" +
+                                        fromId + ", to=" + toId);
+                    }
 
                     lab.addCorridor(fromRoom, toRoom, weight, locked);
+
                 }
             }
 
@@ -153,17 +177,4 @@ public class MapLoader {
         }
     }
 
-    /**
-     * Procura uma sala pelo id, percorrendo a lista de rooms do Labyrinth.
-     */
-    private static Room findRoomById(Labyrinth lab, int id) {
-        Iterator<Room> it = lab.getRooms().iterator();
-        while (it.hasNext()) {
-            Room r = it.next();
-            if (r.getId() == id) {
-                return r;
-            }
-        }
-        throw new IllegalArgumentException("Não foi encontrada sala com id " + id + " no labirinto.");
-    }
 }
