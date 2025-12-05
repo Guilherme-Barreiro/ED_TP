@@ -3,6 +3,7 @@ package Trabalho.Map;
 import Colecoes.Estruturas.ArrayUnorderedList;
 import Colecoes.Estruturas.NetworkList;
 import Colecoes.interfaces.NetworkADT;
+import Colecoes.interfaces.UnorderedListADT;
 import Trabalho.Events.Event;
 import Trabalho.Events.EventFactory;
 
@@ -10,9 +11,9 @@ import java.util.Iterator;
 
 public class Labyrinth {
     private NetworkADT<Room> map;
-    private ArrayUnorderedList<Room> rooms;
-    private ArrayUnorderedList<Room> entryRooms;
-    private ArrayUnorderedList<Corridor> corridors;
+    private UnorderedListADT<Room> rooms;
+    private UnorderedListADT<Room> entryRooms;
+    private UnorderedListADT<Corridor> corridors;
     private Room centerRoom;
 
     public Labyrinth() {
@@ -36,11 +37,11 @@ public class Labyrinth {
         }
     }
 
-    public ArrayUnorderedList<Room> getRooms() {
+    public UnorderedListADT<Room> getRooms() {
         return rooms;
     }
 
-    public ArrayUnorderedList<Room> getEntryRooms() {
+    public UnorderedListADT<Room> getEntryRooms() {
         return entryRooms;
     }
 
@@ -117,5 +118,9 @@ public class Labyrinth {
                 c.unlock();
             }
         }
+    }
+
+    public UnorderedListADT<Corridor> getCorridors() {
+        return corridors;
     }
 }

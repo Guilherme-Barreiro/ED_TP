@@ -20,7 +20,6 @@ public class GameReportJson {
 
         root.put("turns", state.getCurrentTurn() - 1);
 
-        // vencedor
         Player winner = state.getWinner();
         if (winner != null) {
             root.put("winner", winner.getName());

@@ -277,6 +277,9 @@ public class GameState {
         current.setCurrentRoom(roomTarget);
         target.setCurrentRoom(roomCurrent);
 
+        current.markSwapBoundary();
+        target.markSwapBoundary();
+
         System.out.println("SWAP_PLAYER: " + current.getName() +
                 " trocou de posição com " + target.getName() + ".");
 
@@ -289,6 +292,7 @@ public class GameState {
                         "Trocou de posição com " + current.getName(), currentTurn)
         );
     }
+
 
     /**
      * SHUFFLE_ALL: baralha as posições de todos os jogadores.

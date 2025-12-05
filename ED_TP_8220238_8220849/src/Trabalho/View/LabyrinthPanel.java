@@ -1,5 +1,6 @@
 package Trabalho.View;
 
+import Colecoes.interfaces.UnorderedListADT;
 import Trabalho.Map.Labyrinth;
 import Trabalho.Map.Room;
 import Trabalho.Map.RoomType;
@@ -40,7 +41,7 @@ public class LabyrinthPanel extends JPanel {
 
     // layout automático (círculo), só usado se não houver layout manual
     private void computeAutoLayout() {
-        ArrayUnorderedList<Room> rooms = labyrinth.getRooms();
+        UnorderedListADT<Room> rooms = labyrinth.getRooms();
         int n = rooms.size();
 
         roomsArray = new Room[n];

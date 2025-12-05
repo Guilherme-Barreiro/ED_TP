@@ -15,6 +15,7 @@ public class Player {
     private int blockedTurns;
     private final PlayerStats stats;
     private final StackADT<Room> moveStack;
+    private int minStackSize;
 
     public Player(String name, Room startRoom, PlayerController controller) {
         if (startRoom == null || startRoom.getType() != RoomType.ENTRY) {
@@ -31,6 +32,8 @@ public class Player {
 
         this.moveStack = new LinkedStack<>();
         this.moveStack.push(startRoom);
+
+        this.minStackSize = this.moveStack.size();
     }
 
     public String getName() {
@@ -85,8 +88,18 @@ public class Player {
     }
 
     /**
+     * Marca a posição atual na stack como limite mínimo de recuo após um SWAP.
+     * A partir daqui, o MOVE_BACK nunca pode reduzir a stack abaixo deste tamanho.
+     */
+    public void markSwapBoundary() {
+        this.minStackSize = this.moveStack.size();
+    }
+
+    /**
      * Usado pelo evento MOVE_BACK: recua 'steps' passos no caminho.
-     * Mantemos sempre pelo menos uma sala na stack (a inicial).
+     * Nunca recua para antes do limite definido por minStackSize.
+     * - Antes de qualquer SWAP, esse limite é a sala inicial (stack size 1).
+     * - Depois de um SWAP, esse limite passa a ser a posição da stack após o SWAP.
      */
     public void moveBack(int steps) {
         if (steps <= 0) {
@@ -94,7 +107,7 @@ public class Player {
         }
 
         int pops = 0;
-        while (pops < steps && moveStack.size() > 1) {
+        while (pops < steps && moveStack.size() > minStackSize) {
             moveStack.pop();
             pops++;
         }
