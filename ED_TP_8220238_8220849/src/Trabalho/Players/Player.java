@@ -5,6 +5,7 @@ import Colecoes.interfaces.StackADT;
 import Trabalho.Game.GameState;
 import Trabalho.Map.Labyrinth;
 import Trabalho.Map.Room;
+import Trabalho.Map.RoomType;
 import Trabalho.interfacesTrabalho.PlayerController;
 
 public class Player {
@@ -16,6 +17,10 @@ public class Player {
     private final StackADT<Room> moveStack;
 
     public Player(String name, Room startRoom, PlayerController controller) {
+        if (startRoom == null || startRoom.getType() != RoomType.ENTRY) {
+            throw new IllegalArgumentException("A sala inicial do jogador " + name +
+                    " tem de ser uma ENTRY.");
+        }
         this.name = name;
         this.currentRoom = startRoom;
         this.controller = controller;
