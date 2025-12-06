@@ -8,27 +8,40 @@ import java.awt.*;
 
 public class LabyrinthViewer {
 
-    // Versão antiga (layout automático)
+    private static JFrame currentFrame;
+
+    // layout automático
     public static void show(Labyrinth lab) {
+        if (currentFrame != null) {
+            currentFrame.dispose();
+        }
+
         JFrame frame = new JFrame("Labirinto");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         LabyrinthPanel panel = new LabyrinthPanel(lab);
         frame.getContentPane().add(panel);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        currentFrame = frame;
     }
 
-    // NOVO: versão com layout manual
+    // layout manual
     public static void show(Labyrinth lab, Room[] rooms, Point[] positions) {
+        if (currentFrame != null) {
+            currentFrame.dispose();
+        }
+
         JFrame frame = new JFrame("Labirinto");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         LabyrinthPanel panel = new LabyrinthPanel(lab, rooms, positions);
         frame.getContentPane().add(panel);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+
+        currentFrame = frame;
     }
 }

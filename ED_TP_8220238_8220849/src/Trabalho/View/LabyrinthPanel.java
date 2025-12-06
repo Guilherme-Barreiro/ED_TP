@@ -19,7 +19,7 @@ public class LabyrinthPanel extends JPanel {
     private static final int NODE_RADIUS = 20;
     private static final int PADDING = 60;
 
-    // ===== 1) Construtor ANTIGO – layout automático em círculo =====
+    // layout automático
     public LabyrinthPanel(Labyrinth lab) {
         this.lab = lab;
         java.util.List<Room> list = new ArrayList<>();
@@ -37,7 +37,7 @@ public class LabyrinthPanel extends JPanel {
         setPreferredSize(computePreferredSize(positions));
     }
 
-    // ===== 2) Construtor NOVO – layout manual =====
+    // layout manual
     public LabyrinthPanel(Labyrinth lab, Room[] rooms, Point[] positions) {
         if (rooms.length != positions.length) {
             throw new IllegalArgumentException("rooms e positions têm de ter o mesmo tamanho.");
@@ -53,7 +53,6 @@ public class LabyrinthPanel extends JPanel {
         setPreferredSize(computePreferredSize(positions));
     }
 
-    // calcula posições em círculo simples
     private Point[] computeCircularPositions(int n, int cx, int cy, int radius) {
         Point[] pts = new Point[n];
         if (n == 0) return pts;
@@ -67,7 +66,6 @@ public class LabyrinthPanel extends JPanel {
         return pts;
     }
 
-    // calcula o tamanho ideal do painel com base nas posições dos nós
     private Dimension computePreferredSize(Point[] pts) {
         int maxX = 0;
         int maxY = 0;
@@ -76,10 +74,9 @@ public class LabyrinthPanel extends JPanel {
             if (p.x > maxX) maxX = p.x;
             if (p.y > maxY) maxY = p.y;
         }
-        // acrescenta margem e raio dos nós
         int w = maxX + NODE_RADIUS + PADDING;
         int h = maxY + NODE_RADIUS + PADDING;
-        // evita tamanhos ridículos
+
         w = Math.max(w, 400);
         h = Math.max(h, 300);
         return new Dimension(w, h);

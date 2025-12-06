@@ -75,8 +75,6 @@ C:.
 +---out
 ¦   +---production
 ¦       +---ED_TP_8220238_8220849
-¦           ¦   a.json
-¦           ¦   a.txt
 ¦           ¦   ED_TP_8220238_8220849.iml
 ¦           ¦   estrutura.txt
 ¦           ¦   json-simple-1.1.1.jar
@@ -153,6 +151,9 @@ C:.
 ¦           ¦           StackADT.class
 ¦           ¦           UnorderedListADT.class
 ¦           ¦           
+¦           +---resources
+¦           ¦       questions.json
+¦           ¦       
 ¦           +---Trabalho
 ¦               +---Demo
 ¦               ¦       MapEditorMain.class

@@ -4,8 +4,10 @@ import Trabalho.IO.MapWriter;
 import Trabalho.Map.Labyrinth;
 import Trabalho.Map.Room;
 import Trabalho.Map.RoomType;
+import Trabalho.View.LabyrinthViewer;
 import Colecoes.interfaces.UnorderedListADT;
 
+import javax.swing.SwingUtilities;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -18,6 +20,9 @@ public class MapEditorMain {
     public static void main(String[] args) {
         Labyrinth lab = new Labyrinth();
         boolean running = true;
+
+        // mostra logo o grafo vazio (opcional)
+        SwingUtilities.invokeLater(() -> LabyrinthViewer.show(lab));
 
         while (running) {
             System.out.println("\n=== Editor de Mapas ===");
@@ -44,8 +49,6 @@ public class MapEditorMain {
 
         System.out.println("A sair do editor.");
     }
-
-    // ===================== OPÇÃO 1: CRIAR SALA =====================
 
     private static void criarSala(Labyrinth lab) {
         System.out.println("\n--- Criar sala ---");
@@ -75,7 +78,6 @@ public class MapEditorMain {
             }
         }
 
-        // validações básicas de regra de jogo
         if (type == RoomType.CENTER && lab.getCenterRoom() != null) {
             System.out.println("Já existe uma sala CENTER. Não podes criar outra.");
             return;
@@ -87,8 +89,63 @@ public class MapEditorMain {
         }
 
         Room room = new Room(nextRoomId++, name, type);
+
+        // Se for NORMAL, perguntar se tem enigma / alavanca
+        if (type == RoomType.NORMAL) {
+            System.out.println("Sala NORMAL – conteúdo especial?");
+            System.out.println("1 - Nada (sala normal)");
+            System.out.println("2 - Sala com ENIGMA");
+            System.out.println("3 - Sala com ALAVANCA");
+            System.out.print("Opção: ");
+            String extra = in.nextLine().trim();
+
+            switch (extra) {
+                case "2" -> {
+                    // Enigma "placeholder" só para marcar que tem riddle
+                    Trabalho.Events.Question dummyQ =
+                            new Trabalho.Events.Question(
+                                    "ENIGMA_POR_DEFINIR",
+                                    new String[]{"A", "B", "C"},
+                                    0
+                            );
+                    room.setRiddle(dummyQ);
+                }
+                case "3" -> {
+                    // Perguntar número de alavancas (2 a 4)
+                    int leverCount;
+                    while (true) {
+                        System.out.print("Número de alavancas (2 a 4): ");
+                        String line = in.nextLine().trim();
+                        try {
+                            leverCount = Integer.parseInt(line);
+                            if (leverCount >= 2 && leverCount <= 4) {
+                                break;
+                            } else {
+                                System.out.println("Tem de ser um número entre 2 e 4.");
+                            }
+                        } catch (NumberFormatException e) {
+                            System.out.println("Número inválido, tenta outra vez.");
+                        }
+                    }
+
+                    // Para já, alavanca correta fixa em 0 (podes mais tarde perguntar qual é a correta)
+                    Trabalho.Events.LeverPuzzle puzzle =
+                            new Trabalho.Events.LeverPuzzle(0, leverCount);
+                    Trabalho.Events.Lever lever =
+                            new Trabalho.Events.Lever(puzzle);
+                    room.setLever(lever);
+                }
+                default -> {
+                    // 1 ou outra coisa: deixa como normal, sem nada
+                }
+            }
+        }
+
         lab.addRoom(room);
         System.out.println("Sala criada: " + room);
+
+        // atualizar grafo
+        SwingUtilities.invokeLater(() -> LabyrinthViewer.show(lab));
     }
 
     private static int contarEntradas(Labyrinth lab) {
@@ -100,8 +157,6 @@ public class MapEditorMain {
         }
         return count;
     }
-
-    // ===================== OPÇÃO 2: CRIAR CORREDOR =====================
 
     private static void criarCorredor(Labyrinth lab) {
         System.out.println("\n--- Criar corredor ---");
@@ -142,6 +197,9 @@ public class MapEditorMain {
         lab.addCorridor(from, to, weight, locked);
         System.out.println("Corredor criado entre " + from.getName() + " e " + to.getName()
                 + " (locked=" + locked + ").");
+
+        // atualizar grafo
+        SwingUtilities.invokeLater(() -> LabyrinthViewer.show(lab));
     }
 
     private static boolean temPeloMenosNSalas(Labyrinth lab, int n) {
@@ -164,8 +222,6 @@ public class MapEditorMain {
         return null;
     }
 
-    // ===================== OPÇÃO 3: GUARDAR MAPA =====================
-
     private static void guardarMapa(Labyrinth lab) {
         System.out.println("\n--- Guardar mapa ---");
         System.out.print("Nome do ficheiro (ex: mapa1.json): ");
@@ -183,8 +239,6 @@ public class MapEditorMain {
         }
     }
 
-    // ===================== OPÇÃO 4: LISTAR SALAS =====================
-
     private static void listarSalas(UnorderedListADT<Room> rooms) {
         System.out.println("\n--- Salas ---");
         Iterator<Room> it = rooms.iterator();
@@ -197,8 +251,6 @@ public class MapEditorMain {
             System.out.println("ID=" + r.getId() + " | " + r.getName() + " | " + r.getType());
         }
     }
-
-    // ===================== OPÇÃO 5: LISTAR CORREDORES =====================
 
     private static void listarCorredores(Labyrinth lab) {
         System.out.println("\n--- Corredores ---");
@@ -221,8 +273,6 @@ public class MapEditorMain {
             );
         }
     }
-
-    // ===================== HELPERS DE INPUT =====================
 
     private static int lerInt() {
         while (true) {
