@@ -194,9 +194,13 @@ public class MapEditorMain {
         String resp = in.nextLine().trim().toLowerCase();
         boolean locked = resp.startsWith("s");
 
-        lab.addCorridor(from, to, weight, locked);
-        System.out.println("Corredor criado entre " + from.getName() + " e " + to.getName()
-                + " (locked=" + locked + ").");
+        boolean created = lab.addCorridor(from, to, weight, locked);
+        if(created){
+            System.out.println("Corredor criado entre " + from.getName() + " e " + to.getName()
+                    + " (locked=" + locked + ").");
+        }else{
+            System.out.println("Já existe um corredor entre essas salas.");
+        }
 
         // atualizar grafo
         SwingUtilities.invokeLater(() -> LabyrinthViewer.show(lab));

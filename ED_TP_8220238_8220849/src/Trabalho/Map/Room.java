@@ -3,6 +3,8 @@ package Trabalho.Map;
 import Trabalho.Events.Lever;
 import Trabalho.Events.Question;
 
+import java.util.Objects;
+
 public class Room {
     private int id;
     private String name;
@@ -87,6 +89,19 @@ public class Room {
         if (!hasRiddle) {
             this.riddle = null;
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Room room = (Room) o;
+        return id == room.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 
     @Override

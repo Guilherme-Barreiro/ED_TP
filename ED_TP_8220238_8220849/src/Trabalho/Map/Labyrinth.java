@@ -53,8 +53,12 @@ public class Labyrinth {
      * Cria um corredor entre a e b com o peso dado.
      * Gera um Event com base no peso (ou null) através do EventFactory.
      */
-    public void addCorridor(Room a, Room b, double weight, boolean locked) {
-        if (a == null || b == null) return;
+    public boolean addCorridor(Room a, Room b, double weight, boolean locked) {
+        if (a == null || b == null) return false;
+
+        if (corridorExists(a, b)) {
+            return false;
+        }
 
         map.addEdge(a, b, weight);
 
@@ -62,6 +66,29 @@ public class Labyrinth {
 
         Corridor c = new Corridor(a, b, weight, e, locked);
         corridors.addToRear(c);
+        return true;
+    }
+
+    private boolean corridorExists(Room a, Room b) {
+        Iterator<Corridor> it = corridors.iterator();
+
+        while (it.hasNext()) {
+            Corridor c = it.next();
+
+            Room r1 = c.getFrom();
+            Room r2 = c.getTo();
+
+            boolean sameDirection =
+                    r1.equals(a) && r2.equals(b);
+            boolean oppositeDirection =
+                    r1.equals(b) && r2.equals(a);
+
+            if (sameDirection || oppositeDirection) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
