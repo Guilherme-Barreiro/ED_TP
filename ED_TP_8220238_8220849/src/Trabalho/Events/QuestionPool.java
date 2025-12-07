@@ -1,7 +1,7 @@
 package Trabalho.Events;
 
-import Colecoes.Estruturas.LinkedQueue;
-import Colecoes.interfaces.QueueADT;
+import Estruturas.LinkedQueue;
+import interfaces.QueueADT;
 
 public class QuestionPool {
     private QueueADT<Question> available;

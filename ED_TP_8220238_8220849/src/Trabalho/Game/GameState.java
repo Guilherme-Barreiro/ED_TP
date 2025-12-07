@@ -1,8 +1,8 @@
 package Trabalho.Game;
 
-import Colecoes.interfaces.UnorderedListADT;
-import Colecoes.interfaces.QueueADT;
-import Colecoes.Estruturas.LinkedQueue;
+import interfaces.UnorderedListADT;
+import interfaces.QueueADT;
+import Estruturas.LinkedQueue;
 import Trabalho.Events.*;
 import Trabalho.Map.Corridor;
 import Trabalho.Map.Labyrinth;

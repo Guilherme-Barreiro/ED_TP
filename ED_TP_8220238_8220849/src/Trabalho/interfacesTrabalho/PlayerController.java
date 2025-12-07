@@ -1,6 +1,6 @@
 package Trabalho.interfacesTrabalho;
 
-import Colecoes.interfaces.UnorderedListADT;
+import interfaces.UnorderedListADT;
 import Trabalho.Events.Question;
 import Trabalho.Game.GameState;
 import Trabalho.Map.Labyrinth;

@@ -1,7 +1,7 @@
 package Trabalho.Players;
 
-import Colecoes.Estruturas.ArrayUnorderedList;
-import Colecoes.interfaces.UnorderedListADT;
+import Estruturas.ArrayUnorderedList;
+import interfaces.UnorderedListADT;
 import Trabalho.Events.Question;
 import Trabalho.Game.GameState;
 import Trabalho.Map.Labyrinth;

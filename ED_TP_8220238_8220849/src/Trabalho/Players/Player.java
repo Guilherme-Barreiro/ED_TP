@@ -1,7 +1,7 @@
 package Trabalho.Players;
 
-import Colecoes.Estruturas.LinkedStack;
-import Colecoes.interfaces.StackADT;
+import Estruturas.LinkedStack;
+import interfaces.StackADT;
 import Trabalho.Game.GameState;
 import Trabalho.Map.Labyrinth;
 import Trabalho.Map.Room;

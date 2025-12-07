@@ -1,7 +1,7 @@
 package Trabalho.Players;
 
-import Colecoes.Estruturas.ArrayUnorderedList;
-import Colecoes.interfaces.UnorderedListADT;
+import Estruturas.ArrayUnorderedList;
+import interfaces.UnorderedListADT;
 import Trabalho.Events.EventLogEntry;
 import Trabalho.Map.Room;
 

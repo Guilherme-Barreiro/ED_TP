@@ -1,9 +1,9 @@
 package Trabalho.Map;
 
-import Colecoes.Estruturas.ArrayUnorderedList;
-import Colecoes.Estruturas.NetworkList;
-import Colecoes.interfaces.NetworkADT;
-import Colecoes.interfaces.UnorderedListADT;
+import Estruturas.ArrayUnorderedList;
+import Estruturas.NetworkList;
+import interfaces.NetworkADT;
+import interfaces.UnorderedListADT;
 import Trabalho.Events.Event;
 import Trabalho.Events.EventFactory;
 

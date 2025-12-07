@@ -1,7 +1,7 @@
 package Trabalho.Events;
 
-import Colecoes.Estruturas.ArrayUnorderedList;
-import Colecoes.interfaces.UnorderedListADT;
+import Estruturas.ArrayUnorderedList;
+import interfaces.UnorderedListADT;
 
 import java.util.Iterator;
 

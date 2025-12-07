@@ -1,7 +1,7 @@
 package Trabalho.View;
 
-import Colecoes.Estruturas.ArrayUnorderedList;
-import Colecoes.interfaces.UnorderedListADT;
+import Estruturas.ArrayUnorderedList;
+import interfaces.UnorderedListADT;
 import Trabalho.Events.Lever;
 import Trabalho.Events.LeverPuzzle;
 import Trabalho.Events.Question;

@@ -5,7 +5,7 @@ import Trabalho.Map.Labyrinth;
 import Trabalho.Map.Room;
 import Trabalho.Map.RoomType;
 import Trabalho.View.LabyrinthViewer;
-import Colecoes.interfaces.UnorderedListADT;
+import interfaces.UnorderedListADT;
 
 import javax.swing.SwingUtilities;
 import java.io.IOException;
