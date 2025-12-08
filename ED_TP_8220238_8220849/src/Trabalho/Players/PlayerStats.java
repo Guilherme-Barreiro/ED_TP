@@ -69,7 +69,28 @@ public class PlayerStats {
             sb.append(r.getId());
             if (it.hasNext()) sb.append(" -> ");
         }
+        sb.append("]");
+
+        sb.append(", events=[");
+
+        Iterator<EventLogEntry> itEv = events.iterator();
+        while (itEv.hasNext()) {
+            EventLogEntry e = itEv.next();
+            sb.append("{turn=")
+                    .append(e.getTurnNumber())
+                    .append(", type=")
+                    .append(e.getType())
+                    .append(", source=")
+                    .append(e.getSource() != null ? e.getSource().getName() : "null")
+                    .append(", target=")
+                    .append(e.getTarget() != null ? e.getTarget().getName() : "null")
+                    .append("}");
+
+            if (itEv.hasNext()) sb.append(", ");
+        }
+
         sb.append("]}");
         return sb.toString();
     }
+
 }
