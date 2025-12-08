@@ -1,0 +1,193 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Sala 1",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 220,
+      "y": 200
+    },
+    {
+      "id": 2,
+      "name": "Sala 2",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 330,
+      "y": 200
+    },
+    {
+      "id": 3,
+      "name": "Sala 3",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 440,
+      "y": 100
+    },
+    {
+      "id": 4,
+      "name": "Sala 4",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 440,
+      "y": 200
+    },
+    {
+      "id": 5,
+      "name": "Sala 5",
+      "type": "NORMAL",
+      "hasRiddle": true,
+      "lever": null,
+      "x": 550,
+      "y": 300
+    },
+    {
+      "id": 6,
+      "name": "Sala 6",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 220,
+      "y": 400
+    },
+    {
+      "id": 7,
+      "name": "Sala 7",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 330,
+      "y": 400
+    },
+    {
+      "id": 8,
+      "name": "Sala 8",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": {
+        "correctIndex": 1
+      },
+      "x": 330,
+      "y": 300
+    },
+    {
+      "id": 9,
+      "name": "Sala 9",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 550,
+      "y": 400
+    },
+    {
+      "id": 10,
+      "name": "Sala 10",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 440,
+      "y": 400
+    },
+    {
+      "id": 11,
+      "name": "Sala 11",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 330,
+      "y": 500
+    },
+    {
+      "id": 12,
+      "name": "Sala 12",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 440,
+      "y": 500
+    },
+    {
+      "id": 13,
+      "name": "Sala 13",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 550,
+      "y": 500
+    },
+    {
+      "id": 14,
+      "name": "Sala 14",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 220,
+      "y": 500
+    },
+    {
+      "id": 15,
+      "name": "Entrada 1",
+      "type": "ENTRY",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 110,
+      "y": 200
+    },
+    {
+      "id": 16,
+      "name": "Entrada 2",
+      "type": "ENTRY",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 110,
+      "y": 400
+    },
+    {
+      "id": 17,
+      "name": "Entrada 3",
+      "type": "ENTRY",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 660,
+      "y": 400
+    },
+    {
+      "id": 18,
+      "name": "Centro",
+      "type": "CENTER",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 440,
+      "y": 300
+    }
+  ],
+  "corridors": [
+    { "from": 15, "to": 1,  "weight": 1.0,  "locked": false },
+    { "from": 16, "to": 6,  "weight": 0.0,  "locked": false },
+    { "from": 17, "to": 9,  "weight": 3.0,  "locked": true  },
+    { "from": 17, "to": 13, "weight": 3.0,  "locked": false },
+    { "from": 1,  "to": 2,  "weight": 1.0,  "locked": false },
+    { "from": 2,  "to": 3,  "weight": 3.0,  "locked": true  },
+    { "from": 4,  "to": 5,  "weight": 0.0,  "locked": false },
+    { "from": 3,  "to": 4,  "weight": 3.0,  "locked": false },
+    { "from": 5,  "to": 18, "weight": 10.0, "locked": false },
+    { "from": 1,  "to": 6,  "weight": 3.0,  "locked": false },
+    { "from": 6,  "to": 7,  "weight": 0.0,  "locked": false },
+    { "from": 7,  "to": 8,  "weight": 0.0,  "locked": false },
+    { "from": 4,  "to": 8,  "weight": 0.0,  "locked": true  },
+    { "from": 7,  "to": 11, "weight": 3.0,  "locked": false },
+    { "from": 9,  "to": 10, "weight": 3.0,  "locked": false },
+    { "from": 12, "to": 13, "weight": 3.0,  "locked": false },
+    { "from": 9,  "to": 13, "weight": 3.0,  "locked": false },
+    { "from": 10, "to": 8,  "weight": 3.0,  "locked": true  },
+    { "from": 10, "to": 12, "weight": 3.0,  "locked": false },
+    { "from": 7,  "to": 12, "weight": 3.0,  "locked": false },
+    { "from": 16, "to": 14, "weight": 8.0,  "locked": false },
+    { "from": 6,  "to": 14, "weight": 8.0,  "locked": false },
+    { "from": 11, "to": 14, "weight": 8.0,  "locked": false }
+  ]
+}

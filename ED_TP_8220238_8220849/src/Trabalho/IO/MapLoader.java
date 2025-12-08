@@ -10,34 +10,41 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.awt.Point;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Iterator;
 
 /**
  * Lê um ficheiro JSON e constrói um Labyrinth
  * com salas, corredores e (opcionalmente) alavancas.
- * <p>
+ *
  * Formato esperado:
- * <p>
+ *
  * {
- * "rooms": [
- * {
- * "id": 1,
- * "name": "Entrada 1",
- * "type": "ENTRY",
- * "hasRiddle": false,
- * "lever": { "correctIndex": 1 } // ou null
- * },
- * ...
- * ],
- * "corridors": [
- * { "from": 1, "to": 2, "weight": 1.0, "locked": false },
- * ...
- * ]
+ *   "rooms": [
+ *     {
+ *       "id": 1,
+ *       "name": "Entrada 1",
+ *       "type": "ENTRY",
+ *       "hasRiddle": false,
+ *       "lever": { "correctIndex": 1 }, // ou null
+ *       "x": 220,                       // opcional
+ *       "y": 300                        // opcional
+ *     },
+ *     ...
+ *   ],
+ *   "corridors": [
+ *     { "from": 1, "to": 2, "weight": 1.0, "locked": false },
+ *     ...
+ *   ]
  * }
  */
 public class MapLoader {
+
+    // Layout do último mapa carregado (se tiver x,y em todas as salas)
+    private static Room[] lastRoomsWithLayout = null;
+    private static Point[] lastPositions = null;
+    private static boolean lastHasLayout = false;
 
     public static Labyrinth loadFromJson(String filePath)
             throws IOException, ParseException {
@@ -62,6 +69,11 @@ public class MapLoader {
 
             int entryCount = 0;
             int centerCount = 0;
+
+            int nRooms = roomsArray.size();
+            Room[] layoutRooms = new Room[nRooms];
+            Point[] layoutPositions = new Point[nRooms];
+            boolean allHaveLayout = true;
 
             for (int i = 0; i < roomsArray.size(); i++) {
                 Object rRaw = roomsArray.get(i);
@@ -116,8 +128,23 @@ public class MapLoader {
                     }
                 }
 
+                // Ler posições x,y se existirem
+                Object xRaw = rObj.get("x");
+                Object yRaw = rObj.get("y");
+                if (xRaw instanceof Long && yRaw instanceof Long) {
+                    int x = ((Long) xRaw).intValue();
+                    int y = ((Long) yRaw).intValue();
+                    layoutPositions[i] = new Point(x, y);
+                } else {
+                    layoutPositions[i] = null;
+                    allHaveLayout = false;
+                }
+
+                layoutRooms[i] = room;
+
                 lab.addRoom(room);
             }
+
             if (centerCount != 1) {
                 throw new IllegalArgumentException(
                         "O mapa tem de ter exatamente uma sala CENTER, mas tem " + centerCount);
@@ -127,6 +154,7 @@ public class MapLoader {
                 throw new IllegalArgumentException(
                         "O mapa tem de ter pelo menos uma sala ENTRY.");
             }
+
             Object corridorsRaw = root.get("corridors");
             if (corridorsRaw instanceof JSONArray) {
                 JSONArray corridorsArray = (JSONArray) corridorsRaw;
@@ -139,7 +167,6 @@ public class MapLoader {
                     JSONObject cObj = (JSONObject) cRaw;
 
                     Object fromRaw = cObj.get("from");
-
                     Object toRaw = cObj.get("to");
                     if (!(fromRaw instanceof Long) || !(toRaw instanceof Long)) {
                         throw new IllegalArgumentException("Campos \"from\"/\"to\" em corridors[" + i + "] não são inteiros.");
@@ -169,12 +196,32 @@ public class MapLoader {
                     }
 
                     lab.addCorridor(fromRoom, toRoom, weight, locked);
-
                 }
+            }
+
+            if (allHaveLayout) {
+                lastRoomsWithLayout = layoutRooms;
+                lastPositions = layoutPositions;
+                lastHasLayout = true;
+            } else {
+                lastRoomsWithLayout = null;
+                lastPositions = null;
+                lastHasLayout = false;
             }
 
             return lab;
         }
     }
 
+    public static boolean hasLastLayout() {
+        return lastHasLayout;
+    }
+
+    public static Room[] getLastRoomsWithLayout() {
+        return lastRoomsWithLayout;
+    }
+
+    public static Point[] getLastPositions() {
+        return lastPositions;
+    }
 }
