@@ -1,6 +1,7 @@
-package Trabalho.View;
+package Trabalho.Menu;
 
 import Estruturas.ArrayUnorderedList;
+import Trabalho.View.LabyrinthViewer;
 import interfaces.UnorderedListADT;
 import Trabalho.Events.Lever;
 import Trabalho.Events.LeverPuzzle;
@@ -21,29 +22,29 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class Testar {
+public class SingleplayerMenu {
 
     public static void main(String[] args) throws IOException, ParseException {
-        // 1) Criar labirinto
         Labyrinth lab = new Labyrinth();
 
-        Room E1  = new Room(1, "Entrada 1", RoomType.ENTRY);
-        Room E2  = new Room(2, "Entrada 2", RoomType.ENTRY);
-        Room E3  = new Room(3, "Entrada 3", RoomType.ENTRY);
-        Room C   = new Room(4, "Centro", RoomType.CENTER);
-        Room r1  = new Room(5, "Sala 1", RoomType.NORMAL);
-        Room r2  = new Room(6, "Sala 2", RoomType.NORMAL);
-        Room r3  = new Room(7, "Sala 3", RoomType.NORMAL);
-        Room r4  = new Room(8, "Sala 4", RoomType.NORMAL);
-        Room r5  = new Room(9, "Sala 5", RoomType.NORMAL);
-        Room r6  = new Room(10, "Sala 6", RoomType.NORMAL);
-        Room r7  = new Room(11, "Sala 7", RoomType.NORMAL);
-        Room r8  = new Room(12, "Sala 8", RoomType.NORMAL);
-        Room r9  = new Room(13, "Sala 9", RoomType.NORMAL);
-        Room r10 = new Room(14, "Sala 10", RoomType.NORMAL);
-        Room r11 = new Room(15, "Sala 11", RoomType.NORMAL);
-        Room r12 = new Room(16, "Sala 12", RoomType.NORMAL);
-        Room r13 = new Room(17, "Sala 13", RoomType.NORMAL);
+        Room r1  = new Room(1, "Sala 1", RoomType.NORMAL);
+        Room r2  = new Room(2, "Sala 2", RoomType.NORMAL);
+        Room r3  = new Room(3, "Sala 3", RoomType.NORMAL);
+        Room r4  = new Room(4, "Sala 4", RoomType.NORMAL);
+        Room r5  = new Room(5, "Sala 5", RoomType.NORMAL);
+        Room r6  = new Room(6, "Sala 6", RoomType.NORMAL);
+        Room r7  = new Room(7, "Sala 7", RoomType.NORMAL);
+        Room r8  = new Room(8, "Sala 8", RoomType.NORMAL);
+        Room r9  = new Room(9, "Sala 9", RoomType.NORMAL);
+        Room r10 = new Room(10, "Sala 10", RoomType.NORMAL);
+        Room r11 = new Room(11, "Sala 11", RoomType.NORMAL);
+        Room r12 = new Room(12, "Sala 12", RoomType.NORMAL);
+        Room r13 = new Room(13, "Sala 13", RoomType.NORMAL);
+        Room r14 = new Room(14, "Sala 14", RoomType.NORMAL);
+        Room E1  = new Room(15, "Entrada 1", RoomType.ENTRY);
+        Room E2  = new Room(16, "Entrada 2", RoomType.ENTRY);
+        Room E3  = new Room(17, "Entrada 3", RoomType.ENTRY);
+        Room C   = new Room(18, "Centro", RoomType.CENTER);
 
         lab.addRoom(r1);
         lab.addRoom(r2);
@@ -58,33 +59,37 @@ public class Testar {
         lab.addRoom(r11);
         lab.addRoom(r12);
         lab.addRoom(r13);
+        lab.addRoom(r14);
         lab.addRoom(C);
         lab.addRoom(E1);
         lab.addRoom(E2);
         lab.addRoom(E3);
 
         lab.addCorridor(E1, r1, 1.0, false);
-        lab.addCorridor(E2, r6, 3.0, false);
-        lab.addCorridor(E3, r9, 3.0, false);
+        lab.addCorridor(E2, r6, 0.0, false);
+        lab.addCorridor(E3, r9, 3.0, true);
         lab.addCorridor(E3, r13, 3.0, false);
         lab.addCorridor(r1, r2, 1.0, false);
-        lab.addCorridor(r2, r3, 3.0, false);
-        lab.addCorridor(r4, r5, 3.0, false);
+        lab.addCorridor(r2, r3, 3.0, true);
+        lab.addCorridor(r4, r5, 0.0, false);
         lab.addCorridor(r3, r4, 3.0, false);
-        lab.addCorridor(r5, C, 3.0, false);
+        lab.addCorridor(r5, C, 10.0, false);
         lab.addCorridor(r1, r6, 3.0, false);
-        lab.addCorridor(r6, r7, 3.0, false);
-        lab.addCorridor(r7, r8, 3.0, false);
-        lab.addCorridor(r4, r8, 3.0, false);
+        lab.addCorridor(r6, r7, 0.0, false);
+        lab.addCorridor(r7, r8, 0.0, false);
+        lab.addCorridor(r4, r8, 0.0, true);
         lab.addCorridor(r7, r11, 3.0, false);
         lab.addCorridor(r9, r10, 3.0, false);
         lab.addCorridor(r12, r13, 3.0, false);
         lab.addCorridor(r9, r13, 3.0, false);
-        lab.addCorridor(r10, r8, 3.0, false);
+        lab.addCorridor(r10, r8, 3.0, true);
         lab.addCorridor(r10, r12, 3.0, false);
         lab.addCorridor(r7, r12, 3.0, false);
+        lab.addCorridor(E2, r14, 8.0, false);
+        lab.addCorridor(r6, r14, 8.0, false);
+        lab.addCorridor(r11, r14, 8.0, false);
 
-        Room[] rooms = { E1, E2, E3, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, C };
+        Room[] rooms = { E1, E2, E3, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, C };
 
         Point[] positions = new Point[] {
                 new Point(110, 200),  // E1
@@ -103,6 +108,7 @@ public class Testar {
                 new Point(330, 500),  // r11
                 new Point(440, 500),  // r12
                 new Point(550, 500),  // r13
+                new Point(220, 500),  // r14
                 new Point(440, 300)   // C
         };
 
@@ -112,11 +118,7 @@ public class Testar {
         QuestionPool pool;
         try {
             pool = QuestionLoader.loadFromJson("resources/questions.json");
-            System.out.println("QuestionPool carregado com sucesso.");
-            Question exemplo = pool.getRandomQuestion();
-            if (exemplo != null) {
-                System.out.println("Exemplo de pergunta: " + exemplo.getText());
-            }
+
         } catch (IOException | ParseException e) {
             System.out.println("Erro ao carregar resources/questions.json: " + e.getMessage());
             e.printStackTrace();
@@ -127,21 +129,14 @@ public class Testar {
         if (!pool.isCompletelyEmpty()) {
             Question riddleR5 = pool.getRandomQuestion();
             r5.setRiddle(riddleR5);
-
-            System.out.println("Sala com enigma: " + r5.getName());
-            System.out.println("hasEnigma = " + r5.hasRiddle());
-            System.out.println("Texto do enigma: " + r5.getRiddle().getText());
         }
 
         LeverPuzzle puzzle = new LeverPuzzle(1);
         Lever lever = new Lever(puzzle);
         r8.setLever(lever);
 
-        System.out.println("Sala com alavanca: " + r8.getName());
-        System.out.println("hasLever = " + r8.hasLever());
-        System.out.println("Lever correta = " + r8.getLever().getPuzzle().getCorrectIndex());
 
-        // 4) Criar jogador human
+        // 4) Criar jogador humano
         Scanner in = new Scanner(System.in);
 
         System.out.print("\nNome do jogador: ");

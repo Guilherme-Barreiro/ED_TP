@@ -1,5 +1,6 @@
 package Trabalho.Game;
 
+import Trabalho.View.LabyrinthViewer;
 import interfaces.UnorderedListADT;
 import interfaces.QueueADT;
 import Estruturas.LinkedQueue;
@@ -9,6 +10,7 @@ import Trabalho.Map.Labyrinth;
 import Trabalho.Map.Room;
 import Trabalho.Players.Player;
 
+import javax.swing.*;
 import java.util.Iterator;
 import java.util.Random;
 
@@ -35,6 +37,12 @@ public class GameState {
     private boolean extraTurnThisTurn;
 
     private final Random random;
+    /**
+     * Indica se, neste turno, o jogador tem a opção de ficar parado
+     * (apenas quando começou o turno numa sala com alavanca, tentou
+     * uma alavanca e falhou).
+     */
+    private boolean allowStayThisTurn;
 
     /**
      * @param labyrinth    labirinto do jogo
@@ -62,6 +70,7 @@ public class GameState {
         this.currentTurn = 1;
         this.extraTurnThisTurn = false;
         this.random = new Random();
+        this.allowStayThisTurn = false;
 
         Iterator<Player> it = players.iterator();
         while (it.hasNext()) {
@@ -101,17 +110,26 @@ public class GameState {
         return !turnQueue.isEmpty();
     }
 
+    /**
+     * Indica se, neste turno, o jogador pode escolher ficar parado
+     * na sala atual (opção extra no HumanController).
+     */
+    public boolean isStayAllowedThisTurn() {
+        return allowStayThisTurn;
+    }
 
     /**
      * Executa um turno para o jogador que está à frente da queue.
      * - Se estiver bloqueado, apenas gasta 1 turno de bloqueio e roda a fila.
      * - Caso contrário:
-     * 1) escolhe movimento,
-     * 2) move o jogador,
-     * 3) aplica evento do corredor (se existir),
-     * 4) trata alavanca / enigma da sala,
-     * 5) verifica vitória,
-     * 6) roda fila (ou dá extra turn).
+     * 1) tenta resolver enigma se começou o turno numa sala com enigma,
+     * 2) tenta resolver alavanca se começou o turno numa sala com alavanca,
+     * 3) escolhe movimento,
+     * 4) move o jogador,
+     * 5) aplica evento do corredor (se existir),
+     * 6) trata alavanca / enigma da sala onde chegou,
+     * 7) verifica vitória,
+     * 8) roda fila (ou dá extra turn).
      */
     public void nextTurn() {
         if (gameOver) {
@@ -123,6 +141,8 @@ public class GameState {
             System.out.println("Não há jogadores na fila de turnos.");
             return;
         }
+
+        allowStayThisTurn = false;
 
         Player current = turnQueue.first();
         System.out.println("=== Turno " + currentTurn + " - Jogador: " + current.getName() + " ===");
@@ -143,6 +163,16 @@ public class GameState {
             currentTurn++;
             return;
         }
+
+        //Se falhar enigma, o turno acaba aqui (sem movimento).
+        if (!handleRiddleAtTurnStart(current)) {
+            Player p = turnQueue.dequeue();
+            turnQueue.enqueue(p);
+            currentTurn++;
+            return;
+        }
+
+        handleLeverAtTurnStart(current);
 
         Room from = current.getCurrentRoom();
         Room to = current.getController().chooseMove(current, labyrinth, this);
@@ -169,7 +199,7 @@ public class GameState {
         System.out.println(current.getName() + " moveu-se para " + to);
 
         extraTurnThisTurn = false;
-        Event e = corridor.getEvent();
+        Event e = EventFactory.maybeCreateEvent(corridor.getWeight());
         applyCorridorEvent(e, current, corridor);
 
         handleLeverIfAny(current, to);
@@ -293,7 +323,6 @@ public class GameState {
         );
     }
 
-
     /**
      * SHUFFLE_ALL: baralha as posições de todos os jogadores.
      */
@@ -340,6 +369,49 @@ public class GameState {
         return count;
     }
 
+    /**
+     * Se o jogador começou o turno numa sala com alavanca ainda não ativada,
+     * é obrigado a escolher logo uma alavanca antes de poder mover-se.
+     * Se falhar, este turno fica com a opção de permanecer na sala.
+     */
+    private void handleLeverAtTurnStart(Player current) {
+        Room room = current.getCurrentRoom();
+        if (room == null || !room.hasLever()) {
+            return;
+        }
+
+        Lever lever = room.getLever();
+        if (lever == null || lever.isActivated()) {
+            return;
+        }
+
+        LeverPuzzle puzzle = lever.getPuzzle();
+        int leverCount = (puzzle != null) ? puzzle.getLeverCount() : 3;
+
+        System.out.println(current.getName() + " está numa sala com alavanca (" + room.getId() + ").");
+        System.out.println("Antes de te moveres, tens de escolher uma das " + leverCount + " alavancas...");
+
+        int choice = current.getController().chooseLever(room, leverCount);
+
+        boolean ok = lever.tryActivate(choice);
+
+        if (ok) {
+            System.out.println("Alavanca correta! Corredores a partir da sala " + room.getId() + " foram desbloqueados.");
+            labyrinth.unlockCorridorsFrom(room);
+            SwingUtilities.invokeLater(() -> LabyrinthViewer.show(labyrinth));
+            allowStayThisTurn = false;
+
+        } else {
+            System.out.println("\nEscolheste a alavanca errada. Podes tentar outra noutra jogada ou mover-te por outro caminho.");
+            allowStayThisTurn = true;
+        }
+    }
+
+    /**
+     * Alavanca encontrada APÓS um movimento (primeira vez que entra na sala).
+     * Aqui não é dado o direito de ficar parado neste turno: a escolha da alavanca
+     * é um “bónus” em cima do movimento já feito.
+     */
     private void handleLeverIfAny(Player current, Room room) {
         if (room == null || !room.hasLever()) {
             return;
@@ -363,11 +435,61 @@ public class GameState {
         if (ok) {
             System.out.println("Alavanca correta! Corredores a partir da sala " + room.getId() + " foram desbloqueados.");
             labyrinth.unlockCorridorsFrom(room);
+
+            SwingUtilities.invokeLater(() -> LabyrinthViewer.show(labyrinth));
         } else {
             System.out.println("Escolheste a alavanca errada. Nada acontece... tenta noutra jogada.");
         }
     }
 
+    /**
+     * Se o jogador COMEÇA o turno numa sala com ENIGMA ativo:
+     * - tenta responder logo no início;
+     * - se falhar, o turno termina e não se pode mover;
+     * - se acertar, o enigma é removido e pode mover-se normalmente.
+     *
+     * @return true se o jogador estiver livre para se mover neste turno;
+     *         false se falhou o enigma e o turno termina.
+     */
+    private boolean handleRiddleAtTurnStart(Player current) {
+        Room room = current.getCurrentRoom();
+        if (room == null || !room.hasRiddle()) {
+            return true; // sem enigma -> pode mover-se
+        }
+
+        if (questionPool.isCompletelyEmpty()) {
+            System.out.println("Não há mais perguntas disponíveis. O enigma é ignorado.");
+            room.setHasRiddle(false);
+            return true;
+        }
+
+        Question q = questionPool.getRandomQuestion();
+        if (q == null) {
+            System.out.println("Falha ao obter pergunta. O enigma é ignorado.");
+            room.setHasRiddle(false);
+            return true;
+        }
+
+        System.out.println("Enigma na sala " + room.getId() + ":");
+        int answerIndex = current.getController().answerQuestion(q);
+
+        if (q.isCorrect(answerIndex)) {
+            System.out.println("Resposta correta!");
+            current.getStats().incCorrectRiddles();
+            room.setHasRiddle(false);
+            return true; // libertado, pode mover-se
+        } else {
+            System.out.println("Resposta errada. Ficas preso nesta sala até acertares no enigma.");
+            current.getStats().incWrongRiddles();
+            return false; // turno termina, sem movimento
+        }
+    }
+
+    /**
+     * Enigma encontrado APÓS um movimento (quando entra pela primeira vez na sala).
+     * Se falhar aqui, o turno já está “gasto” de qualquer forma; a partir do próximo
+     * turno o handleRiddleAtTurnStart(...) vai obrigá-lo a continuar a tentar.
+     */
     private void handleRiddleIfAny(Player current, Room room) {
         if (room == null || !room.hasRiddle()) {
             return;
@@ -398,6 +520,5 @@ public class GameState {
             current.getStats().incWrongRiddles();
         }
     }
-
 
 }

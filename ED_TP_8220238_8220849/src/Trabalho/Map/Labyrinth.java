@@ -62,7 +62,7 @@ public class Labyrinth {
 
         map.addEdge(a, b, weight);
 
-        Event e = EventFactory.maybeCreateEvent(weight);
+        Event e = null;
 
         Corridor c = new Corridor(a, b, weight, e, locked);
         corridors.addToRear(c);

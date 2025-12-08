@@ -25,9 +25,11 @@ public class HumanController implements PlayerController {
 
         Iterator<Room> it = neighbors.iterator();
         if (!it.hasNext()) {
-            System.out.println("Não há movimentos possíveis.");
+            System.out.println("Não há movimentos possíveis. Vais ficar na sala atual.");
             return player.getCurrentRoom();
         }
+
+        boolean canStay = (state != null && state.isStayAllowedThisTurn());
 
         System.out.println("Jogador: " + player.getName());
         System.out.println("Estás em: " + player.getCurrentRoom());
@@ -42,6 +44,12 @@ public class HumanController implements PlayerController {
             index++;
         }
 
+        Integer stayIndex = null;
+        if (canStay) {
+            stayIndex = index;
+            System.out.println("  " + stayIndex + " - Ficar na sala atual");
+        }
+
         int choice = -1;
         boolean valid = false;
         while (!valid) {
@@ -49,25 +57,41 @@ public class HumanController implements PlayerController {
             String line = in.nextLine();
             try {
                 choice = Integer.parseInt(line);
-                if (choice >= 0 && choice < options.size()) {
-                    valid = true;
+
+                if (canStay) {
+                    if (choice >= 0 && choice <= stayIndex) {
+                        valid = true;
+                    } else {
+                        System.out.println("Índice inválido.");
+                    }
                 } else {
-                    System.out.println("Índice inválido.");
+                    if (choice >= 0 && choice < options.size()) {
+                        valid = true;
+                    } else {
+                        System.out.println("Índice inválido.");
+                    }
                 }
+
             } catch (NumberFormatException e) {
                 System.out.println("Valor inválido.");
             }
         }
 
-        index = 0;
+        // se escolher ficar devolve a sala atual
+        if (canStay && stayIndex != null && choice == stayIndex) {
+            return player.getCurrentRoom();
+        }
+        // senão devolve a sala escolhida
+        int i = 0;
         it = options.iterator();
         while (it.hasNext()) {
             Room r = it.next();
-            if (index == choice) {
+            if (i == choice) {
                 return r;
             }
-            index++;
+            i++;
         }
+
         return player.getCurrentRoom();
     }
 

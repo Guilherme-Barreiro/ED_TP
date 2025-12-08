@@ -1,0 +1,45 @@
+{
+    "rooms": [
+        {
+            "hasRiddle": false,
+            "name": "1",
+            "id": 1,
+            "lever": null,
+            "type": "ENTRY"
+        },
+        {
+            "hasRiddle": false,
+            "name": "2",
+            "id": 2,
+            "lever": null,
+            "type": "NORMAL"
+        },
+        {
+            "hasRiddle": false,
+            "name": "3",
+            "id": 3,
+            "lever": null,
+            "type": "CENTER"
+        }
+    ],
+    "corridors": [
+        {
+            "weight": 1.0,
+            "from": 1,
+            "to": 2,
+            "locked": false
+        },
+        {
+            "weight": 1.0,
+            "from": 2,
+            "to": 3,
+            "locked": false
+        },
+        {
+            "weight": 20.0,
+            "from": 1,
+            "to": 3,
+            "locked": true
+        }
+    ]
+}

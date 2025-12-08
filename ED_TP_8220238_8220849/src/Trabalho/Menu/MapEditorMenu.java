@@ -1,4 +1,4 @@
-package Trabalho.Demo;
+package Trabalho.Menu;
 
 import Trabalho.IO.MapWriter;
 import Trabalho.Map.Labyrinth;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class MapEditorMain {
+public class MapEditorMenu {
 
     private static final Scanner in = new Scanner(System.in);
     private static int nextRoomId = 1;
@@ -21,7 +21,6 @@ public class MapEditorMain {
         Labyrinth lab = new Labyrinth();
         boolean running = true;
 
-        // mostra logo o grafo vazio (opcional)
         SwingUtilities.invokeLater(() -> LabyrinthViewer.show(lab));
 
         while (running) {
@@ -235,13 +234,23 @@ public class MapEditorMain {
             return;
         }
 
+        String folder = "Mapas";
+
+        java.io.File dir = new java.io.File(folder);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+
+        String filePath = folder + "/" + filename;
+
         try {
-            MapWriter.saveToJson(lab, filename);
-            System.out.println("Mapa guardado em: " + filename);
+            MapWriter.saveToJson(lab, filePath);
+            System.out.println("Mapa guardado em: " + filePath);
         } catch (IOException e) {
             System.out.println("Erro ao guardar mapa: " + e.getMessage());
         }
     }
+
 
     private static void listarSalas(UnorderedListADT<Room> rooms) {
         System.out.println("\n--- Salas ---");

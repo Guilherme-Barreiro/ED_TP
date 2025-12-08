@@ -10,7 +10,11 @@ public class LabyrinthViewer {
 
     private static JFrame currentFrame;
 
-    // layout automático
+    // guardar último layout manual usado
+    private static Room[] lastRooms;
+    private static Point[] lastPositions;
+
+    // layout automático (reutiliza layout manual se existir)
     public static void show(Labyrinth lab) {
         if (currentFrame != null) {
             currentFrame.dispose();
@@ -19,7 +23,13 @@ public class LabyrinthViewer {
         JFrame frame = new JFrame("Labirinto");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        LabyrinthPanel panel = new LabyrinthPanel(lab);
+        LabyrinthPanel panel;
+        if (lastRooms != null && lastPositions != null && lastRooms.length == lastPositions.length) {
+            panel = new LabyrinthPanel(lab, lastRooms, lastPositions);
+        } else {
+            panel = new LabyrinthPanel(lab);
+        }
+
         frame.getContentPane().add(panel);
         frame.pack();
         frame.setLocationRelativeTo(null);
@@ -32,6 +42,9 @@ public class LabyrinthViewer {
         if (currentFrame != null) {
             currentFrame.dispose();
         }
+
+        lastRooms = rooms;
+        lastPositions = positions;
 
         JFrame frame = new JFrame("Labirinto");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
