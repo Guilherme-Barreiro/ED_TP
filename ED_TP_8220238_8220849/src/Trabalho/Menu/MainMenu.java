@@ -35,6 +35,7 @@ public class MainMenu {
             System.out.println("3 - Bot a jogar");
             System.out.println("4 - Criar mapa");
             System.out.println("5 - Ver relatórios de jogos anteriores");
+            System.out.println("6 - Hall of Fame");
             System.out.println("0 - Sair");
             System.out.print("Opção: ");
 
@@ -46,6 +47,7 @@ public class MainMenu {
                 case "3" -> iniciarBotGame();
                 case "4" -> criarMapa();
                 case "5" -> verRelatorios();
+                case "6" -> verHallOfFame();
                 case "0" -> {
                     System.out.println("A sair do jogo...");
                     running = false;
@@ -119,6 +121,16 @@ public class MainMenu {
             GameReportsMenu.main(new String[0]);
         } catch (Exception e) {
             System.out.println("Erro ao abrir relatórios: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private static void verHallOfFame() {
+        System.out.println("\n--- Hall of Fame ---");
+        try {
+            HallOfFameMenu.main(new String[0]);
+        } catch (Exception e) {
+            System.out.println("Erro ao abrir Hall of Fame: " + e.getMessage());
             e.printStackTrace();
         }
     }

@@ -30,6 +30,7 @@ public class GameState {
     private final QueueADT<Player> turnQueue;
     private final QuestionPool questionPool;
     private final GameMode mode;
+    private final Difficulty difficulty;
 
     private boolean gameOver;
     private Player winner;
@@ -53,14 +54,16 @@ public class GameState {
      * @param players      lista de jogadores (na ordem inicial)
      * @param questionPool pool de perguntas para os enigmas
      * @param mode         modo de jogo (MANUAL / AUTOMATIC)
+     * @param difficulty   dificuldade de jogo (EASY / NORMAL / HARD)
      * @throws IllegalArgumentException se algum dos parâmetros for {@code null}
      */
     public GameState(Labyrinth labyrinth,
                      UnorderedListADT<Player> players,
                      QuestionPool questionPool,
-                     GameMode mode) {
+                     GameMode mode,
+                     Difficulty difficulty) {
 
-        if (labyrinth == null || players == null || questionPool == null || mode == null) {
+        if (labyrinth == null || players == null || questionPool == null || mode == null || difficulty == null) {
             throw new IllegalArgumentException("Parâmetros do GameState não podem ser nulos.");
         }
 
@@ -68,6 +71,7 @@ public class GameState {
         this.players = players;
         this.questionPool = questionPool;
         this.mode = mode;
+        this.difficulty = difficulty;
 
         this.turnQueue = new LinkedQueue<Player>();
         this.gameOver = false;
@@ -83,6 +87,7 @@ public class GameState {
             turnQueue.enqueue(it.next());
         }
     }
+
 
     /**
      * Devolve o labirinto do jogo.
@@ -145,6 +150,10 @@ public class GameState {
      */
     public int getCurrentTurn() {
         return currentTurn;
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
     }
 
     /**
@@ -263,7 +272,7 @@ public class GameState {
         System.out.println(current.getName() + " moveu-se para " + to);
 
         extraTurnThisTurn = false;
-        Event e = EventFactory.maybeCreateEvent(corridor.getWeight());
+        Event e = EventFactory.maybeCreateEvent(corridor.getWeight(), difficulty);
         applyCorridorEvent(e, current, corridor);
 
         handleLeverIfAny(current, to);

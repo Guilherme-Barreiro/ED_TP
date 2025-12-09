@@ -1,0 +1,254 @@
+{
+  "questions": [
+    {
+      "text": "Em que ano começou a Primeira Guerra Mundial?",
+      "options": ["1912", "1914", "1918"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que tratado de paz formalizou o fim da Primeira Guerra Mundial com a Alemanha?",
+      "options": ["Tratado de Versalhes", "Tratado de Tordesilhas", "Tratado de Viena"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destes períodos geológicos é o mais recente?",
+      "options": ["Jurássico", "Cretácico", "Quaternário"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Que civilização antiga construiu a cidade de Machu Picchu?",
+      "options": ["Maias", "Incas", "Astecas"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a capital da Mongólia?",
+      "options": ["Astana", "Ulan Bator (Ulaanbaatar)", "Bichkek"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que filósofo grego foi tutor de Alexandre, o Grande?",
+      "options": ["Platão", "Aristóteles", "Sócrates"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual destas rochas é de origem magmática (ígnea) intrusiva?",
+      "options": ["Granito", "Calcário", "Arenito"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que evento histórico é geralmente considerado o início da Idade Contemporânea?",
+      "options": ["Queda de Roma (476)", "Revolução Francesa (1789)", "Descoberta da América (1492)"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a capital da Finlândia?",
+      "options": ["Helsínquia", "Copenhaga", "Estocolmo"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que país é atravessado pelo rio Mekong e tem como capital Vientiane?",
+      "options": ["Laos", "Camboja", "Vietname"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Em geologia, como se chama a zona de contacto entre duas placas tectónicas que se afastam?",
+      "options": ["Falha transformante", "Dorsal oceânica (limite divergente)", "Zona de subducção"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que imperador romano ordenou a construção de uma muralha no norte da Britânia, conhecida pelo seu nome?",
+      "options": ["Trajano", "Adriano", "Constantino"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é o maior lago de água doce do mundo em volume?",
+      "options": ["Lago Superior", "Lago Vitória", "Lago Baikal"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Qual das seguintes cidades é capital da Croácia?",
+      "options": ["Zagreb", "Liubliana", "Sarajevo"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que revolução iniciada em 1917 levou à criação da União Soviética?",
+      "options": ["Revolução Cultural", "Revolução Bolchevique", "Revolução Meiji"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é o nome dado à desintegração radioativa de um núcleo atómico instável?",
+      "options": ["Fusão nuclear", "Fissão nuclear", "Decaimento radioativo"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Em que cidade europeia ocorreu a Conferência de 1814–1815 que redesenhou o mapa político após Napoleão?",
+      "options": ["Viena", "Paris", "Berlim"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que reino peninsular português foi anexado temporariamente pela Espanha na União Ibérica (1580–1640)?",
+      "options": ["Reino de Portugal", "Reino do Algarve", "Reino da Galiza"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Como se chama o supercontinente que existiu há cerca de 300 milhões de anos?",
+      "options": ["Laurásia", "Gondwana", "Pangeia"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Qual é a capital da Islândia?",
+      "options": ["Reiquiavique (Reykjavík)", "Oslo", "Helsínquia"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que tipo de fronteira tectónica está associada à formação de fossas oceânicas profundas?",
+      "options": ["Convergente (subducção)", "Divergente", "Transformante"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destes países não tem saída para o mar?",
+      "options": ["Bolívia", "Peru", "Equador"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que cidade foi capital do Império Bizantino durante grande parte da sua existência?",
+      "options": ["Alexandria", "Constantinopla", "Antioquia"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Em que ano se deu a queda da Bastilha, símbolo do início da Revolução Francesa?",
+      "options": ["1789", "1815", "1799"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destes minerais é a forma cristalina pura de carbono e apresenta dureza máxima na escala de Mohs?",
+      "options": ["Grafite", "Diamante", "Quartzo"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a capital do Chile?",
+      "options": ["Santiago", "Lima", "Quito"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destas cidades fica mais a leste?",
+      "options": ["Lisboa", "Londres", "Berlim"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Qual é o principal gás responsável pela formação da camada de ozono?",
+      "options": ["Oxigénio (O2)", "Ozono (O3)", "Azoto (N2)"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que civilização antiga construiu as linhas de Nazca, no Peru?",
+      "options": ["Nazca", "Inca", "Olmeca"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destas capitais se situa a uma altitude superior a 3 500 metros?",
+      "options": ["Cidade do México", "La Paz (sede do governo da Bolívia)", "Bogotá"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que mar interior de grande salinidade se situa entre Israel, Jordânia e Cisjordânia?",
+      "options": ["Mar Cáspio", "Mar Vermelho", "Mar Morto"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Qual foi o principal objetivo das viagens de circum-navegação iniciadas por Fernão de Magalhães?",
+      "options": ["Encontrar uma rota marítima para as Índias navegando para oeste", "Cartografar o Atlântico Norte", "Conquistar o Egipto"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destas rochas é típica de ambientes sedimentares marinhos ricos em carbonato de cálcio?",
+      "options": ["Basalto", "Grés (arenito)", "Calcário"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Que país europeu tem como capital a cidade de Bucareste?",
+      "options": ["Roménia", "Hungria", "Bulgária"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que erupção vulcânica destruiu as cidades de Pompeia e Herculano no ano 79 d.C.?",
+      "options": ["Vesúvio", "Etna", "Stromboli"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destes rios desagua no Oceano Índico?",
+      "options": ["Ganges", "Danúbio", "Volga"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que nome é dado ao ponto na superfície da Terra diretamente por cima do foco de um sismo?",
+      "options": ["Epicentro", "Hipocentro", "Isóbaro"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é a capital da Nova Zelândia?",
+      "options": ["Wellington", "Auckland", "Christchurch"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que grande cadeia montanhosa atravessa a América do Sul de norte a sul?",
+      "options": ["Himalaias", "Andes", "Rocosas"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que império construiu uma extensa rede de estradas na América do Sul antes da chegada dos europeus?",
+      "options": ["Império Inca", "Império Azteca", "Império Maia"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destas capitais está localizada mais perto do Círculo Polar Ártico?",
+      "options": ["Oslo", "Reiquiavique (Reykjavík)", "Copenhaga"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que fenómeno geológico está associado à emissão rápida de cinzas, gases e fragmentos de rocha de um vulcão?",
+      "options": ["Sismo tectónico", "Corrente de densidade piroclástica", "Deslizamento de terras"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual destes mares é praticamente fechado e liga-se ao Oceano Atlântico através do estreito de Gibraltar?",
+      "options": ["Mar Negro", "Mar Mediterrâneo", "Mar Cáspio"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que cidade foi capital do Império Asteca antes da conquista espanhola?",
+      "options": ["Tenochtitlán", "Cuzco", "Tikal"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é a capital da Suíça (sede do governo federal)?",
+      "options": ["Zurique", "Genebra", "Berna"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Que metal é líquido à temperatura ambiente e foi usado em muitos termómetros antigos?",
+      "options": ["Mercúrio", "Chumbo", "Gálio"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destes continentes apresenta a maior cordilheira glacial contínua junto à sua costa ocidental?",
+      "options": ["Antártida", "América do Sul", "África"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que famoso navegador português chegou pela primeira vez, por mar, à Índia em 1498?",
+      "options": ["Vasco da Gama", "Bartolomeu Dias", "Fernão de Magalhães"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destas ilhas portuguesas é de origem vulcânica e integra o chamado 'Triângulo' nas Ilhas dos Açores?",
+      "options": ["Madeira", "Terceira", "Pico"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Como se chama a zona muito profunda dos oceanos onde a luz solar quase não chega e a pressão é extremamente elevada?",
+      "options": ["Zona fótica", "Zona abissal", "Zona litoral"],
+      "correctIndex": 1
+    }
+  ]
+}

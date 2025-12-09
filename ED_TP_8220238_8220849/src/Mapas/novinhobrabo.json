@@ -1,0 +1,177 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Entrada Norte",
+      "type": "ENTRY",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 100,
+      "y": 100
+    },
+    {
+      "id": 2,
+      "name": "Entrada Sul",
+      "type": "ENTRY",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 100,
+      "y": 400
+    },
+    {
+      "id": 3,
+      "name": "Entrada Leste",
+      "type": "ENTRY",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 700,
+      "y": 250
+    },
+    {
+      "id": 4,
+      "name": "Corredor N1",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 220,
+      "y": 100
+    },
+    {
+      "id": 5,
+      "name": "Corredor N2",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 340,
+      "y": 100
+    },
+    {
+      "id": 6,
+      "name": "Sala Enigma 1",
+      "type": "NORMAL",
+      "hasRiddle": true,
+      "lever": null,
+      "x": 340,
+      "y": 200
+    },
+    {
+      "id": 7,
+      "name": "Sala Alavanca 1",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": {
+        "correctIndex": 2
+      },
+      "x": 460,
+      "y": 200
+    },
+    {
+      "id": 8,
+      "name": "Sala Alavanca 2",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": {
+        "correctIndex": 1
+      },
+      "x": 460,
+      "y": 100
+    },
+    {
+      "id": 9,
+      "name": "Sala Enigma 2",
+      "type": "NORMAL",
+      "hasRiddle": true,
+      "lever": null,
+      "x": 460,
+      "y": 300
+    },
+    {
+      "id": 10,
+      "name": "Centro",
+      "type": "CENTER",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 580,
+      "y": 250
+    },
+    {
+      "id": 11,
+      "name": "Corredor Sul 1",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 220,
+      "y": 400
+    },
+    {
+      "id": 12,
+      "name": "Corredor Sul 2",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 340,
+      "y": 400
+    },
+    {
+      "id": 13,
+      "name": "Sala Alavanca 3",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": {
+        "correctIndex": 0
+      },
+      "x": 340,
+      "y": 300
+    },
+    {
+      "id": 14,
+      "name": "Sala Intermédia",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 220,
+      "y": 250
+    },
+    {
+      "id": 15,
+      "name": "Sala Tesouro",
+      "type": "NORMAL",
+      "hasRiddle": true,
+      "lever": null,
+      "x": 580,
+      "y": 350
+    },
+    {
+      "id": 16,
+      "name": "Sala Lateral",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 580,
+      "y": 150
+    }
+  ],
+  "corridors": [
+    { "from": 1,  "to": 4,  "weight": 1.0,  "locked": false },
+    { "from": 4,  "to": 5,  "weight": 0.0,  "locked": false },
+    { "from": 5,  "to": 6,  "weight": 3.0,  "locked": false },
+    { "from": 6,  "to": 7,  "weight": 3.0,  "locked": false },
+    { "from": 7,  "to": 9,  "weight": 0.0,  "locked": false },
+    { "from": 9,  "to": 10, "weight": 10.0, "locked": false },
+
+    { "from": 4,  "to": 14, "weight": 0.0,  "locked": false },
+    { "from": 14, "to": 11, "weight": 3.0,  "locked": false },
+    { "from": 2,  "to": 11, "weight": 1.0,  "locked": false },
+    { "from": 11, "to": 12, "weight": 0.0,  "locked": false },
+    { "from": 12, "to": 13, "weight": 3.0,  "locked": false },
+    { "from": 13, "to": 9,  "weight": 3.0,  "locked": false },
+
+    { "from": 5,  "to": 8,  "weight": 3.0,  "locked": true  },
+    { "from": 8,  "to": 16, "weight": 3.0,  "locked": true  },
+    { "from": 3,  "to": 16, "weight": 1.0,  "locked": false },
+    { "from": 16, "to": 10, "weight": 0.0,  "locked": false },
+
+    { "from": 10, "to": 15, "weight": 8.0,  "locked": false },
+    { "from": 15, "to": 13, "weight": 3.0,  "locked": true  }
+  ]
+}

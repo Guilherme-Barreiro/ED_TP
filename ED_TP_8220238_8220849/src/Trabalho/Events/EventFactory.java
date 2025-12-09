@@ -1,5 +1,7 @@
 package Trabalho.Events;
 
+import Trabalho.Game.Difficulty;
+
 import java.util.Random;
 
 /**
@@ -25,7 +27,7 @@ public class EventFactory {
      * @param weight peso do corredor (por ex. 1..5)
      * @return Event ou null (se não acontecer nada)
      */
-    public static Event maybeCreateEvent(double weight) {
+    private static Event baseMaybeCreateEvent(double weight) {
 
         double triggerProb;
 
@@ -83,5 +85,65 @@ public class EventFactory {
         }
 
         return new Event(type, intensity);
+    }
+
+    public static Event maybeCreateEvent(double weight) {
+        return baseMaybeCreateEvent(weight);
+    }
+
+    public static Event maybeCreateEvent(double weight, Difficulty difficulty) {
+        if (difficulty == null) {
+            return baseMaybeCreateEvent(weight);
+        }
+
+        Event base = baseMaybeCreateEvent(weight);
+
+        if (difficulty == Difficulty.NORMAL) {
+            return base;
+        }
+
+        if (difficulty == Difficulty.EASY) {
+            if (base == null) {
+                if (random.nextDouble() < 0.15) {
+                    return new Event(EventType.EXTRA_TURN, 1);
+                }
+                return null;
+            }
+
+            switch (base.getType()) {
+                case MOVE_BACK:
+                case SKIP_TURNS:
+                case SHUFFLE_ALL:
+                case SWAP_PLAYER:
+                    if (random.nextDouble() < 0.6) {
+                        return new Event(EventType.EXTRA_TURN, 1);
+                    }
+                    return base;
+                default:
+                    return base;
+            }
+        }
+
+        if (difficulty == Difficulty.HARD) {
+            if (base == null) {
+                if (random.nextDouble() < 0.15) {
+                    int intensity = 1 + random.nextInt(2);
+                    return new Event(EventType.SKIP_TURNS, intensity);
+                }
+                return null;
+            }
+
+            if (base.getType() == EventType.EXTRA_TURN) {
+                if (random.nextDouble() < 0.6) {
+                    int intensity = base.getIntensity();
+                    if (intensity <= 0) intensity = 1;
+                    return new Event(EventType.SKIP_TURNS, intensity);
+                }
+            }
+
+            return base;
+        }
+
+        return base;
     }
 }

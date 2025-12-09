@@ -1,0 +1,1 @@
+{"winner":"barreiro","players":[{"currentRoom":18,"path":[16,6,7,8,4,8,4,5,18],"correctRiddles":1,"wrongRiddles":2,"name":"barreiro","events":[{"description":"Evento no corredor: Corridor{from=7, to=8, weight=0.0, locked=false, event=null}","turn":3,"source":"barreiro","type":"EXTRA_TURN","target":null}]}],"turns":9}

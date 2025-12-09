@@ -1,6 +1,7 @@
 package Trabalho.Menu;
 
 import Estruturas.ArrayUnorderedList;
+import Trabalho.Game.Difficulty;
 import Trabalho.IO.GameReportJson;
 import Trabalho.View.LabyrinthViewer;
 import interfaces.UnorderedListADT;
@@ -64,11 +65,20 @@ public class MultiplayerMenu {
             SwingUtilities.invokeLater(() -> LabyrinthViewer.show(lab));
         }
 
+        Difficulty difficulty = escolherDificuldade(in);
+
+        String questionsFile;
+        switch (difficulty) {
+            case EASY -> questionsFile = "src/Questions/questions_easy.json";
+            case HARD -> questionsFile = "src/Questions/questions_hard.json";
+            default -> questionsFile = "src/Questions/questions_normal.json";
+        }
+
         QuestionPool pool;
         try {
-            pool = QuestionLoader.loadFromJson("src/resources/questions.json");
+            pool = QuestionLoader.loadFromJson(questionsFile);
         } catch (IOException | ParseException e) {
-            System.out.println("Erro ao carregar src/resources/questions.json: " + e.getMessage());
+            System.out.println("Erro ao carregar " + questionsFile + ": " + e.getMessage());
             e.printStackTrace();
             return;
         }
@@ -107,7 +117,7 @@ public class MultiplayerMenu {
             players.addToRear(player);
         }
 
-        GameState state = new GameState(lab, players, pool, GameMode.MANUAL);
+        GameState state = new GameState(lab, players, pool, GameMode.MANUAL, difficulty);
 
         System.out.println("\n=== Início do jogo (Multiplayer) ===");
         System.out.println("Objetivo: chegar à sala central (" + lab.getCenterRoom().getName() + ").");
@@ -141,6 +151,27 @@ public class MultiplayerMenu {
             System.out.println("Erro ao guardar relatório do jogo: " + e.getMessage());
         }
 
+    }
+
+    private static Difficulty escolherDificuldade(Scanner in) {
+        while (true) {
+            System.out.println("\nEscolhe a dificuldade:");
+            System.out.println("1 - Fácil");
+            System.out.println("2 - Normal");
+            System.out.println("3 - Difícil");
+            System.out.print("Opção: ");
+            String op = in.nextLine().trim();
+            switch (op) {
+                case "1":
+                    return Difficulty.EASY;
+                case "2":
+                    return Difficulty.NORMAL;
+                case "3":
+                    return Difficulty.HARD;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        }
     }
 
     /**

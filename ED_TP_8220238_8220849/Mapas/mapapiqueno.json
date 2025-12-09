@@ -1,1 +1,0 @@
-{"rooms":[{"hasRiddle":false,"name":"a","id":1,"lever":null,"type":"ENTRY"},{"hasRiddle":false,"name":"b","id":2,"lever":null,"type":"CENTER"}],"corridors":[{"weight":1.0,"from":1,"to":2,"locked":false}]}

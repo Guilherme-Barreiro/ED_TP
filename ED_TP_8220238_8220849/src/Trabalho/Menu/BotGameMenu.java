@@ -3,6 +3,7 @@ package Trabalho.Menu;
 import Estruturas.ArrayUnorderedList;
 import Trabalho.Game.GameMode;
 import Trabalho.Game.GameState;
+import Trabalho.Game.Difficulty;
 import Trabalho.IO.GameReportJson;
 import Trabalho.IO.MapLoader;
 import Trabalho.IO.QuestionLoader;
@@ -61,11 +62,50 @@ public class BotGameMenu {
             SwingUtilities.invokeLater(() -> LabyrinthViewer.show(lab));
         }
 
+        Difficulty difficulty = Difficulty.NORMAL;
+        boolean diffChosen = false;
+        while (!diffChosen) {
+            System.out.println("\nEscolhe a dificuldade:");
+            System.out.println("1 - Fácil");
+            System.out.println("2 - Normal");
+            System.out.println("3 - Difícil");
+            System.out.print("Opção: ");
+            String diffOp = in.nextLine().trim();
+            switch (diffOp) {
+                case "1":
+                    difficulty = Difficulty.EASY;
+                    diffChosen = true;
+                    break;
+                case "2":
+                    difficulty = Difficulty.NORMAL;
+                    diffChosen = true;
+                    break;
+                case "3":
+                    difficulty = Difficulty.HARD;
+                    diffChosen = true;
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        }
+
         QuestionPool pool;
         try {
-            pool = QuestionLoader.loadFromJson("src/resources/questions.json");
+            String questionsFile;
+            switch (difficulty) {
+                case EASY:
+                    questionsFile = "src/Questions/questions_easy.json";
+                    break;
+                case HARD:
+                    questionsFile = "src/Questions/questions_hard.json";
+                    break;
+                default:
+                    questionsFile = "src/Questions/questions_normal.json";
+                    break;
+            }
+            pool = QuestionLoader.loadFromJson(questionsFile);
         } catch (IOException | ParseException e) {
-            System.out.println("Erro ao carregar src/resources/questions.json: " + e.getMessage());
+            System.out.println("Erro ao carregar ficheiro de perguntas: " + e.getMessage());
             e.printStackTrace();
             return;
         }
@@ -102,7 +142,7 @@ public class BotGameMenu {
                     startRoom.getId() + " (" + startRoom.getName() + ").");
         }
 
-        GameState state = new GameState(lab, players, pool, GameMode.AUTOMATIC);
+        GameState state = new GameState(lab, players, pool, GameMode.AUTOMATIC, difficulty);
 
         System.out.println("\n=== Início do jogo (Bots) ===");
         System.out.println("Objetivo: chegar à sala central (" + lab.getCenterRoom().getName() + ").");

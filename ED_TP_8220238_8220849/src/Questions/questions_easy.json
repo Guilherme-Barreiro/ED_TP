@@ -1,0 +1,254 @@
+{
+  "questions": [
+    {
+      "text": "Em que continente se situa Portugal?",
+      "options": ["África", "Europa", "Ásia"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a capital de Espanha?",
+      "options": ["Madrid", "Barcelona", "Sevilha"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é o maior continente da Terra em área?",
+      "options": ["África", "Ásia", "Europa"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual destes é um oceano?",
+      "options": ["Mediterrâneo", "Pacífico", "Cáspio"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a capital de França?",
+      "options": ["Roma", "Paris", "Berlim"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que país é famoso pelas pirâmides de Gizé?",
+      "options": ["México", "Egipto", "Peru"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é o maior planeta rochoso do Sistema Solar?",
+      "options": ["Terra", "Marte", "Mercúrio"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Em que país fica a cidade do Rio de Janeiro?",
+      "options": ["Argentina", "Brasil", "Portugal"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual destas cidades é capital de Itália?",
+      "options": ["Milão", "Roma", "Nápoles"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é o nome do nosso satélite natural?",
+      "options": ["Lua", "Fobos", "Europa"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que camada da Terra é a mais externa?",
+      "options": ["Núcleo", "Manto", "Crosta"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Que animal é conhecido como o 'rei da selva'?",
+      "options": ["Tigre", "Leão", "Elefante"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a capital de Portugal?",
+      "options": ["Porto", "Lisboa", "Coimbra"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que país tem a forma aproximada de uma bota no mapa da Europa?",
+      "options": ["Itália", "Grécia", "Alemanha"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que estrutura famosa se encontra inclinada na cidade de Pisa?",
+      "options": ["Torre", "Ponte", "Catedral"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que continente é também um país?",
+      "options": ["Austrália", "Antártida", "Europa"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é o planeta mais próximo do Sol?",
+      "options": ["Vénus", "Terra", "Mercúrio"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Que mar separa a Itália da costa oeste da Península Balcânica?",
+      "options": ["Mar Tirreno", "Mar Adriático", "Mar Báltico"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que país africano tem Lisboa como antiga metrópole colonial e fala português?",
+      "options": ["Nigéria", "Angola", "Quénia"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Como se chama o maior deserto gelado do planeta?",
+      "options": ["Ártico", "Antártida", "Groenlândia"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a capital da Alemanha?",
+      "options": ["Munique", "Frankfurt", "Berlim"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Como se chama o maior rio de Portugal continental?",
+      "options": ["Douro", "Tejo", "Guadiana"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Em que país europeu se localizam as cidades de Atenas e Salónica?",
+      "options": ["Grécia", "Turquia", "Chipre"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destes é um vulcão famoso em Itália?",
+      "options": ["Etna", "Kilimanjaro", "Fujiyama"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual destes planetas é conhecido pelos seus anéis visíveis?",
+      "options": ["Júpiter", "Saturno", "Urano"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Em que continente se situa o deserto do Saara?",
+      "options": ["África", "Ásia", "América do Sul"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é a capital do Reino Unido?",
+      "options": ["Londres", "Manchester", "Edimburgo"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que país tem como capital a cidade de Buenos Aires?",
+      "options": ["Chile", "Argentina", "Uruguai"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Em que país se situa a cidade do Cairo?",
+      "options": ["Egipto", "Marrocos", "Tunísia"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que continente é quase totalmente coberto de gelo?",
+      "options": ["Antártida", "Europa", "Ásia"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Em que país europeu se encontra a cidade de Lisboa?",
+      "options": ["Espanha", "Portugal", "Itália"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual destes rios passa por Paris?",
+      "options": ["Danúbio", "Sena", "Tâmisa"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Em que país se encontra a Estátua da Liberdade?",
+      "options": ["Estados Unidos da América", "França", "Reino Unido"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é o ponto mais alto da superfície terrestre?",
+      "options": ["Monte Everest", "Monte Branco", "K2"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é a capital da Rússia?",
+      "options": ["São Petersburgo", "Moscovo", "Kiev"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que oceano separa a Europa da América do Norte?",
+      "options": ["Índico", "Atlântico", "Pacífico"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Em que país se situam as cataratas do Niágara (lado norte)?",
+      "options": ["Estados Unidos da América", "Canadá", "México"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a capital da Grécia?",
+      "options": ["Atenas", "Roma", "Istambul"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que país europeu é famoso pelos moinhos de vento e tulipas?",
+      "options": ["Holanda (Países Baixos)", "Bélgica", "Dinamarca"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é a capital da Irlanda?",
+      "options": ["Dublin", "Belfast", "Cork"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que mar banha a costa sul da Turquia e a costa norte do Egipto?",
+      "options": ["Mar Vermelho", "Mar Mediterrâneo", "Mar Negro"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Em que país se encontra a famosa cidade de Veneza?",
+      "options": ["Espanha", "Itália", "França"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que camada gasosa envolve a Terra e nos protege da radiação solar excessiva?",
+      "options": ["Litosfera", "Atmosfera", "Hidrosfera"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual é a capital da Índia?",
+      "options": ["Nova Deli", "Bombaim (Mumbai)", "Calcutá"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que país tem como capital a cidade de Otava?",
+      "options": ["Austrália", "Canadá", "Nova Zelândia"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que continente é rodeado pelo Oceano Glacial Ártico a norte?",
+      "options": ["África", "Europa", "Antártida"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Qual destes rios é conhecido por atravessar o Egipto?",
+      "options": ["Nilo", "Amazonas", "Yangtzé"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Que país tem como capital a cidade de Tóquio?",
+      "options": ["Coreia do Sul", "Japão", "China"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Que grande floresta tropical se localiza sobretudo no Brasil?",
+      "options": ["Floresta Amazónica", "Floresta Negra", "Taiga"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Qual é a capital de Angola?",
+      "options": ["Luanda", "Maputo", "Praia"],
+      "correctIndex": 0
+    }
+  ]
+}
