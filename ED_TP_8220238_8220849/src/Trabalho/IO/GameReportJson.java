@@ -79,7 +79,7 @@ public class GameReportJson {
     public static String generateAndSave(GameState state) throws IOException {
         String jsonReport = generate(state);
 
-        String dirPath = "Game Reports";
+        String dirPath = "src/Game Reports";
         File dir = new File(dirPath);
         if (!dir.exists()) {
             dir.mkdirs();

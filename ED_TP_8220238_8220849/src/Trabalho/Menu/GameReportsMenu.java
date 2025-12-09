@@ -15,7 +15,7 @@ public class GameReportsMenu {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        File folder = new File("Game Reports");
+        File folder = new File("src/Game Reports");
         if (!folder.exists() || !folder.isDirectory()) {
             System.out.println("Não existe nenhuma pasta \"Game Reports\" com relatórios.");
             return;

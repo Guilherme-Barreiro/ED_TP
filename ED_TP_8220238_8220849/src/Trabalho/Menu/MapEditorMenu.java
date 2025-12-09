@@ -234,7 +234,7 @@ public class MapEditorMenu {
             return;
         }
 
-        String folder = "Mapas";
+        String folder = "src/Mapas";
 
         java.io.File dir = new java.io.File(folder);
         if (!dir.exists()) {

@@ -19,7 +19,7 @@ import java.util.Scanner;
 
 public class MapSelectionMenu {
 
-    private static final String MAPS_FOLDER = "Mapas";
+    private static final String MAPS_FOLDER = "src/Mapas";
 
     /**
      * Menu que:

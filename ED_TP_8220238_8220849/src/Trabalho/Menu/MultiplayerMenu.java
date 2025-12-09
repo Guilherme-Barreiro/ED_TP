@@ -46,9 +46,9 @@ public class MultiplayerMenu {
 
         QuestionPool pool;
         try {
-            pool = QuestionLoader.loadFromJson("resources/questions.json");
+            pool = QuestionLoader.loadFromJson("src/resources/questions.json");
         } catch (IOException | ParseException e) {
-            System.out.println("Erro ao carregar resources/questions.json: " + e.getMessage());
+            System.out.println("Erro ao carregar src/resources/questions.json: " + e.getMessage());
             e.printStackTrace();
             return;
         }

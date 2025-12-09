@@ -1,0 +1,1 @@
+{"winner":"Bot 2","players":[{"currentRoom":2,"path":[1,2,1,2],"correctRiddles":0,"wrongRiddles":0,"name":"Bot 1","events":[]},{"currentRoom":4,"path":[1,2,3,4],"correctRiddles":1,"wrongRiddles":1,"name":"Bot 2","events":[]}],"turns":3}
