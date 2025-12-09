@@ -7,9 +7,12 @@ import Trabalho.Players.Player;
 import Trabalho.Map.Room;
 import Trabalho.Events.EventLogEntry;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Iterator;
 
 public class GameReportJson {
+    private static int reportCounter = 0;
 
     /**
      * Gera uma string JSON com o relatório do jogo,
@@ -75,6 +78,19 @@ public class GameReportJson {
         root.put("players", playersArray);
 
         return root.toJSONString();
+    }
+
+    public static String generateAndSave(GameState state) throws IOException {
+        String jsonReport = generate(state);
+
+        reportCounter++;
+        String fileName = "game-report-" + reportCounter + ".json";
+
+        try (FileWriter fw = new FileWriter(fileName)) {
+            fw.write(jsonReport);
+        }
+
+        return fileName;
     }
 }
 
