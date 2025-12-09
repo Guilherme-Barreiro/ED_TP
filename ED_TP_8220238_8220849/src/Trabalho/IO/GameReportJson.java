@@ -7,21 +7,17 @@ import Trabalho.Players.Player;
 import Trabalho.Map.Room;
 import Trabalho.Events.EventLogEntry;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 
 public class GameReportJson {
-    private static int reportCounter = 0;
 
-    /**
-     * Gera uma string JSON com o relatório do jogo,
-     * a partir do GameState.
-     */
     public static String generate(GameState state) {
         JSONObject root = new JSONObject();
 
-        root.put("turns", state.getCurrentTurn() - 1);
+        root.put("turns", state.getCurrentTurn());
 
         Player winner = state.getWinner();
         if (winner != null) {
@@ -83,8 +79,13 @@ public class GameReportJson {
     public static String generateAndSave(GameState state) throws IOException {
         String jsonReport = generate(state);
 
-        reportCounter++;
-        String fileName = "game-report-" + reportCounter + ".json";
+        String dirPath = "Game Reports";
+        File dir = new File(dirPath);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+
+        String fileName = dirPath + "/game-report-" + System.currentTimeMillis() + ".json";
 
         try (FileWriter fw = new FileWriter(fileName)) {
             fw.write(jsonReport);
@@ -93,5 +94,3 @@ public class GameReportJson {
         return fileName;
     }
 }
-
-

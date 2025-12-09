@@ -7,37 +7,42 @@ import Trabalho.Map.RoomType;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.*;
+import java.util.Iterator;
 
 public class LabyrinthPanel extends JPanel {
 
     private final Labyrinth lab;
     private final Room[] rooms;
     private final Point[] positions;
-    private final Map<Room, Point> roomPositions;
 
     private static final int NODE_RADIUS = 20;
     private static final int PADDING = 60;
 
-    // layout automático
     public LabyrinthPanel(Labyrinth lab) {
         this.lab = lab;
-        java.util.List<Room> list = new ArrayList<>();
-        Iterator<Room> it = lab.getRooms().iterator();
-        while (it.hasNext()) {
-            list.add(it.next());
+
+        Iterator<Room> itCount = lab.getRooms().iterator();
+        int count = 0;
+        while (itCount.hasNext()) {
+            itCount.next();
+            count++;
         }
-        this.rooms = list.toArray(new Room[0]);
+
+        Room[] roomsArray = new Room[count];
+        Iterator<Room> itRooms = lab.getRooms().iterator();
+        int idx = 0;
+        while (itRooms.hasNext()) {
+            roomsArray[idx] = itRooms.next();
+            idx++;
+        }
+
+        this.rooms = roomsArray;
         this.positions = computeCircularPositions(rooms.length, 400, 300, 200);
-        this.roomPositions = new HashMap<>();
-        for (int i = 0; i < rooms.length; i++) {
-            roomPositions.put(rooms[i], positions[i]);
-        }
+
         setBackground(Color.WHITE);
         setPreferredSize(computePreferredSize(positions));
     }
 
-    // layout manual
     public LabyrinthPanel(Labyrinth lab, Room[] rooms, Point[] positions) {
         if (rooms.length != positions.length) {
             throw new IllegalArgumentException("rooms e positions têm de ter o mesmo tamanho.");
@@ -45,10 +50,7 @@ public class LabyrinthPanel extends JPanel {
         this.lab = lab;
         this.rooms = rooms;
         this.positions = positions;
-        this.roomPositions = new HashMap<>();
-        for (int i = 0; i < rooms.length; i++) {
-            roomPositions.put(rooms[i], positions[i]);
-        }
+
         setBackground(Color.WHITE);
         setPreferredSize(computePreferredSize(positions));
     }
@@ -98,6 +100,15 @@ public class LabyrinthPanel extends JPanel {
         drawRooms(g2);
     }
 
+    private Point findPosition(Room room) {
+        for (int i = 0; i < rooms.length; i++) {
+            if (rooms[i] == room) {
+                return positions[i];
+            }
+        }
+        return null;
+    }
+
     private void drawCorridors(Graphics2D g2) {
         Iterator<Corridor> it = lab.getCorridors().iterator();
         while (it.hasNext()) {
@@ -105,15 +116,15 @@ public class LabyrinthPanel extends JPanel {
             Room from = c.getFrom();
             Room to = c.getTo();
 
-            Point p1 = roomPositions.get(from);
-            Point p2 = roomPositions.get(to);
+            Point p1 = findPosition(from);
+            Point p2 = findPosition(to);
             if (p1 == null || p2 == null) continue;
 
             if (c.isLocked()) {
                 g2.setStroke(new BasicStroke(2.0f));
                 g2.setColor(Color.RED);
             } else {
-                g2.setStroke(new BasicStroke(1.0f));
+                g2.setStroke(new BasicStroke(2.0f));
                 g2.setColor(Color.LIGHT_GRAY);
             }
 
@@ -180,6 +191,5 @@ public class LabyrinthPanel extends JPanel {
 
         g2.setFont(normalFont);
     }
-
 
 }

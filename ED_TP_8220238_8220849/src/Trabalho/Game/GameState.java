@@ -34,6 +34,7 @@ public class GameState {
     private boolean gameOver;
     private Player winner;
     private int currentTurn;
+    private int playersProcessedThisTurn;
     private boolean extraTurnThisTurn;
 
     private final Random random;
@@ -68,6 +69,7 @@ public class GameState {
         this.gameOver = false;
         this.winner = null;
         this.currentTurn = 1;
+        this.playersProcessedThisTurn = 0;
         this.extraTurnThisTurn = false;
         this.random = new Random();
         this.allowStayThisTurn = false;
@@ -118,6 +120,23 @@ public class GameState {
         return allowStayThisTurn;
     }
 
+    private void advanceTurnQueue() {
+        if (turnQueue.isEmpty()) {
+            return;
+        }
+
+        Player p = turnQueue.dequeue();
+        turnQueue.enqueue(p);
+
+        playersProcessedThisTurn++;
+
+        int total = getPlayersCount();
+        if (total > 0 && playersProcessedThisTurn >= total) {
+            playersProcessedThisTurn = 0;
+            currentTurn++;
+        }
+    }
+
     /**
      * Executa um turno para o jogador que está à frente da queue.
      * - Se estiver bloqueado, apenas gasta 1 turno de bloqueio e roda a fila.
@@ -157,18 +176,12 @@ public class GameState {
                     current.getBlockedTurns() + " turnos.");
             current.decrementBlockedTurns();
 
-            Player p = turnQueue.dequeue();
-            turnQueue.enqueue(p);
-
-            currentTurn++;
+            advanceTurnQueue();
             return;
         }
 
-        //Se falhar enigma, o turno acaba aqui (sem movimento).
         if (!handleRiddleAtTurnStart(current)) {
-            Player p = turnQueue.dequeue();
-            turnQueue.enqueue(p);
-            currentTurn++;
+            advanceTurnQueue();
             return;
         }
 
@@ -179,9 +192,7 @@ public class GameState {
 
         if (to == null || to == from) {
             System.out.println(current.getName() + " não se moveu.");
-            Player p = turnQueue.dequeue();
-            turnQueue.enqueue(p);
-            currentTurn++;
+            advanceTurnQueue();
             return;
         }
 
@@ -189,9 +200,7 @@ public class GameState {
         if (corridor == null || corridor.isLocked()) {
             System.out.println("Corredor inválido ou bloqueado entre " + from + " e " + to +
                     ". Movimento cancelado.");
-            Player p = turnQueue.dequeue();
-            turnQueue.enqueue(p);
-            currentTurn++;
+            advanceTurnQueue();
             return;
         }
 
@@ -211,13 +220,10 @@ public class GameState {
         }
 
         if (!extraTurnThisTurn) {
-            Player p = turnQueue.dequeue();
-            turnQueue.enqueue(p);
+            advanceTurnQueue();
         } else {
             extraTurnThisTurn = false;
         }
-
-        currentTurn++;
     }
 
     private void declareWinner(Player winner) {

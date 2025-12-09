@@ -14,6 +14,7 @@ public class MainMenu {
             System.out.println("2 - Multiplayer");
             System.out.println("3 - Bot a jogar");
             System.out.println("4 - Criar mapa");
+            System.out.println("5 - Ver relatórios de jogos anteriores");
             System.out.println("0 - Sair");
             System.out.print("Opção: ");
 
@@ -24,6 +25,7 @@ public class MainMenu {
                 case "2" -> iniciarMultiplayer();
                 case "3" -> iniciarBotGame();
                 case "4" -> criarMapa();
+                case "5" -> verRelatorios();
                 case "0" -> {
                     System.out.println("A sair do jogo...");
                     running = false;
@@ -35,7 +37,7 @@ public class MainMenu {
         in.close();
     }
 
-    private static void iniciarSingleplayer() { // 80% funcional
+    private static void iniciarSingleplayer() {
         System.out.println("\n--- Singleplayer ---");
         try {
             SingleplayerMenu.main(new String[0]);
@@ -47,27 +49,40 @@ public class MainMenu {
 
     private static void iniciarMultiplayer() {
         System.out.println("\n--- Multiplayer ---");
-        System.out.println("Modo ainda não implementado.");
-        // Aqui no futuro vamos montar:
-        // - criação de vários jogadores humanos
-        // - escolha das entradas
-        // - criação do GameState com vários Player
+        try {
+            MultiplayerMenu.main(new String[0]);
+        } catch (Exception e) {
+            System.out.println("Erro ao iniciar modo Multiplayer: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     private static void iniciarBotGame() {
         System.out.println("\n--- Bot a jogar ---");
-        System.out.println("Modo ainda não implementado.");
-        // Aqui no futuro:
-        // - criar jogadores bot (BotController)
-        // - eventualmente permitir um humano a observar / misto humano + bots
+        try {
+            BotGameMenu.main(new String[0]);
+        } catch (Exception e) {
+            System.out.println("Erro ao iniciar modo Bot: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
-    private static void criarMapa() { // 100% funcional (penso)
+    private static void criarMapa() {
         System.out.println("\n--- Editor de Mapas ---");
         try {
             MapEditorMenu.main(new String[0]);
         } catch (Exception e) {
             System.out.println("Erro ao iniciar o editor de mapas: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private static void verRelatorios() {
+        System.out.println("\n--- Relatórios de jogos anteriores ---");
+        try {
+            GameReportsMenu.main(new String[0]);
+        } catch (Exception e) {
+            System.out.println("Erro ao abrir relatórios: " + e.getMessage());
             e.printStackTrace();
         }
     }
