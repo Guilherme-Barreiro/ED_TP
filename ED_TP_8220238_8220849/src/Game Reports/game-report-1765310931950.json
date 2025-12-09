@@ -1,1 +1,1585 @@
-{"winner":"Bot 4","players":[{"currentRoom":16,"path":[16,6,16,1,15,12,7,12,10,9,12,10,12,7,7,12,13,17,5,4,8,7,12,7,12,7,12,12,14,11,10,10,8,10,8,4,5,4,14,6,9,14,16,16,6,7,6,7,13,12,13,9,12,13,12,13,9,8,12,10,8,4,8,10,12,13,10,12,13,9,16,6,7,11,6,7,7,12,13,12,13,9,13,12,7,12,7,7,6,14,8,6,1,2,1,15,1,6,6,14,1,2,1,6,1,6,16],"correctRiddles":0,"wrongRiddles":0,"name":"Bot 1","events":[{"description":"Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}","turn":7,"source":"Bot 1","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=10, to=12, weight=3.0, locked=false, event=null}","turn":9,"source":"Bot 1","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}","turn":12,"source":"Bot 1","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}","turn":17,"source":"Bot 1","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}","turn":19,"source":"Bot 1","type":"MOVE_BACK","target":null},{"description":"Trocou de posição com Bot 3","turn":20,"source":"Bot 1","type":"SWAP_PLAYER","target":"Bot 3"},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":20,"source":"Bot 1","type":"SWAP_PLAYER","target":null},{"description":"Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}","turn":21,"source":"Bot 1","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":26,"source":"Bot 1","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}","turn":27,"source":"Bot 1","type":"SHUFFLE_ALL","target":null},{"description":"Trocou de posição com Bot 4","turn":27,"source":"Bot 1","type":"SWAP_PLAYER","target":"Bot 4"},{"description":"Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}","turn":31,"source":"Bot 1","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}","turn":31,"source":"Bot 1","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}","turn":33,"source":"Bot 1","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}","turn":37,"source":"Bot 1","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=10, to=12, weight=3.0, locked=false, event=null}","turn":39,"source":"Bot 1","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}","turn":44,"source":"Bot 1","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}","turn":46,"source":"Bot 1","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 3","turn":48,"source":"Bot 1","type":"SWAP_PLAYER","target":"Bot 3"},{"description":"Evento no corredor: Corridor{from=7, to=11, weight=3.0, locked=false, event=null}","turn":51,"source":"Bot 1","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}","turn":53,"source":"Bot 1","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}","turn":54,"source":"Bot 1","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}","turn":54,"source":"Bot 1","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}","turn":60,"source":"Bot 1","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":62,"source":"Bot 1","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=1, to=6, weight=3.0, locked=false, event=null}","turn":68,"source":"Bot 1","type":"SKIP_TURNS","target":null}]},{"currentRoom":12,"path":[17,13,17,13,6,14,15,11,7,11,14,11,7,8,4,5,6,16,6,7,6,1,6,14,11,10,12,7,14,16,14,14,6,14,14,9,13,9,13,17,7,8,7,11,7,14,11,14,9,6,16,6,1,15,1,6,14,16,17,13,17,13,17,13,12,7,12,10,12,7,8,10,8,8,15,1,1,6,1,15,1,15,1,2,4,8,14,11,11,14,11,7,12],"correctRiddles":1,"wrongRiddles":0,"name":"Bot 2","events":[{"description":"Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}","turn":1,"source":"Bot 2","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":3,"source":"Bot 2","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 5","turn":4,"source":"Bot 2","type":"SWAP_PLAYER","target":"Bot 5"},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":7,"source":"Bot 2","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=6, to=7, weight=0.0, locked=false, event=null}","turn":15,"source":"Bot 2","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":19,"source":"Bot 2","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}","turn":20,"source":"Bot 2","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}","turn":23,"source":"Bot 2","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":26,"source":"Bot 2","type":"SHUFFLE_ALL","target":null},{"description":"Trocou de posição com Bot 5","turn":34,"source":"Bot 2","type":"SWAP_PLAYER","target":"Bot 5"},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":35,"source":"Bot 2","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":38,"source":"Bot 2","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=16, to=6, weight=0.0, locked=false, event=null}","turn":40,"source":"Bot 2","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":44,"source":"Bot 2","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 3","turn":46,"source":"Bot 2","type":"SWAP_PLAYER","target":"Bot 3"},{"description":"Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}","turn":46,"source":"Bot 2","type":"SWAP_PLAYER","target":null},{"description":"Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}","turn":51,"source":"Bot 2","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}","turn":53,"source":"Bot 2","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=10, to=12, weight=3.0, locked=false, event=null}","turn":55,"source":"Bot 2","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}","turn":61,"source":"Bot 2","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":71,"source":"Bot 2","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 3","turn":72,"source":"Bot 2","type":"SWAP_PLAYER","target":"Bot 3"}]},{"currentRoom":6,"path":[16,14,6,13,12,14,11,9,10,12,7,11,7,11,7,8,8,10,12,13,12,7,8,10,8,7,10,11,14,12,13,17,13,9,9,9,4,3,9,13,9,13,12,13,6,7,8,10,8,4,8,10,12,8,14,6,10,9,13,17,13,12,7,13,17,16,14,16,9,10,8,7,13,7,6,14,11,12,13,17,13,12,13,9,6,7,6,8,10,12,6,7,6,16,6,6,1,1,11,14,11,7,11,7,6],"correctRiddles":0,"wrongRiddles":0,"name":"Bot 3","events":[{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":2,"source":"Bot 3","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}","turn":3,"source":"Bot 3","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 4","turn":5,"source":"Bot 3","type":"SWAP_PLAYER","target":"Bot 4"},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":5,"source":"Bot 3","type":"SWAP_PLAYER","target":null},{"description":"Evento no corredor: Corridor{from=10, to=12, weight=3.0, locked=false, event=null}","turn":7,"source":"Bot 3","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=7, to=11, weight=3.0, locked=false, event=null}","turn":9,"source":"Bot 3","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}","turn":15,"source":"Bot 3","type":"MOVE_BACK","target":null},{"description":"Trocou de posição com Bot 1","turn":20,"source":"Bot 3","type":"SWAP_PLAYER","target":"Bot 1"},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":20,"source":"Bot 3","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}","turn":22,"source":"Bot 3","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=3, to=4, weight=3.0, locked=false, event=null}","turn":26,"source":"Bot 3","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}","turn":33,"source":"Bot 3","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=10, to=12, weight=3.0, locked=false, event=null}","turn":37,"source":"Bot 3","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":38,"source":"Bot 3","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}","turn":44,"source":"Bot 3","type":"MOVE_BACK","target":null},{"description":"Trocou de posição com Bot 2","turn":46,"source":"Bot 3","type":"SWAP_PLAYER","target":"Bot 2"},{"description":"Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}","turn":46,"source":"Bot 3","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 1","turn":48,"source":"Bot 3","type":"SWAP_PLAYER","target":"Bot 1"},{"description":"Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}","turn":48,"source":"Bot 3","type":"SWAP_PLAYER","target":null},{"description":"Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}","turn":50,"source":"Bot 3","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 4","turn":55,"source":"Bot 3","type":"SWAP_PLAYER","target":"Bot 4"},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":55,"source":"Bot 3","type":"SWAP_PLAYER","target":null},{"description":"Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}","turn":59,"source":"Bot 3","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}","turn":60,"source":"Bot 3","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=6, to=7, weight=0.0, locked=false, event=null}","turn":62,"source":"Bot 3","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=10, to=12, weight=3.0, locked=false, event=null}","turn":64,"source":"Bot 3","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 5","turn":65,"source":"Bot 3","type":"SWAP_PLAYER","target":"Bot 5"},{"description":"Evento no corredor: Corridor{from=1, to=6, weight=3.0, locked=false, event=null}","turn":70,"source":"Bot 3","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 2","turn":72,"source":"Bot 3","type":"SWAP_PLAYER","target":"Bot 2"},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":72,"source":"Bot 3","type":"SWAP_PLAYER","target":null},{"description":"Evento no corredor: Corridor{from=7, to=11, weight=3.0, locked=false, event=null}","turn":73,"source":"Bot 3","type":"MOVE_BACK","target":null}]},{"currentRoom":18,"path":[15,1,13,9,10,13,9,9,11,7,8,7,8,6,14,6,17,13,17,17,13,17,13,9,10,11,14,7,7,12,13,17,13,17,13,9,9,4,9,13,14,6,16,14,6,17,13,9,10,9,13,12,10,10,9,13,9,10,8,10,8,4,8,4,8,4,8,7,6,1,6,14,7,13,17,13,12,11,7,6,1,6,1,15,14,6,9,10,8,9,10,8,4,3,4,2,1,8,10,10,8,4,5,18],"correctRiddles":0,"wrongRiddles":0,"name":"Bot 4","events":[{"description":"Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}","turn":2,"source":"Bot 4","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}","turn":2,"source":"Bot 4","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}","turn":3,"source":"Bot 4","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 3","turn":5,"source":"Bot 4","type":"SWAP_PLAYER","target":"Bot 3"},{"description":"Evento no corredor: Corridor{from=7, to=11, weight=3.0, locked=false, event=null}","turn":5,"source":"Bot 4","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":10,"source":"Bot 4","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":12,"source":"Bot 4","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}","turn":14,"source":"Bot 4","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}","turn":15,"source":"Bot 4","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}","turn":16,"source":"Bot 4","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}","turn":17,"source":"Bot 4","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":19,"source":"Bot 4","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}","turn":22,"source":"Bot 4","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}","turn":24,"source":"Bot 4","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}","turn":24,"source":"Bot 4","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 1","turn":27,"source":"Bot 4","type":"SWAP_PLAYER","target":"Bot 1"},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":27,"source":"Bot 4","type":"SWAP_PLAYER","target":null},{"description":"Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}","turn":28,"source":"Bot 4","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":30,"source":"Bot 4","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}","turn":32,"source":"Bot 4","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}","turn":34,"source":"Bot 4","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}","turn":38,"source":"Bot 4","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}","turn":39,"source":"Bot 4","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}","turn":41,"source":"Bot 4","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=4, to=8, weight=0.0, locked=false, event=null}","turn":44,"source":"Bot 4","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":52,"source":"Bot 4","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}","turn":53,"source":"Bot 4","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}","turn":54,"source":"Bot 4","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 3","turn":55,"source":"Bot 4","type":"SWAP_PLAYER","target":"Bot 3"},{"description":"Evento no corredor: Corridor{from=1, to=6, weight=3.0, locked=false, event=null}","turn":58,"source":"Bot 4","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=1, to=6, weight=3.0, locked=false, event=null}","turn":61,"source":"Bot 4","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":62,"source":"Bot 4","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}","turn":64,"source":"Bot 4","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=5, to=18, weight=10.0, locked=false, event=null}","turn":75,"source":"Bot 4","type":"SKIP_TURNS","target":null}]},{"currentRoom":1,"path":[17,13,16,14,14,11,15,1,6,16,14,6,8,7,12,12,7,12,7,11,7,11,7,8,7,8,10,10,12,7,8,7,11,14,11,14,4,14,9,13,9,9,10,9,10,8,8,7,6,16,6,16,14,7,8,7,8,10,12,12,8,4,5,4,5,4,3,4,8,10,9,13,9,10,9,13,12,14,16,16,6,16,6,14,16,6,16,6,9,6,14,6,12,7,11,14,16,16,14,14,11,2,1,15,1],"correctRiddles":0,"wrongRiddles":0,"name":"Bot 5","events":[{"description":"Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}","turn":1,"source":"Bot 5","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}","turn":3,"source":"Bot 5","type":"SHUFFLE_ALL","target":null},{"description":"Trocou de posição com Bot 2","turn":4,"source":"Bot 5","type":"SWAP_PLAYER","target":"Bot 2"},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":4,"source":"Bot 5","type":"SWAP_PLAYER","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":9,"source":"Bot 5","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}","turn":13,"source":"Bot 5","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=7, to=11, weight=3.0, locked=false, event=null}","turn":15,"source":"Bot 5","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=7, to=8, weight=0.0, locked=false, event=null}","turn":18,"source":"Bot 5","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=7, to=8, weight=0.0, locked=false, event=null}","turn":21,"source":"Bot 5","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":23,"source":"Bot 5","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":25,"source":"Bot 5","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}","turn":26,"source":"Bot 5","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}","turn":27,"source":"Bot 5","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=6, to=7, weight=0.0, locked=false, event=null}","turn":31,"source":"Bot 5","type":"EXTRA_TURN","target":null},{"description":"Trocou de posição com Bot 2","turn":34,"source":"Bot 5","type":"SWAP_PLAYER","target":"Bot 2"},{"description":"Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}","turn":34,"source":"Bot 5","type":"SWAP_PLAYER","target":null},{"description":"Evento no corredor: Corridor{from=7, to=8, weight=0.0, locked=false, event=null}","turn":36,"source":"Bot 5","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}","turn":37,"source":"Bot 5","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=4, to=5, weight=0.0, locked=false, event=null}","turn":39,"source":"Bot 5","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}","turn":47,"source":"Bot 5","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}","turn":48,"source":"Bot 5","type":"MOVE_BACK","target":null},{"description":"Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}","turn":49,"source":"Bot 5","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}","turn":52,"source":"Bot 5","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":56,"source":"Bot 5","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":62,"source":"Bot 5","type":"SKIP_TURNS","target":null},{"description":"Trocou de posição com Bot 3","turn":65,"source":"Bot 5","type":"SWAP_PLAYER","target":"Bot 3"},{"description":"Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}","turn":65,"source":"Bot 5","type":"SWAP_PLAYER","target":null},{"description":"Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}","turn":66,"source":"Bot 5","type":"EXTRA_TURN","target":null},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":67,"source":"Bot 5","type":"SKIP_TURNS","target":null},{"description":"Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}","turn":69,"source":"Bot 5","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}","turn":70,"source":"Bot 5","type":"SHUFFLE_ALL","target":null},{"description":"Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}","turn":71,"source":"Bot 5","type":"SHUFFLE_ALL","target":null}]}],"turns":75}
+{
+  "winner": "Bot 4",
+  "players": [
+    {
+      "currentRoom": 16,
+      "path": [
+        16,
+        6,
+        16,
+        1,
+        15,
+        12,
+        7,
+        12,
+        10,
+        9,
+        12,
+        10,
+        12,
+        7,
+        7,
+        12,
+        13,
+        17,
+        5,
+        4,
+        8,
+        7,
+        12,
+        7,
+        12,
+        7,
+        12,
+        12,
+        14,
+        11,
+        10,
+        10,
+        8,
+        10,
+        8,
+        4,
+        5,
+        4,
+        14,
+        6,
+        9,
+        14,
+        16,
+        16,
+        6,
+        7,
+        6,
+        7,
+        13,
+        12,
+        13,
+        9,
+        12,
+        13,
+        12,
+        13,
+        9,
+        8,
+        12,
+        10,
+        8,
+        4,
+        8,
+        10,
+        12,
+        13,
+        10,
+        12,
+        13,
+        9,
+        16,
+        6,
+        7,
+        11,
+        6,
+        7,
+        7,
+        12,
+        13,
+        12,
+        13,
+        9,
+        13,
+        12,
+        7,
+        12,
+        7,
+        7,
+        6,
+        14,
+        8,
+        6,
+        1,
+        2,
+        1,
+        15,
+        1,
+        6,
+        6,
+        14,
+        1,
+        2,
+        1,
+        6,
+        1,
+        6,
+        16
+      ],
+      "correctRiddles": 0,
+      "wrongRiddles": 0,
+      "name": "Bot 1",
+      "events": [
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}",
+          "turn": 7,
+          "source": "Bot 1",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 9,
+          "source": "Bot 1",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 12,
+          "source": "Bot 1",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 17,
+          "source": "Bot 1",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 19,
+          "source": "Bot 1",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 3",
+          "turn": 20,
+          "source": "Bot 1",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 3"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 20,
+          "source": "Bot 1",
+          "type": "SWAP_PLAYER",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}",
+          "turn": 21,
+          "source": "Bot 1",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 26,
+          "source": "Bot 1",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 27,
+          "source": "Bot 1",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 4",
+          "turn": 27,
+          "source": "Bot 1",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 4"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 31,
+          "source": "Bot 1",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 31,
+          "source": "Bot 1",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 33,
+          "source": "Bot 1",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 37,
+          "source": "Bot 1",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 39,
+          "source": "Bot 1",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 44,
+          "source": "Bot 1",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 46,
+          "source": "Bot 1",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 3",
+          "turn": 48,
+          "source": "Bot 1",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 3"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=11, weight=3.0, locked=false, event=null}",
+          "turn": 51,
+          "source": "Bot 1",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 53,
+          "source": "Bot 1",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 54,
+          "source": "Bot 1",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 54,
+          "source": "Bot 1",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 60,
+          "source": "Bot 1",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 62,
+          "source": "Bot 1",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=1, to=6, weight=3.0, locked=false, event=null}",
+          "turn": 68,
+          "source": "Bot 1",
+          "type": "SKIP_TURNS",
+          "target": null
+        }
+      ]
+    },
+    {
+      "currentRoom": 12,
+      "path": [
+        17,
+        13,
+        17,
+        13,
+        6,
+        14,
+        15,
+        11,
+        7,
+        11,
+        14,
+        11,
+        7,
+        8,
+        4,
+        5,
+        6,
+        16,
+        6,
+        7,
+        6,
+        1,
+        6,
+        14,
+        11,
+        10,
+        12,
+        7,
+        14,
+        16,
+        14,
+        14,
+        6,
+        14,
+        14,
+        9,
+        13,
+        9,
+        13,
+        17,
+        7,
+        8,
+        7,
+        11,
+        7,
+        14,
+        11,
+        14,
+        9,
+        6,
+        16,
+        6,
+        1,
+        15,
+        1,
+        6,
+        14,
+        16,
+        17,
+        13,
+        17,
+        13,
+        17,
+        13,
+        12,
+        7,
+        12,
+        10,
+        12,
+        7,
+        8,
+        10,
+        8,
+        8,
+        15,
+        1,
+        1,
+        6,
+        1,
+        15,
+        1,
+        15,
+        1,
+        2,
+        4,
+        8,
+        14,
+        11,
+        11,
+        14,
+        11,
+        7,
+        12
+      ],
+      "correctRiddles": 1,
+      "wrongRiddles": 0,
+      "name": "Bot 2",
+      "events": [
+        {
+          "description": "Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 1,
+          "source": "Bot 2",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 3,
+          "source": "Bot 2",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 5",
+          "turn": 4,
+          "source": "Bot 2",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 5"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 7,
+          "source": "Bot 2",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=7, weight=0.0, locked=false, event=null}",
+          "turn": 15,
+          "source": "Bot 2",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 19,
+          "source": "Bot 2",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 20,
+          "source": "Bot 2",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 23,
+          "source": "Bot 2",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 26,
+          "source": "Bot 2",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 5",
+          "turn": 34,
+          "source": "Bot 2",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 5"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 35,
+          "source": "Bot 2",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 38,
+          "source": "Bot 2",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=16, to=6, weight=0.0, locked=false, event=null}",
+          "turn": 40,
+          "source": "Bot 2",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 44,
+          "source": "Bot 2",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 3",
+          "turn": 46,
+          "source": "Bot 2",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 3"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 46,
+          "source": "Bot 2",
+          "type": "SWAP_PLAYER",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 51,
+          "source": "Bot 2",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 53,
+          "source": "Bot 2",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 55,
+          "source": "Bot 2",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}",
+          "turn": 61,
+          "source": "Bot 2",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 71,
+          "source": "Bot 2",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 3",
+          "turn": 72,
+          "source": "Bot 2",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 3"
+        }
+      ]
+    },
+    {
+      "currentRoom": 6,
+      "path": [
+        16,
+        14,
+        6,
+        13,
+        12,
+        14,
+        11,
+        9,
+        10,
+        12,
+        7,
+        11,
+        7,
+        11,
+        7,
+        8,
+        8,
+        10,
+        12,
+        13,
+        12,
+        7,
+        8,
+        10,
+        8,
+        7,
+        10,
+        11,
+        14,
+        12,
+        13,
+        17,
+        13,
+        9,
+        9,
+        9,
+        4,
+        3,
+        9,
+        13,
+        9,
+        13,
+        12,
+        13,
+        6,
+        7,
+        8,
+        10,
+        8,
+        4,
+        8,
+        10,
+        12,
+        8,
+        14,
+        6,
+        10,
+        9,
+        13,
+        17,
+        13,
+        12,
+        7,
+        13,
+        17,
+        16,
+        14,
+        16,
+        9,
+        10,
+        8,
+        7,
+        13,
+        7,
+        6,
+        14,
+        11,
+        12,
+        13,
+        17,
+        13,
+        12,
+        13,
+        9,
+        6,
+        7,
+        6,
+        8,
+        10,
+        12,
+        6,
+        7,
+        6,
+        16,
+        6,
+        6,
+        1,
+        1,
+        11,
+        14,
+        11,
+        7,
+        11,
+        7,
+        6
+      ],
+      "correctRiddles": 0,
+      "wrongRiddles": 0,
+      "name": "Bot 3",
+      "events": [
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 2,
+          "source": "Bot 3",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 3,
+          "source": "Bot 3",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 4",
+          "turn": 5,
+          "source": "Bot 3",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 4"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 5,
+          "source": "Bot 3",
+          "type": "SWAP_PLAYER",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 7,
+          "source": "Bot 3",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=11, weight=3.0, locked=false, event=null}",
+          "turn": 9,
+          "source": "Bot 3",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 15,
+          "source": "Bot 3",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 1",
+          "turn": 20,
+          "source": "Bot 3",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 1"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 20,
+          "source": "Bot 3",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 22,
+          "source": "Bot 3",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=3, to=4, weight=3.0, locked=false, event=null}",
+          "turn": 26,
+          "source": "Bot 3",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}",
+          "turn": 33,
+          "source": "Bot 3",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 37,
+          "source": "Bot 3",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 38,
+          "source": "Bot 3",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 44,
+          "source": "Bot 3",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 2",
+          "turn": 46,
+          "source": "Bot 3",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 2"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 46,
+          "source": "Bot 3",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 1",
+          "turn": 48,
+          "source": "Bot 3",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 1"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 48,
+          "source": "Bot 3",
+          "type": "SWAP_PLAYER",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}",
+          "turn": 50,
+          "source": "Bot 3",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 4",
+          "turn": 55,
+          "source": "Bot 3",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 4"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 55,
+          "source": "Bot 3",
+          "type": "SWAP_PLAYER",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 59,
+          "source": "Bot 3",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 60,
+          "source": "Bot 3",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=7, weight=0.0, locked=false, event=null}",
+          "turn": 62,
+          "source": "Bot 3",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 64,
+          "source": "Bot 3",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 5",
+          "turn": 65,
+          "source": "Bot 3",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 5"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=1, to=6, weight=3.0, locked=false, event=null}",
+          "turn": 70,
+          "source": "Bot 3",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 2",
+          "turn": 72,
+          "source": "Bot 3",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 2"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 72,
+          "source": "Bot 3",
+          "type": "SWAP_PLAYER",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=11, weight=3.0, locked=false, event=null}",
+          "turn": 73,
+          "source": "Bot 3",
+          "type": "MOVE_BACK",
+          "target": null
+        }
+      ]
+    },
+    {
+      "currentRoom": 18,
+      "path": [
+        15,
+        1,
+        13,
+        9,
+        10,
+        13,
+        9,
+        9,
+        11,
+        7,
+        8,
+        7,
+        8,
+        6,
+        14,
+        6,
+        17,
+        13,
+        17,
+        17,
+        13,
+        17,
+        13,
+        9,
+        10,
+        11,
+        14,
+        7,
+        7,
+        12,
+        13,
+        17,
+        13,
+        17,
+        13,
+        9,
+        9,
+        4,
+        9,
+        13,
+        14,
+        6,
+        16,
+        14,
+        6,
+        17,
+        13,
+        9,
+        10,
+        9,
+        13,
+        12,
+        10,
+        10,
+        9,
+        13,
+        9,
+        10,
+        8,
+        10,
+        8,
+        4,
+        8,
+        4,
+        8,
+        4,
+        8,
+        7,
+        6,
+        1,
+        6,
+        14,
+        7,
+        13,
+        17,
+        13,
+        12,
+        11,
+        7,
+        6,
+        1,
+        6,
+        1,
+        15,
+        14,
+        6,
+        9,
+        10,
+        8,
+        9,
+        10,
+        8,
+        4,
+        3,
+        4,
+        2,
+        1,
+        8,
+        10,
+        10,
+        8,
+        4,
+        5,
+        18
+      ],
+      "correctRiddles": 0,
+      "wrongRiddles": 0,
+      "name": "Bot 4",
+      "events": [
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 2,
+          "source": "Bot 4",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}",
+          "turn": 2,
+          "source": "Bot 4",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 3,
+          "source": "Bot 4",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 3",
+          "turn": 5,
+          "source": "Bot 4",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 3"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=11, weight=3.0, locked=false, event=null}",
+          "turn": 5,
+          "source": "Bot 4",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 10,
+          "source": "Bot 4",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 12,
+          "source": "Bot 4",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 14,
+          "source": "Bot 4",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 15,
+          "source": "Bot 4",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 16,
+          "source": "Bot 4",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}",
+          "turn": 17,
+          "source": "Bot 4",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 19,
+          "source": "Bot 4",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 22,
+          "source": "Bot 4",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 24,
+          "source": "Bot 4",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 24,
+          "source": "Bot 4",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 1",
+          "turn": 27,
+          "source": "Bot 4",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 1"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 27,
+          "source": "Bot 4",
+          "type": "SWAP_PLAYER",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 28,
+          "source": "Bot 4",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 30,
+          "source": "Bot 4",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 32,
+          "source": "Bot 4",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}",
+          "turn": 34,
+          "source": "Bot 4",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 38,
+          "source": "Bot 4",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}",
+          "turn": 39,
+          "source": "Bot 4",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}",
+          "turn": 41,
+          "source": "Bot 4",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=4, to=8, weight=0.0, locked=false, event=null}",
+          "turn": 44,
+          "source": "Bot 4",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 52,
+          "source": "Bot 4",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 53,
+          "source": "Bot 4",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=12, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 54,
+          "source": "Bot 4",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 3",
+          "turn": 55,
+          "source": "Bot 4",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 3"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=1, to=6, weight=3.0, locked=false, event=null}",
+          "turn": 58,
+          "source": "Bot 4",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=1, to=6, weight=3.0, locked=false, event=null}",
+          "turn": 61,
+          "source": "Bot 4",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 62,
+          "source": "Bot 4",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}",
+          "turn": 64,
+          "source": "Bot 4",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=5, to=18, weight=10.0, locked=false, event=null}",
+          "turn": 75,
+          "source": "Bot 4",
+          "type": "SKIP_TURNS",
+          "target": null
+        }
+      ]
+    },
+    {
+      "currentRoom": 1,
+      "path": [
+        17,
+        13,
+        16,
+        14,
+        14,
+        11,
+        15,
+        1,
+        6,
+        16,
+        14,
+        6,
+        8,
+        7,
+        12,
+        12,
+        7,
+        12,
+        7,
+        11,
+        7,
+        11,
+        7,
+        8,
+        7,
+        8,
+        10,
+        10,
+        12,
+        7,
+        8,
+        7,
+        11,
+        14,
+        11,
+        14,
+        4,
+        14,
+        9,
+        13,
+        9,
+        9,
+        10,
+        9,
+        10,
+        8,
+        8,
+        7,
+        6,
+        16,
+        6,
+        16,
+        14,
+        7,
+        8,
+        7,
+        8,
+        10,
+        12,
+        12,
+        8,
+        4,
+        5,
+        4,
+        5,
+        4,
+        3,
+        4,
+        8,
+        10,
+        9,
+        13,
+        9,
+        10,
+        9,
+        13,
+        12,
+        14,
+        16,
+        16,
+        6,
+        16,
+        6,
+        14,
+        16,
+        6,
+        16,
+        6,
+        9,
+        6,
+        14,
+        6,
+        12,
+        7,
+        11,
+        14,
+        16,
+        16,
+        14,
+        14,
+        11,
+        2,
+        1,
+        15,
+        1
+      ],
+      "correctRiddles": 0,
+      "wrongRiddles": 0,
+      "name": "Bot 5",
+      "events": [
+        {
+          "description": "Evento no corredor: Corridor{from=17, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 1,
+          "source": "Bot 5",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 3,
+          "source": "Bot 5",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 2",
+          "turn": 4,
+          "source": "Bot 5",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 2"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 4,
+          "source": "Bot 5",
+          "type": "SWAP_PLAYER",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 9,
+          "source": "Bot 5",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 13,
+          "source": "Bot 5",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=11, weight=3.0, locked=false, event=null}",
+          "turn": 15,
+          "source": "Bot 5",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=8, weight=0.0, locked=false, event=null}",
+          "turn": 18,
+          "source": "Bot 5",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=8, weight=0.0, locked=false, event=null}",
+          "turn": 21,
+          "source": "Bot 5",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 23,
+          "source": "Bot 5",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 25,
+          "source": "Bot 5",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 26,
+          "source": "Bot 5",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}",
+          "turn": 27,
+          "source": "Bot 5",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=7, weight=0.0, locked=false, event=null}",
+          "turn": 31,
+          "source": "Bot 5",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 2",
+          "turn": 34,
+          "source": "Bot 5",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 2"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 34,
+          "source": "Bot 5",
+          "type": "SWAP_PLAYER",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=8, weight=0.0, locked=false, event=null}",
+          "turn": 36,
+          "source": "Bot 5",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=10, to=8, weight=3.0, locked=false, event=null}",
+          "turn": 37,
+          "source": "Bot 5",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=4, to=5, weight=0.0, locked=false, event=null}",
+          "turn": 39,
+          "source": "Bot 5",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 47,
+          "source": "Bot 5",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=10, weight=3.0, locked=false, event=null}",
+          "turn": 48,
+          "source": "Bot 5",
+          "type": "MOVE_BACK",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=9, to=13, weight=3.0, locked=false, event=null}",
+          "turn": 49,
+          "source": "Bot 5",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 52,
+          "source": "Bot 5",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 56,
+          "source": "Bot 5",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 62,
+          "source": "Bot 5",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Trocou de posição com Bot 3",
+          "turn": 65,
+          "source": "Bot 5",
+          "type": "SWAP_PLAYER",
+          "target": "Bot 3"
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=6, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 65,
+          "source": "Bot 5",
+          "type": "SWAP_PLAYER",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=7, to=12, weight=3.0, locked=false, event=null}",
+          "turn": 66,
+          "source": "Bot 5",
+          "type": "EXTRA_TURN",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 67,
+          "source": "Bot 5",
+          "type": "SKIP_TURNS",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 69,
+          "source": "Bot 5",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=16, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 70,
+          "source": "Bot 5",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        },
+        {
+          "description": "Evento no corredor: Corridor{from=11, to=14, weight=8.0, locked=false, event=null}",
+          "turn": 71,
+          "source": "Bot 5",
+          "type": "SHUFFLE_ALL",
+          "target": null
+        }
+      ]
+    }
+  ],
+  "turns": 75
+}

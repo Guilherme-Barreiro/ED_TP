@@ -146,8 +146,6 @@ public class HallOfFameMenu {
         }
 
         public void printSummary() {
-            System.out.println("\n=== Hall of Fame ===");
-
             if (playerCount == 0) {
                 System.out.println("Ainda não há dados suficientes.");
                 return;

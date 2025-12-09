@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="Colecoes_TP1">
+  <library name="Colecoes_TP">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/src/Colecoes_TP.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/Libs/Colecoes_TP.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -29,7 +29,7 @@ class GameStateTest {
         Player p = new Player("Bot", entry, new BotController());
         players.addToRear(p);
 
-        GameState state = new GameState(lab, players, pool, GameMode.MANUAL);
+        GameState state = new GameState(lab, players, pool, GameMode.MANUAL, Difficulty.NORMAL);
 
         state.nextTurn();
 
@@ -49,7 +49,7 @@ class GameStateTest {
         Player p = new Player("Jogador", entry, new BotController());
         players.addToRear(p);
 
-        GameState state = new GameState(lab, players, pool, GameMode.MANUAL);
+        GameState state = new GameState(lab, players, pool, GameMode.MANUAL, Difficulty.NORMAL);
 
         p.setBlockedTurns(2);
 

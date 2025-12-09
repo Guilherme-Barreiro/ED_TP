@@ -1,0 +1,1 @@
+{"winner":"dids bot","players":[{"currentRoom":18,"path":[16,6,7,8,4,5,18],"correctRiddles":1,"wrongRiddles":1,"name":"dids bot","events":[{"description":"Evento no corredor: Corridor{from=5, to=18, weight=10.0, locked=false, event=null}","turn":6,"source":"dids bot","type":"SHUFFLE_ALL","target":null}]}],"turns":6}
