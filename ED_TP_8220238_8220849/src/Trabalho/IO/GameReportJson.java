@@ -12,8 +12,20 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 
+/**
+ * Gera uma string JSON com os seguintes campos:
+ * - número de turnos da partida
+ * - nome do vencedor (ou null se não houver)
+ * - estatísticas de cada jogador
+ */
 public class GameReportJson {
-
+    /**
+     * Gera uma string JSON com o relatório de jogo,
+     * com base no {@link GameState} atual.
+     *
+     * @param state estado do jogo a partir do qual gerar o relatório
+     * @return string JSON representando o relatório completo
+     */
     public static String generate(GameState state) {
         JSONObject root = new JSONObject();
 
@@ -76,6 +88,14 @@ public class GameReportJson {
         return root.toJSONString();
     }
 
+    /**
+     * Gera o relatório JSON e grava-o imediatamente para um ficheiro
+     * numa pasta padrão (por exemplo {@code src/Game Reports}).
+     *
+     * @param state estado do jogo a partir do qual gerar o relatório
+     * @return caminho completo do ficheiro criado
+     * @throws IOException se ocorrer um erro ao escrever o ficheiro
+     */
     public static String generateAndSave(GameState state) throws IOException {
         String jsonReport = generate(state);
 

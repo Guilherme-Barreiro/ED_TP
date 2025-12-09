@@ -10,8 +10,24 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Menu responsável por listar e visualizar relatórios de jogos anteriores
+ * guardados em ficheiros JSON na pasta {@code src/Game Reports}.
+ * <p>
+ * Permite ao utilizador:
+ * <ul>
+ *     <li>ver a lista de relatórios disponíveis;</li>
+ *     <li>escolher um relatório pelo índice;</li>
+ *     <li>imprimir para a consola um resumo dos turnos, vencedor,
+ *         percurso e eventos de cada jogador.</li>
+ * </ul>
+ */
 public class GameReportsMenu {
-
+    /**
+     * Ponto de entrada do menu de relatórios.
+     *
+     * @param args não usado
+     */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
@@ -53,6 +69,13 @@ public class GameReportsMenu {
         mostrarRelatorio(selected);
     }
 
+    /**
+     * Lê um ficheiro JSON de relatório de jogo e imprime um resumo
+     * legível na consola (turnos, vencedor, percurso e eventos
+     * de cada jogador).
+     *
+     * @param file ficheiro de relatório a mostrar
+     */
     private static void mostrarRelatorio(File file) {
         System.out.println("\n=== Relatório: " + file.getName() + " ===");
         JSONParser parser = new JSONParser();

@@ -46,10 +46,14 @@ public class GameState {
     private boolean allowStayThisTurn;
 
     /**
+     * Cria um novo estado de jogo com o labirinto, lista de jogadores,
+     * pool de perguntas e modo de jogo indicados.
+     *
      * @param labyrinth    labirinto do jogo
      * @param players      lista de jogadores (na ordem inicial)
      * @param questionPool pool de perguntas para os enigmas
      * @param mode         modo de jogo (MANUAL / AUTOMATIC)
+     * @throws IllegalArgumentException se algum dos parâmetros for {@code null}
      */
     public GameState(Labyrinth labyrinth,
                      UnorderedListADT<Player> players,
@@ -80,34 +84,75 @@ public class GameState {
         }
     }
 
+    /**
+     * Devolve o labirinto do jogo.
+     *
+     * @return labirinto associado a este estado
+     */
     public Labyrinth getLabyrinth() {
         return labyrinth;
     }
 
+    /**
+     * Devolve a lista de jogadores.
+     *
+     * @return lista de jogadores
+     */
     public UnorderedListADT<Player> getPlayers() {
         return players;
     }
 
+    /**
+     * Devolve o pool de perguntas usado pelos enigmas.
+     *
+     * @return {@link QuestionPool} do jogo
+     */
     public QuestionPool getQuestionPool() {
         return questionPool;
     }
 
+    /**
+     * Devolve o modo de jogo (manual ou automático).
+     *
+     * @return modo de jogo
+     */
     public GameMode getMode() {
         return mode;
     }
 
+    /**
+     * Indica se o jogo já terminou.
+     *
+     * @return {@code true} se o jogo já terminou, {@code false} caso contrário
+     */
     public boolean isGameOver() {
         return gameOver;
     }
 
+    /**
+     * Devolve o jogador vencedor, se o jogo já tiver terminado.
+     *
+     * @return jogador vencedor ou {@code null} se ainda não houver vencedor
+     */
     public Player getWinner() {
         return winner;
     }
 
+    /**
+     * Devolve o número do turno atual (lógico).
+     *
+     * @return número do turno
+     */
     public int getCurrentTurn() {
         return currentTurn;
     }
 
+    /**
+     * Verifica se ainda existem jogadores na fila de turnos.
+     *
+     * @return {@code true} se existir pelo menos um jogador na fila,
+     * {@code false} caso contrário
+     */
     public boolean hasPlayersInQueue() {
         return !turnQueue.isEmpty();
     }
@@ -120,6 +165,16 @@ public class GameState {
         return allowStayThisTurn;
     }
 
+    /**
+     * Avança a fila de turnos: o jogador da frente vai para o fim da fila.
+     * <p>
+     * Adicionalmente:
+     * <ul>
+     *     <li>incrementa o contador de jogadores processados neste turno lógico;</li>
+     *     <li>quando todos os jogadores tiverem sido processados,
+     *     aumenta o número de turno.</li>
+     * </ul>
+     */
     private void advanceTurnQueue() {
         if (turnQueue.isEmpty()) {
             return;
@@ -226,6 +281,12 @@ public class GameState {
         }
     }
 
+    /**
+     * Declara o vencedor do jogo, marca o jogo como terminado
+     * e mostra uma mensagem de vitória.
+     *
+     * @param winner jogador vencedor
+     */
     private void declareWinner(Player winner) {
         this.gameOver = true;
         this.winner = winner;
@@ -233,6 +294,17 @@ public class GameState {
                 " chegou à sala central no turno " + currentTurn + ". <<<");
     }
 
+    /**
+     * Aplica o efeito de um evento ocorrido num corredor para o jogador atual.
+     * <p>
+     * Dependendo do tipo de evento, chama o manipulador específico:
+     * MOVE_BACK, SKIP_TURNS, EXTRA_TURN, SWAP_PLAYER ou SHUFFLE_ALL.
+     * Também regista o evento nas estatísticas do jogador.
+     *
+     * @param event    evento a aplicar (pode ser {@code null})
+     * @param current  jogador que atravessou o corredor
+     * @param corridor corredor onde o evento ocorreu
+     */
     private void applyCorridorEvent(Event event, Player current, Corridor corridor) {
         if (event == null) {
             return;
@@ -269,6 +341,12 @@ public class GameState {
         );
     }
 
+    /**
+     * Trata o evento MOVE_BACK, fazendo o jogador recuar um certo número de casas.
+     *
+     * @param event   evento MOVE_BACK com a intensidade (número de casas)
+     * @param current jogador a recuar
+     */
     private void handleMoveBack(Event event, Player current) {
         int steps = event.getIntensity();
         if (steps <= 0) return;
@@ -277,6 +355,12 @@ public class GameState {
         current.moveBack(steps);
     }
 
+    /**
+     * Trata o evento SKIP_TURNS, bloqueando o jogador por um número de turnos.
+     *
+     * @param event   evento SKIP_TURNS com a intensidade (número de turnos)
+     * @param current jogador a bloquear
+     */
     private void handleSkipTurns(Event event, Player current) {
         int turnsToSkip = event.getIntensity();
         if (turnsToSkip <= 0) return;
@@ -285,6 +369,12 @@ public class GameState {
         current.setBlockedTurns(current.getBlockedTurns() + turnsToSkip);
     }
 
+    /**
+     * Trata o evento EXTRA_TURN, permitindo ao jogador repetir o turno.
+     *
+     * @param event   evento EXTRA_TURN
+     * @param current jogador que recebe o turno extra
+     */
     private void handleExtraTurn(Event event, Player current) {
         System.out.println(current.getName() + " ganhou um turno extra!");
         extraTurnThisTurn = true;
@@ -292,7 +382,12 @@ public class GameState {
 
     /**
      * SWAP_PLAYER: o jogador escolhe outro jogador para trocar de posição.
-     * Requer que o PlayerController implemente chooseSwapTarget(...).
+     * <p>
+     * Requer que o {@code PlayerController} implemente
+     * {@code chooseSwapTarget(...)}.
+     *
+     * @param event   evento SWAP_PLAYER
+     * @param current jogador que está a atravessar o corredor
      */
     private void handleSwapPlayer(Event event, Player current) {
         int total = getPlayersCount();
@@ -330,7 +425,10 @@ public class GameState {
     }
 
     /**
-     * SHUFFLE_ALL: baralha as posições de todos os jogadores.
+     * SHUFFLE_ALL: baralha as posições de todos os jogadores no labirinto,
+     * mantendo o conjunto de salas ocupado, mas trocando-as aleatoriamente.
+     *
+     * @param event evento SHUFFLE_ALL
      */
     private void handleShuffleAll(Event event) {
         int n = getPlayersCount();
@@ -365,6 +463,11 @@ public class GameState {
         System.out.println("SHUFFLE_ALL: posições dos jogadores baralhadas.");
     }
 
+    /**
+     * Conta e devolve o número total de jogadores na lista {@link #players}.
+     *
+     * @return número de jogadores
+     */
     private int getPlayersCount() {
         int count = 0;
         Iterator<Player> it = players.iterator();
@@ -376,9 +479,17 @@ public class GameState {
     }
 
     /**
-     * Se o jogador começou o turno numa sala com alavanca ainda não ativada,
+     * Se o jogador começou o turno numa sala com ALAVANCA ainda não ativada,
      * é obrigado a escolher logo uma alavanca antes de poder mover-se.
-     * Se falhar, este turno fica com a opção de permanecer na sala.
+     * <p>
+     * Comportamento:
+     * <ul>
+     *     <li>Se acertar, desbloqueia os corredores a partir da sala;</li>
+     *     <li>Se falhar, este turno fica com a opção de permanecer na sala
+     *     (sem ser obrigado a mover-se).</li>
+     * </ul>
+     *
+     * @param current jogador atual
      */
     private void handleLeverAtTurnStart(Player current) {
         Room room = current.getCurrentRoom();
@@ -414,9 +525,14 @@ public class GameState {
     }
 
     /**
-     * Alavanca encontrada APÓS um movimento (primeira vez que entra na sala).
-     * Aqui não é dado o direito de ficar parado neste turno: a escolha da alavanca
-     * é um “bónus” em cima do movimento já feito.
+     * Trata uma alavanca encontrada APÓS um movimento
+     * (primeira vez que entra na sala).
+     * <p>
+     * Aqui não é dado o direito de ficar parado neste turno:
+     * a escolha da alavanca é um “bónus” em cima do movimento já feito.
+     *
+     * @param current jogador atual
+     * @param room    sala onde o jogador acabou de entrar
      */
     private void handleLeverIfAny(Player current, Room room) {
         if (room == null || !room.hasLever()) {
@@ -455,12 +571,12 @@ public class GameState {
      * - se acertar, o enigma é removido e pode mover-se normalmente.
      *
      * @return true se o jogador estiver livre para se mover neste turno;
-     *         false se falhou o enigma e o turno termina.
+     * false se falhou o enigma e o turno termina.
      */
     private boolean handleRiddleAtTurnStart(Player current) {
         Room room = current.getCurrentRoom();
         if (room == null || !room.hasRiddle()) {
-            return true; // sem enigma -> pode mover-se
+            return true;
         }
 
         if (questionPool.isCompletelyEmpty()) {
@@ -483,18 +599,24 @@ public class GameState {
             System.out.println("Resposta correta!");
             current.getStats().incCorrectRiddles();
             room.setHasRiddle(false);
-            return true; // libertado, pode mover-se
+            return true;
         } else {
             System.out.println("Resposta errada. Ficas preso nesta sala até acertares no enigma.");
             current.getStats().incWrongRiddles();
-            return false; // turno termina, sem movimento
+            return false;
         }
     }
 
+
     /**
      * Enigma encontrado APÓS um movimento (quando entra pela primeira vez na sala).
-     * Se falhar aqui, o turno já está “gasto” de qualquer forma; a partir do próximo
-     * turno o handleRiddleAtTurnStart(...) vai obrigá-lo a continuar a tentar.
+     * <p>
+     * Se falhar aqui, o turno já está gasto de qualquer forma;
+     * a partir do próximo turno o {@link #handleRiddleAtTurnStart(Player)}
+     * vai obrigá-lo a continuar a tentar.
+     *
+     * @param current jogador atual
+     * @param room    sala onde o jogador acabou de entrar
      */
     private void handleRiddleIfAny(Player current, Room room) {
         if (room == null || !room.hasRiddle()) {

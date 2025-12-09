@@ -11,13 +11,32 @@ import Trabalho.interfacesTrabalho.PlayerController;
 import java.util.Iterator;
 import java.util.Random;
 
+/**
+ * Implementação de {@link PlayerController} para jogadores controlados por bot.
+ * <p>
+ * As decisões são tomadas de forma aleatória:
+ * <ul>
+ *     <li>movimento: escolhe aleatoriamente uma sala vizinha;</li>
+ *     <li>perguntas de enigma: escolhe uma opção aleatória;</li>
+ *     <li>alavancas: escolhe uma alavanca aleatória;</li>
+ *     <li>SWAP_PLAYER: escolhe aleatoriamente outro jogador para trocar.</li>
+ * </ul>
+ */
 public class BotController implements PlayerController {
     private final Random random;
 
+    /**
+     * Cria um controlador de bot com um gerador de números aleatórios.
+     */
     public BotController() {
         this.random = new Random();
     }
 
+    /**
+     * Escolhe um movimento aleatório entre as salas vizinhas acessíveis.
+     * <p>
+     * Se não existirem vizinhos, permanece na sala atual.
+     */
     @Override
     public Room chooseMove(Player player, Labyrinth labyrinth, GameState state) {
         ArrayUnorderedList<Room> neighbors =
@@ -48,6 +67,11 @@ public class BotController implements PlayerController {
         return player.getCurrentRoom();
     }
 
+    /**
+     * Responde a uma pergunta escolhendo aleatoriamente um dos índices das opções.
+     *
+     * @return índice aleatório no intervalo [0, número de opções[
+     */
     @Override
     public int answerQuestion(Question question) {
         int options = question.getOptionsCount();
@@ -57,11 +81,20 @@ public class BotController implements PlayerController {
         return random.nextInt(options);
     }
 
+    /**
+     * Escolhe aleatoriamente uma alavanca entre {@code 0} e {@code leverCount-1}.
+     */
     @Override
     public int chooseLever(Room room, int leverCount) {
         return random.nextInt(leverCount);
     }
 
+    /**
+     * Escolhe aleatoriamente um jogador diferente de {@code current}
+     * para o evento SWAP_PLAYER.
+     * <p>
+     * Se não houver mais jogadores, devolve o próprio {@code current}.
+     */
     @Override
     public Player chooseSwapTarget(Player current, UnorderedListADT<Player> allPlayers, GameState state) {
         int count = 0;

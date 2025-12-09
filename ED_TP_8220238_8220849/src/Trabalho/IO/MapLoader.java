@@ -17,35 +17,54 @@ import java.io.IOException;
 /**
  * Lê um ficheiro JSON e constrói um Labyrinth
  * com salas, corredores e (opcionalmente) alavancas.
- *
+ * <p>
  * Formato esperado:
- *
+ * <p>
  * {
- *   "rooms": [
- *     {
- *       "id": 1,
- *       "name": "Entrada 1",
- *       "type": "ENTRY",
- *       "hasRiddle": false,
- *       "lever": { "correctIndex": 1 }, // ou null
- *       "x": 220,                       // opcional
- *       "y": 300                        // opcional
- *     },
- *     ...
- *   ],
- *   "corridors": [
- *     { "from": 1, "to": 2, "weight": 1.0, "locked": false },
- *     ...
- *   ]
+ * "rooms": [
+ * {
+ * "id": 1,
+ * "name": "Entrada 1",
+ * "type": "ENTRY",
+ * "hasRiddle": false,
+ * "lever": { "correctIndex": 1 },
+ * "x": 220,
+ * "y": 300
+ * },
+ * ...
+ * ],
+ * "corridors": [
+ * { "from": 1, "to": 2, "weight": 1.0, "locked": false },
+ * ...
+ * ]
  * }
  */
 public class MapLoader {
 
-    // Layout do último mapa carregado (se tiver x,y em todas as salas)
     private static Room[] lastRoomsWithLayout = null;
     private static Point[] lastPositions = null;
     private static boolean lastHasLayout = false;
 
+    /**
+     * Lê o ficheiro de mapa JSON e constrói um novo {@link Labyrinth}.
+     * <p>
+     * Também valida:
+     * <ul>
+     *     <li>que existe exatamente uma sala CENTER;</li>
+     *     <li>que existe pelo menos uma sala ENTRY;</li>
+     *     <li>que os corredores referem IDs de salas válidos.</li>
+     * </ul>
+     * Se todas as salas tiverem coordenadas (x,y), guarda essas informações
+     * nos campos estáticos {@link #lastRoomsWithLayout} e
+     * {@link #lastPositions}.
+     *
+     * @param filePath caminho do ficheiro JSON do mapa
+     * @return labirinto construído
+     * @throws IOException              se ocorrer um erro de leitura
+     * @throws ParseException           se o JSON for inválido
+     * @throws IllegalArgumentException se a estrutura do ficheiro não corresponder
+     *                                  ao formato esperado
+     */
     public static Labyrinth loadFromJson(String filePath)
             throws IOException, ParseException {
 
@@ -128,7 +147,6 @@ public class MapLoader {
                     }
                 }
 
-                // Ler posições x,y se existirem
                 Object xRaw = rObj.get("x");
                 Object yRaw = rObj.get("y");
                 if (xRaw instanceof Long && yRaw instanceof Long) {
@@ -213,14 +231,35 @@ public class MapLoader {
         }
     }
 
+    /**
+     * Indica se o último mapa carregado tinha layout visual completo
+     * (ou seja, todas as salas com coordenadas x,y definidas).
+     *
+     * @return {@code true} se existir layout completo, {@code false} caso contrário
+     */
     public static boolean hasLastLayout() {
         return lastHasLayout;
     }
 
+    /**
+     * Devolve o array de salas do último layout carregado.
+     * <p>
+     * Só é significativo se {@link #hasLastLayout()} for {@code true}.
+     *
+     * @return array de salas do layout ou {@code null} se não existir
+     */
     public static Room[] getLastRoomsWithLayout() {
         return lastRoomsWithLayout;
     }
 
+    /**
+     * Devolve o array de posições do último layout carregado.
+     * <p>
+     * Cada índice corresponde à sala no mesmo índice de
+     * {@link #getLastRoomsWithLayout()}.
+     *
+     * @return array de pontos (x,y) ou {@code null} se não existir layout
+     */
     public static Point[] getLastPositions() {
         return lastPositions;
     }

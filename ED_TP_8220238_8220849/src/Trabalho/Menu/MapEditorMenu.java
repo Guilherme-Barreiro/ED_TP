@@ -12,11 +12,28 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Editor interativo de mapas (labirintos).
+ * <p>
+ * Permite:
+ * <ul>
+ *     <li>criar salas (ENTRY, NORMAL, CENTER);</li>
+ *     <li>atribuir enigmas ou alavancas a salas NORMAL;</li>
+ *     <li>criar corredores entre salas;</li>
+ *     <li>listar salas e corredores existentes;</li>
+ *     <li>guardar o mapa em ficheiro JSON.</li>
+ * </ul>
+ */
 public class MapEditorMenu {
 
     private static final Scanner in = new Scanner(System.in);
     private static int nextRoomId = 1;
 
+    /**
+     * Ciclo principal do editor de mapas.
+     *
+     * @param args não usado
+     */
     public static void main(String[] args) {
         Labyrinth lab = new Labyrinth();
         boolean running = true;
@@ -49,6 +66,12 @@ public class MapEditorMenu {
         System.out.println("A sair do editor.");
     }
 
+    /**
+     * Cria uma nova sala no labirinto, pedindo o nome, tipo
+     * e (no caso de NORMAL) o conteúdo especial (nada, enigma, alavanca).
+     *
+     * @param lab labirinto onde adicionar a sala
+     */
     private static void criarSala(Labyrinth lab) {
         System.out.println("\n--- Criar sala ---");
 
@@ -89,7 +112,6 @@ public class MapEditorMenu {
 
         Room room = new Room(nextRoomId++, name, type);
 
-        // Se for NORMAL, perguntar se tem enigma / alavanca
         if (type == RoomType.NORMAL) {
             System.out.println("Sala NORMAL – conteúdo especial?");
             System.out.println("1 - Nada (sala normal)");
@@ -100,7 +122,6 @@ public class MapEditorMenu {
 
             switch (extra) {
                 case "2" -> {
-                    // Enigma "placeholder" só para marcar que tem riddle
                     Trabalho.Events.Question dummyQ =
                             new Trabalho.Events.Question(
                                     "ENIGMA_POR_DEFINIR",
@@ -110,7 +131,6 @@ public class MapEditorMenu {
                     room.setRiddle(dummyQ);
                 }
                 case "3" -> {
-                    // Perguntar número de alavancas (2 a 4)
                     int leverCount;
                     while (true) {
                         System.out.print("Número de alavancas (2 a 4): ");
@@ -127,7 +147,6 @@ public class MapEditorMenu {
                         }
                     }
 
-                    // Para já, alavanca correta fixa em 0 (podes mais tarde perguntar qual é a correta)
                     Trabalho.Events.LeverPuzzle puzzle =
                             new Trabalho.Events.LeverPuzzle(0, leverCount);
                     Trabalho.Events.Lever lever =
@@ -135,7 +154,6 @@ public class MapEditorMenu {
                     room.setLever(lever);
                 }
                 default -> {
-                    // 1 ou outra coisa: deixa como normal, sem nada
                 }
             }
         }
@@ -143,10 +161,15 @@ public class MapEditorMenu {
         lab.addRoom(room);
         System.out.println("Sala criada: " + room);
 
-        // atualizar grafo
         SwingUtilities.invokeLater(() -> LabyrinthViewer.show(lab));
     }
 
+    /**
+     * Conta quantas salas ENTRY existem no labirinto.
+     *
+     * @param lab labirinto
+     * @return número de salas de entrada
+     */
     private static int contarEntradas(Labyrinth lab) {
         int count = 0;
         Iterator<Room> it = lab.getEntryRooms().iterator();
@@ -157,6 +180,12 @@ public class MapEditorMenu {
         return count;
     }
 
+    /**
+     * Cria um novo corredor entre duas salas escolhidas pelo utilizador,
+     * com peso e estado de bloqueio configuráveis.
+     *
+     * @param lab labirinto onde criar o corredor
+     */
     private static void criarCorredor(Labyrinth lab) {
         System.out.println("\n--- Criar corredor ---");
 
@@ -194,17 +223,19 @@ public class MapEditorMenu {
         boolean locked = resp.startsWith("s");
 
         boolean created = lab.addCorridor(from, to, weight, locked);
-        if(created){
+        if (created) {
             System.out.println("Corredor criado entre " + from.getName() + " e " + to.getName()
                     + " (locked=" + locked + ").");
-        }else{
+        } else {
             System.out.println("Já existe um corredor entre essas salas.");
         }
 
-        // atualizar grafo
         SwingUtilities.invokeLater(() -> LabyrinthViewer.show(lab));
     }
 
+    /**
+     * Verifica se o labirinto tem pelo menos {@code n} salas.
+     */
     private static boolean temPeloMenosNSalas(Labyrinth lab, int n) {
         int count = 0;
         Iterator<Room> it = lab.getRooms().iterator();
@@ -216,6 +247,13 @@ public class MapEditorMenu {
         return false;
     }
 
+    /**
+     * Procura uma sala por ID numa lista de salas.
+     *
+     * @param rooms lista de salas
+     * @param id    identificador da sala
+     * @return sala correspondente, ou {@code null} se não existir
+     */
     private static Room encontrarSalaPorId(UnorderedListADT<Room> rooms, int id) {
         Iterator<Room> it = rooms.iterator();
         while (it.hasNext()) {
@@ -225,6 +263,11 @@ public class MapEditorMenu {
         return null;
     }
 
+    /**
+     * Pede um nome de ficheiro e guarda o mapa em JSON na pasta {@code src/Mapas}.
+     *
+     * @param lab labirinto a guardar
+     */
     private static void guardarMapa(Labyrinth lab) {
         System.out.println("\n--- Guardar mapa ---");
         System.out.print("Nome do ficheiro (ex: mapa1.json): ");
@@ -251,7 +294,11 @@ public class MapEditorMenu {
         }
     }
 
-
+    /**
+     * Lista todas as salas existentes.
+     *
+     * @param rooms lista de salas
+     */
     private static void listarSalas(UnorderedListADT<Room> rooms) {
         System.out.println("\n--- Salas ---");
         Iterator<Room> it = rooms.iterator();
@@ -265,6 +312,11 @@ public class MapEditorMenu {
         }
     }
 
+    /**
+     * Lista todos os corredores existentes no labirinto.
+     *
+     * @param lab labirinto
+     */
     private static void listarCorredores(Labyrinth lab) {
         System.out.println("\n--- Corredores ---");
 
@@ -287,6 +339,12 @@ public class MapEditorMenu {
         }
     }
 
+    /**
+     * Lê um inteiro da consola, repetindo até o utilizador introduzir
+     * um valor válido.
+     *
+     * @return inteiro lido
+     */
     private static int lerInt() {
         while (true) {
             String line = in.nextLine().trim();
@@ -298,6 +356,13 @@ public class MapEditorMenu {
         }
     }
 
+    /**
+     * Lê um double da consola. Se o utilizador carregar apenas ENTER,
+     * devolve o valor por defeito.
+     *
+     * @param defaultValue valor por defeito
+     * @return valor introduzido ou o valor por defeito em caso de erro
+     */
     private static double lerDoubleComDefault(double defaultValue) {
         String line = in.nextLine().trim();
         if (line.isEmpty()) return defaultValue;

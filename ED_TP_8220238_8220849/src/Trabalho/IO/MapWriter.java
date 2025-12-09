@@ -13,10 +13,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 
+/**
+ * Responsável por serializar um {@link Labyrinth} para ficheiros JSON.
+ * <p>
+ * Suporta:
+ * <ul>
+ *     <li>guardar apenas a estrutura lógica (salas, corredores, enigmas, alavancas);</li>
+ *     <li>guardar também o layout visual (coordenadas das salas), se fornecido.</li>
+ * </ul>
+ */
 public class MapWriter {
 
     /**
-     * guarda apenas a estrutura lógic sem posiçoes das salas
+     * Guarda apenas a estrutura lógica do labirinto (sem posições das salas).
+     *
+     * @param lab      labirinto a exportar
+     * @param filePath caminho do ficheiro JSON de saída
+     * @throws IOException se ocorrer algum erro de escrita
      */
     public static void saveToJson(Labyrinth lab, String filePath) throws IOException {
         JSONObject root = new JSONObject();
@@ -69,10 +82,20 @@ public class MapWriter {
     }
 
     /**
-     * Nova versão: guarda também o layout visual.
-     * rooms[] e positions[] devem estar alinhados (mesmo índice = mesma sala).
-     * Se algum id de sala do lab não existir em rooms[], simplesmente
-     * não leva coordenadas no JSON (continua válido).
+     * Guarda a estrutura lógica do labirinto e também o layout visual.
+     * <p>
+     * Os arrays {@code rooms} e {@code positions} devem estar alinhados:
+     * mesmo índice = mesma sala (com a respetiva posição).
+     * <p>
+     * Se um ID de sala do labirinto não aparecer em {@code rooms}, essa sala
+     * é exportada sem coordenadas (continua a ser válida).
+     *
+     * @param lab       labirinto a exportar
+     * @param rooms     array de salas com layout conhecido
+     * @param positions array de posições correspondentes às salas do array rooms
+     * @param filePath  caminho do ficheiro JSON de saída
+     * @throws IOException              se ocorrer algum erro de escrita
+     * @throws IllegalArgumentException se os arrays forem nulos ou tiverem tamanhos diferentes
      */
     public static void saveToJson(Labyrinth lab,
                                   Room[] rooms,
@@ -139,9 +162,15 @@ public class MapWriter {
     }
 
     /**
-     * Pesquisa linear: encontra a posição associada à sala r,
-     * usando arrays rooms[] e positions[].
-     * Não usa Map / HashMap.
+     * Pesquisa linear que encontra a posição associada à sala {@code r},
+     * usando os arrays {@code rooms} e {@code positions}.
+     * <p>
+     * Não utiliza {@code Map} / {@code HashMap}, por restrição do enunciado.
+     *
+     * @param r         sala para a qual se pretende obter a posição
+     * @param rooms     array de salas com layout conhecido
+     * @param positions array de posições correspondentes
+     * @return posição encontrada ou {@code null} se a sala não existir no array
      */
     private static Point findPositionForRoom(Room r, Room[] rooms, Point[] positions) {
         int id = r.getId();

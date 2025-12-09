@@ -2,8 +2,28 @@ package Trabalho.Menu;
 
 import java.util.Scanner;
 
+/**
+ * Menu principal da aplicação.
+ * <p>
+ * Permite ao utilizador escolher:
+ * <ul>
+ *     <li>modo Singleplayer;</li>
+ *     <li>modo Multiplayer;</li>
+ *     <li>modo Bots;</li>
+ *     <li>editor de mapas;</li>
+ *     <li>visualização de relatórios de jogos anteriores;</li>
+ *     <li>sair do jogo.</li>
+ * </ul>
+ */
 public class MainMenu {
-
+    /**
+     * Ciclo principal do menu.
+     * <p>
+     * Mostra as opções e despacha para o menu correspondente
+     * até o utilizador escolher sair.
+     *
+     * @param args não usado
+     */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         boolean running = true;
@@ -37,6 +57,10 @@ public class MainMenu {
         in.close();
     }
 
+    /**
+     * Arranca o menu de jogo Singleplayer.
+     * Apanha exceções e mostra mensagem de erro se algo correr mal.
+     */
     private static void iniciarSingleplayer() {
         System.out.println("\n--- Singleplayer ---");
         try {
@@ -47,6 +71,9 @@ public class MainMenu {
         }
     }
 
+    /**
+     * Arranca o menu de jogo Multiplayer.
+     */
     private static void iniciarMultiplayer() {
         System.out.println("\n--- Multiplayer ---");
         try {
@@ -57,6 +84,9 @@ public class MainMenu {
         }
     }
 
+    /**
+     * Arranca o modo em que apenas bots jogam.
+     */
     private static void iniciarBotGame() {
         System.out.println("\n--- Bot a jogar ---");
         try {
@@ -67,6 +97,9 @@ public class MainMenu {
         }
     }
 
+    /**
+     * Arranca o editor de mapas.
+     */
     private static void criarMapa() {
         System.out.println("\n--- Editor de Mapas ---");
         try {
@@ -77,6 +110,9 @@ public class MainMenu {
         }
     }
 
+    /**
+     * Abre o menu de visualização de relatórios de jogos anteriores.
+     */
     private static void verRelatorios() {
         System.out.println("\n--- Relatórios de jogos anteriores ---");
         try {

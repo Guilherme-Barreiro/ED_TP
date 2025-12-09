@@ -27,8 +27,28 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Menu para configuração e execução de um jogo em modo Singleplayer
+ * (um único jogador humano).
+ * <p>
+ * Passos principais:
+ * <ul>
+ *     <li>escolha do mapa;</li>
+ *     <li>carregamento das perguntas de enigmas;</li>
+ *     <li>pedido do nome do jogador;</li>
+ *     <li>escolha da sala de entrada;</li>
+ *     <li>início do jogo em modo {@link GameMode#MANUAL};</li>
+ *     <li>no fim, mostra estatísticas e gera relatório JSON.</li>
+ * </ul>
+ */
 public class SingleplayerMenu {
-
+    /**
+     * Ponto de entrada do modo Singleplayer.
+     *
+     * @param args não usado
+     * @throws IOException    se ocorrer erro com ficheiros
+     * @throws ParseException se ocorrer erro ao ler JSON
+     */
     public static void main(String[] args) throws IOException, ParseException {
 
         Scanner in = new Scanner(System.in);
@@ -39,7 +59,6 @@ public class SingleplayerMenu {
             return;
         }
 
-        // Se as rooms do mapa tiverem posições sao usadas, senao é usado o layout circular.
         if (MapLoader.hasLastLayout()) {
             Room[] rooms = MapLoader.getLastRoomsWithLayout();
             Point[] positions = MapLoader.getLastPositions();
@@ -48,7 +67,6 @@ public class SingleplayerMenu {
             SwingUtilities.invokeLater(() -> LabyrinthViewer.show(lab));
         }
 
-        // caregar questions do JSON
         QuestionPool pool;
         try {
             pool = QuestionLoader.loadFromJson("src/resources/questions.json");
@@ -106,7 +124,14 @@ public class SingleplayerMenu {
         }
     }
 
-    // Helper: escolher uma sala de entrada (ENTRY) pelo ID
+    /**
+     * Permite ao jogador escolher qual a sala de entrada (ENTRY)
+     * onde quer começar.
+     *
+     * @param lab labirinto
+     * @param in  scanner para ler do teclado
+     * @return sala de entrada escolhida ou {@code null} se não existirem entradas
+     */
     private static Room escolherEntrada(Labyrinth lab, Scanner in) {
         UnorderedListADT<Room> entries = lab.getEntryRooms();
         Iterator<Room> it = entries.iterator();

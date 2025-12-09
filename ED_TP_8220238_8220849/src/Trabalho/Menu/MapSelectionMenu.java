@@ -17,17 +17,35 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Menu responsável pela seleção de mapas (ficheiros JSON) da pasta {@code src/Mapas}.
+ * <p>
+ * Funcionalidades:
+ * <ul>
+ *     <li>listar ficheiros .json disponíveis na pasta de mapas;</li>
+ *     <li>permitir ao utilizador escolher um mapa por índice;</li>
+ *     <li>carregar o mapa com {@link MapLoader};</li>
+ *     <li>validar se todas as entradas (ENTRY) conseguem chegar à sala central (CENTER),
+ *         ignorando o estado de bloqueio dos corredores.</li>
+ * </ul>
+ */
 public class MapSelectionMenu {
 
     private static final String MAPS_FOLDER = "src/Mapas";
 
     /**
      * Menu que:
-     *  - lista os ficheiros .json na pasta Mapas
-     *  - deixa o utilizador escolher um
-     *  - tenta carregar com MapLoader
-     *  - valida se todas as ENTRY chegam ao CENTER (ignorando locked)
-     *  - repete até ter um mapa válido ou o utilizador desistir (Ctrl+C)
+     * <ul>
+     *   <li>lista os ficheiros .json na pasta Mapas;</li>
+     *   <li>deixa o utilizador escolher um;</li>
+     *   <li>tenta carregar com {@link MapLoader};</li>
+     *   <li>valida se todas as ENTRY chegam ao CENTER (ignorando locked);</li>
+     *   <li>repete até ter um mapa válido ou o utilizador desistir (Ctrl+C).</li>
+     * </ul>
+     *
+     * @param in {@link Scanner} a usar para ler do teclado
+     * @return um {@link Labyrinth} válido, ou {@code null} se não for possível
+     * carregar/validar nenhum mapa
      */
     public static Labyrinth escolherMapa(Scanner in) {
         while (true) {
@@ -93,11 +111,16 @@ public class MapSelectionMenu {
     }
 
     /**
-     * Valida um Labyrinth:
-     *  - tem CENTER não nulo
-     *  - tem pelo menos uma ENTRY
-     *  - TODAS as ENTRY conseguem chegar ao CENTER
-     *    através da estrutura de corredores (ignorando o locked).
+     * Valida um {@link Labyrinth}:
+     * <ul>
+     *   <li>tem CENTER não nulo;</li>
+     *   <li>tem pelo menos uma ENTRY;</li>
+     *   <li>todas as ENTRY conseguem chegar ao CENTER, através dos corredores,
+     *       ignorando o estado de bloqueio.</li>
+     * </ul>
+     *
+     * @param lab labirinto a validar
+     * @return {@code true} se o mapa for considerado válido, {@code false} caso contrário
      */
     private static boolean validarMapa(Labyrinth lab) {
         if (lab == null) {
@@ -116,7 +139,6 @@ public class MapSelectionMenu {
             return false;
         }
 
-        // Contar ENTRY
         int entryCount = 0;
         Iterator<Room> itEntriesCount = entryRooms.iterator();
         while (itEntriesCount.hasNext()) {
@@ -131,7 +153,6 @@ public class MapSelectionMenu {
             return false;
         }
 
-        // BFS a partir da sala CENTER, ignorando locked
         UnorderedListADT<Room> visitados = new ArrayUnorderedList<>();
         QueueADT<Room> fila = new LinkedQueue<>();
 
@@ -159,7 +180,6 @@ public class MapSelectionMenu {
             }
         }
 
-        // Verificar que todas as ENTRY foram visitadas
         Iterator<Room> itEntries = entryRooms.iterator();
         while (itEntries.hasNext()) {
             Room entry = itEntries.next();
@@ -178,7 +198,11 @@ public class MapSelectionMenu {
     }
 
     /**
-     * Procura uma sala numa UnorderedListADT usando comparação por referência.
+     * Procura uma sala numa {@link UnorderedListADT} usando comparação por referência.
+     *
+     * @param lista lista de salas
+     * @param alvo  sala a procurar
+     * @return {@code true} se a sala estiver presente, {@code false} caso contrário
      */
     private static boolean contemSala(UnorderedListADT<Room> lista, Room alvo) {
         Iterator<Room> it = lista.iterator();

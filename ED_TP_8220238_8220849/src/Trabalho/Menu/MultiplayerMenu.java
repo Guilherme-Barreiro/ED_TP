@@ -24,8 +24,28 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Menu para configuração e execução de um jogo em modo Multiplayer
+ * (vários jogadores humanos no mesmo computador).
+ * <p>
+ * Funcionalidades:
+ * <ul>
+ *     <li>escolher mapa;</li>
+ *     <li>carregar perguntas de enigmas;</li>
+ *     <li>definir número de jogadores e o nome de cada um;</li>
+ *     <li>escolher sala de entrada para cada jogador;</li>
+ *     <li>iniciar o jogo em modo {@link GameMode#MANUAL};</li>
+ *     <li>mostrar estatísticas e gerar relatório no final.</li>
+ * </ul>
+ */
 public class MultiplayerMenu {
-
+    /**
+     * Ponto de entrada do modo Multiplayer.
+     *
+     * @param args não usado
+     * @throws IOException    se ocorrer erro em ficheiros
+     * @throws ParseException se ocorrer erro ao interpretar JSON
+     */
     public static void main(String[] args) throws IOException, ParseException {
 
         Scanner in = new Scanner(System.in);
@@ -123,6 +143,14 @@ public class MultiplayerMenu {
 
     }
 
+    /**
+     * Permite ao utilizador escolher uma sala de entrada (ENTRY)
+     * do labirinto pelo ID.
+     *
+     * @param lab labirinto
+     * @param in  scanner para ler do teclado
+     * @return sala de entrada escolhida, ou {@code null} se não existirem entradas
+     */
     private static Room escolherEntrada(Labyrinth lab, Scanner in) {
         UnorderedListADT<Room> entries = lab.getEntryRooms();
         Iterator<Room> it = entries.iterator();

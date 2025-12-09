@@ -6,15 +6,32 @@ import Trabalho.Map.Room;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Janela utilitária para visualizar graficamente um {@link Labyrinth}
+ * usando um {@link LabyrinthPanel}.
+ * <p>
+ * Mantém uma referência à última janela aberta para a fechar antes de
+ * abrir uma nova, e guarda o último layout (salas + posições) para
+ * ser reutilizado quando apenas o estado lógico do labirinto muda.
+ */
 public class LabyrinthViewer {
 
     private static JFrame currentFrame;
 
-    // guardar último layout manual usado
     private static Room[] lastRooms;
     private static Point[] lastPositions;
 
-    // layout automático (reutiliza layout manual se existir)
+    /**
+     * Mostra o labirinto numa nova janela.
+     * <p>
+     * Se existir um layout previamente guardado ({@link #lastRooms} e
+     * {@link #lastPositions}), esse layout é reutilizado; caso contrário,
+     * o {@link LabyrinthPanel} calcula automaticamente as posições em círculo.
+     * <p>
+     * Se já existir uma janela aberta, ela é fechada antes de abrir a nova.
+     *
+     * @param lab labirinto a visualizar
+     */
     public static void show(Labyrinth lab) {
         if (currentFrame != null) {
             currentFrame.dispose();
@@ -37,7 +54,20 @@ public class LabyrinthViewer {
         currentFrame = frame;
     }
 
-    // layout manual
+    /**
+     * Mostra o labirinto numa nova janela com um layout específico,
+     * fornecido através dos arrays de salas e posições.
+     * <p>
+     * Este layout é guardado em {@link #lastRooms} e {@link #lastPositions}
+     * para que possa ser reutilizado em chamadas futuras de
+     * {@link #show(Labyrinth)}.
+     * <p>
+     * Se já existir uma janela aberta, ela é fechada antes de abrir a nova.
+     *
+     * @param lab       labirinto a visualizar
+     * @param rooms     array de salas (na mesma ordem que as posições)
+     * @param positions array de posições para cada sala
+     */
     public static void show(Labyrinth lab, Room[] rooms, Point[] positions) {
         if (currentFrame != null) {
             currentFrame.dispose();

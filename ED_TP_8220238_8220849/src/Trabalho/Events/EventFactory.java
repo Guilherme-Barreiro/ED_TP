@@ -2,11 +2,26 @@ package Trabalho.Events;
 
 import java.util.Random;
 
+/**
+ * Fábrica responsável por criar eventos aleatórios associados a um corredor,
+ * com base no peso desse corredor.
+ * <p>
+ * A probabilidade de surgir um evento e o tipo de evento gerado
+ * dependem do peso do corredor:
+ * <ul>
+ *     <li>Corredores leves (peso baixo) têm menor probabilidade de evento
+ *     e eventos mais “leves” (ex.: turno extra, recuar pouco).</li>
+ *     <li>Corredores pesados (peso alto) têm maior probabilidade de evento
+ *     e eventos mais fortes ou caóticos
+ *     (ex.: trocar jogadores, baralhar todos, saltar turnos).</li>
+ * </ul>
+ */
 public class EventFactory {
     private static final Random random = new Random();
 
     /**
      * Decide se há evento neste corredor, e se sim qual.
+     *
      * @param weight peso do corredor (por ex. 1..5)
      * @return Event ou null (se não acontecer nada)
      */

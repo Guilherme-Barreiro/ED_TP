@@ -9,6 +9,24 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Iterator;
 
+/**
+ * Painel Swing responsável por desenhar graficamente um {@link Labyrinth}.
+ * <p>
+ * Mostra:
+ * <ul>
+ *     <li>sala de entrada (ENTRY) a verde;</li>
+ *     <li>sala central (CENTER) a amarelo;</li>
+ *     <li>salas com enigma a roxo;</li>
+ *     <li>salas com alavanca a azul;</li>
+ *     <li>corredores normais a cinzento claro;</li>
+ *     <li>corredores bloqueados a vermelho.</li>
+ * </ul>
+ * Suporta:
+ * <ul>
+ *     <li>cálculo automático de posições em círculo;</li>
+ *     <li>layout baseado em posições fornecidas via ficheiro de mapa.</li>
+ * </ul>
+ */
 public class LabyrinthPanel extends JPanel {
 
     private final Labyrinth lab;
@@ -18,6 +36,12 @@ public class LabyrinthPanel extends JPanel {
     private static final int NODE_RADIUS = 20;
     private static final int PADDING = 60;
 
+    /**
+     * Cria um painel para um labirinto, calculando automaticamente
+     * as posições das salas em círculo.
+     *
+     * @param lab labirinto a desenhar
+     */
     public LabyrinthPanel(Labyrinth lab) {
         this.lab = lab;
 
@@ -43,6 +67,15 @@ public class LabyrinthPanel extends JPanel {
         setPreferredSize(computePreferredSize(positions));
     }
 
+    /**
+     * Cria um painel para um labirinto com um layout fixo,
+     * fornecido externamente (por exemplo, carregado de um ficheiro).
+     *
+     * @param lab       labirinto a desenhar
+     * @param rooms     array de salas (na mesma ordem que as posições)
+     * @param positions array de posições para cada sala
+     * @throws IllegalArgumentException se o número de salas não coincidir com o número de posições
+     */
     public LabyrinthPanel(Labyrinth lab, Room[] rooms, Point[] positions) {
         if (rooms.length != positions.length) {
             throw new IllegalArgumentException("rooms e positions têm de ter o mesmo tamanho.");
@@ -55,6 +88,16 @@ public class LabyrinthPanel extends JPanel {
         setPreferredSize(computePreferredSize(positions));
     }
 
+    /**
+     * Calcula posições em círculo para {@code n} elementos, centradas em (cx, cy)
+     * com o raio indicado.
+     *
+     * @param n      número de posições a gerar
+     * @param cx     coordenada X do centro
+     * @param cy     coordenada Y do centro
+     * @param radius raio do círculo
+     * @return array de pontos com as posições calculadas
+     */
     private Point[] computeCircularPositions(int n, int cx, int cy, int radius) {
         Point[] pts = new Point[n];
         if (n == 0) return pts;
@@ -68,6 +111,13 @@ public class LabyrinthPanel extends JPanel {
         return pts;
     }
 
+    /**
+     * Calcula o tamanho preferido do painel com base nas posições
+     * das salas, adicionando uma margem.
+     *
+     * @param pts posições das salas
+     * @return dimensão preferida do painel
+     */
     private Dimension computePreferredSize(Point[] pts) {
         int maxX = 0;
         int maxY = 0;
@@ -84,6 +134,11 @@ public class LabyrinthPanel extends JPanel {
         return new Dimension(w, h);
     }
 
+    /**
+     * Método Swing responsável por desenhar o conteúdo do painel.
+     *
+     * @param g contexto gráfico
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -100,6 +155,13 @@ public class LabyrinthPanel extends JPanel {
         drawRooms(g2);
     }
 
+    /**
+     * Encontra a posição associada a uma determinada sala,
+     * percorrendo o array {@link #rooms}.
+     *
+     * @param room sala a procurar
+     * @return posição correspondente, ou {@code null} se não for encontrada
+     */
     private Point findPosition(Room room) {
         for (int i = 0; i < rooms.length; i++) {
             if (rooms[i] == room) {
@@ -109,6 +171,13 @@ public class LabyrinthPanel extends JPanel {
         return null;
     }
 
+    /**
+     * Desenha todos os corredores do labirinto.
+     * <p>
+     * Corredores bloqueados são a vermelho; os restantes a cinzento claro.
+     *
+     * @param g2 contexto gráfico 2D
+     */
     private void drawCorridors(Graphics2D g2) {
         Iterator<Corridor> it = lab.getCorridors().iterator();
         while (it.hasNext()) {
@@ -132,6 +201,12 @@ public class LabyrinthPanel extends JPanel {
         }
     }
 
+    /**
+     * Desenha todas as salas do labirinto, com cores diferentes conforme o tipo
+     * e com marcadores para enigmas e alavancas.
+     *
+     * @param g2 contexto gráfico 2D
+     */
     private void drawRooms(Graphics2D g2) {
         Font normalFont = g2.getFont();
 

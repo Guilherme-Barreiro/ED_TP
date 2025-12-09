@@ -29,6 +29,17 @@ import java.io.IOException;
  */
 public class QuestionLoader {
 
+    /**
+     * Lê um ficheiro JSON com perguntas e constrói um {@link QuestionPool}
+     * contendo todas as perguntas válidas.
+     *
+     * @param filePath caminho do ficheiro JSON de perguntas
+     * @return pool preenchido com todas as perguntas lidas
+     * @throws IOException           se ocorrer um erro de leitura
+     * @throws ParseException        se o JSON for inválido
+     * @throws IllegalArgumentException se a estrutura do ficheiro não corresponder
+     *                                  ao formato esperado
+     */
     public static QuestionPool loadFromJson(String filePath)
             throws IOException, ParseException {
 

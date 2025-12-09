@@ -23,8 +23,27 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Menu responsável por configurar e executar um jogo
+ * completamente automático, controlado apenas por bots.
+ * <p>
+ * Passos principais:
+ * <ul>
+ *     <li>pede ao utilizador que escolha um mapa válido;</li>
+ *     <li>carrega as perguntas de enigmas;</li>
+ *     <li>cria um número de bots escolhido pelo utilizador;</li>
+ *     <li>inicia o jogo em modo {@link GameMode#AUTOMATIC};</li>
+ *     <li>no fim, mostra estatísticas e gera um relatório JSON.</li>
+ * </ul>
+ */
 public class BotGameMenu {
-
+    /**
+     * Ponto de entrada do modo “Bot a jogar”.
+     *
+     * @param args não usado
+     * @throws IOException    se ocorrer erro de leitura/escrita de ficheiros
+     * @throws ParseException se houver erro ao fazer parse de JSON
+     */
     public static void main(String[] args) throws IOException, ParseException {
         Scanner in = new Scanner(System.in);
 
@@ -120,6 +139,10 @@ public class BotGameMenu {
 
     /**
      * Escolhe aleatoriamente uma sala de entrada (ENTRY) do labirinto.
+     *
+     * @param lab labirinto onde procurar entradas
+     * @param rnd gerador de números aleatórios
+     * @return uma sala do tipo ENTRY, ou {@code null} se não houver entradas
      */
     private static Room escolherEntradaAleatoria(Labyrinth lab, Random rnd) {
         UnorderedListADT<Room> entries = lab.getEntryRooms();

@@ -11,13 +11,32 @@ import Trabalho.interfacesTrabalho.PlayerController;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Implementação de {@link PlayerController} para um jogador humano.
+ * <p>
+ * Todas as decisões (movimento, respostas a enigmas, alavancas e SWAP_PLAYER)
+ * são pedidas ao utilizador via consola.
+ */
 public class HumanController implements PlayerController {
     private final Scanner in;
 
+    /**
+     * Cria um controlador humano associado a um {@link Scanner}
+     * para ler input do utilizador.
+     *
+     * @param in scanner usado para ler da consola
+     */
     public HumanController(Scanner in) {
         this.in = in;
     }
 
+    /**
+     * Mostra as salas vizinhas acessíveis e pede ao utilizador que escolha
+     * o índice do próximo movimento.
+     * <p>
+     * Se o {@link GameState} permitir ficar parado neste turno,
+     * é adicionada a opção de permanecer na sala atual.
+     */
     @Override
     public Room chooseMove(Player player, Labyrinth labyrinth, GameState state) {
         ArrayUnorderedList<Room> neighbors =
@@ -77,11 +96,9 @@ public class HumanController implements PlayerController {
             }
         }
 
-        // se escolher ficar devolve a sala atual
         if (canStay && stayIndex != null && choice == stayIndex) {
             return player.getCurrentRoom();
         }
-        // senão devolve a sala escolhida
         int i = 0;
         it = options.iterator();
         while (it.hasNext()) {
@@ -95,6 +112,12 @@ public class HumanController implements PlayerController {
         return player.getCurrentRoom();
     }
 
+    /**
+     * Mostra o texto e as opções da pergunta e pede ao utilizador
+     * que introduza o índice da resposta.
+     *
+     * @return índice escolhido (entre 0 e número de opções - 1)
+     */
     @Override
     public int answerQuestion(Question question) {
         System.out.println("Pergunta: " + question.getText());
@@ -121,6 +144,14 @@ public class HumanController implements PlayerController {
         return choice;
     }
 
+    /**
+     * Mostra o número de alavancas disponíveis na sala e pede ao utilizador
+     * que escolha o índice de uma alavanca.
+     *
+     * @param room       sala atual
+     * @param leverCount número de alavancas disponíveis
+     * @return índice de alavanca escolhido (0..leverCount-1)
+     */
     @Override
     public int chooseLever(Room room, int leverCount) {
         System.out.println("Estás na sala: " + room.getName());
@@ -149,6 +180,12 @@ public class HumanController implements PlayerController {
         return choice;
     }
 
+    /**
+     * Mostra a lista de outros jogadores e pede ao utilizador que escolha
+     * qual será o alvo do evento SWAP_PLAYER.
+     *
+     * @return jogador escolhido para troca; se não houver outros, devolve o próprio
+     */
     @Override
     public Player chooseSwapTarget(Player current, UnorderedListADT<Player> allPlayers, GameState state) {
         int count = 0;
