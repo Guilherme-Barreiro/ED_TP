@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2025-12-10">
-<meta name="description" content="declaration: package: Trabalho.Menu, class: MapSelectionMenu">
+<meta name="description" content="declaration: package: trabalho.menu, class: MapSelectionMenu">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../script-dir/jquery-ui.min.css" title="Style">
@@ -83,11 +83,11 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">Trabalho.Menu</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">trabalho.menu</a></div>
 <h1 title="Class MapSelectionMenu" class="title">Class MapSelectionMenu</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">Trabalho.Menu.MapSelectionMenu</div>
+<div class="inheritance">trabalho.menu.MapSelectionMenu</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
@@ -99,7 +99,7 @@ loadScripts(document, 'script');</script>
  <ul>
      <li>listar ficheiros .json disponíveis na pasta de mapas;</li>
      <li>permitir ao utilizador escolher um mapa por índice;</li>
-     <li>carregar o mapa com <a href="../IO/MapLoader.html" title="class in Trabalho.IO"><code>MapLoader</code></a>;</li>
+     <li>carregar o mapa com <a href="../IO/MapLoader.html" title="class in trabalho.io"><code>MapLoader</code></a>;</li>
      <li>validar se todas as entradas (ENTRY) conseguem chegar à sala central (CENTER),
          ignorando o estado de bloqueio dos corredores.</li>
  </ul></div>
@@ -130,14 +130,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../Map/Labyrinth.html" title="class in Trabalho.Map">Labyrinth</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../Map/Labyrinth.html" title="class in trabalho.map">Labyrinth</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#escolherMapa(java.util.Scanner)" class="member-name-link">escolherMapa</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/Scanner.html" title="class or interface in java.util" class="external-link">Scanner</a>&nbsp;in)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Menu que:
  
    lista os ficheiros .json na pasta Mapas;
    deixa o utilizador escolher um;
-   tenta carregar com <a href="../IO/MapLoader.html" title="class in Trabalho.IO"><code>MapLoader</code></a>;
+   tenta carregar com <a href="../IO/MapLoader.html" title="class in trabalho.io"><code>MapLoader</code></a>;
    valida se todas as ENTRY chegam ao CENTER (ignorando locked);
    repete até ter um mapa válido ou o utilizador desistir (Ctrl+C).
  </div>
@@ -176,12 +176,12 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="escolherMapa(java.util.Scanner)">
 <h3>escolherMapa</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../Map/Labyrinth.html" title="class in Trabalho.Map">Labyrinth</a></span>&nbsp;<span class="element-name">escolherMapa</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/Scanner.html" title="class or interface in java.util" class="external-link">Scanner</a>&nbsp;in)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../Map/Labyrinth.html" title="class in trabalho.map">Labyrinth</a></span>&nbsp;<span class="element-name">escolherMapa</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/Scanner.html" title="class or interface in java.util" class="external-link">Scanner</a>&nbsp;in)</span></div>
 <div class="block">Menu que:
  <ul>
    <li>lista os ficheiros .json na pasta Mapas;</li>
    <li>deixa o utilizador escolher um;</li>
-   <li>tenta carregar com <a href="../IO/MapLoader.html" title="class in Trabalho.IO"><code>MapLoader</code></a>;</li>
+   <li>tenta carregar com <a href="../IO/MapLoader.html" title="class in trabalho.io"><code>MapLoader</code></a>;</li>
    <li>valida se todas as ENTRY chegam ao CENTER (ignorando locked);</li>
    <li>repete até ter um mapa válido ou o utilizador desistir (Ctrl+C).</li>
  </ul></div>
@@ -189,7 +189,7 @@ loadScripts(document, 'script');</script>
 <dt>Parameters:</dt>
 <dd><code>in</code> - <a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/util/Scanner.html" title="class or interface in java.util" class="external-link"><code>Scanner</code></a> a usar para ler do teclado</dd>
 <dt>Returns:</dt>
-<dd>um <a href="../Map/Labyrinth.html" title="class in Trabalho.Map"><code>Labyrinth</code></a> válido, ou <code>null</code> se não for possível
+<dd>um <a href="../Map/Labyrinth.html" title="class in trabalho.map"><code>Labyrinth</code></a> válido, ou <code>null</code> se não for possível
  carregar/validar nenhum mapa</dd>
 </dl>
 </section>

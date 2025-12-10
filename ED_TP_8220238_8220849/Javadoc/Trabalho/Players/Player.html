@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2025-12-10">
-<meta name="description" content="declaration: package: Trabalho.Players, class: Player">
+<meta name="description" content="declaration: package: trabalho.players, class: Player">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../script-dir/jquery-ui.min.css" title="Style">
@@ -83,11 +83,11 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">Trabalho.Players</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">trabalho.players</a></div>
 <h1 title="Class Player" class="title">Class Player</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">Trabalho.Players.Player</div>
+<div class="inheritance">trabalho.players.Player</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
@@ -101,7 +101,7 @@ loadScripts(document, 'script');</script>
      <li>sala atual;</li>
      <li>controller responsável pelas decisões;</li>
      <li>turnos bloqueados (para eventos SKIP_TURNS);</li>
-     <li>estatísticas (<a href="PlayerStats.html" title="class in Trabalho.Players"><code>PlayerStats</code></a>);</li>
+     <li>estatísticas (<a href="PlayerStats.html" title="class in trabalho.players"><code>PlayerStats</code></a>);</li>
      <li>uma stack com o percurso de salas para suportar o evento MOVE_BACK;</li>
      <li>um limite mínimo na stack (para não recuar para antes de um SWAP).</li>
  </ul></div>
@@ -117,8 +117,8 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,Trabalho.Map.Room,Trabalho.interfacesTrabalho.PlayerController)" class="member-name-link">Player</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="../Map/Room.html" title="class in Trabalho.Map">Room</a>&nbsp;startRoom,
- <a href="../interfacesTrabalho/PlayerController.html" title="interface in Trabalho.interfacesTrabalho">PlayerController</a>&nbsp;controller)</code></div>
+ <a href="../Map/Room.html" title="class in trabalho.map">Room</a>&nbsp;startRoom,
+ <a href="../interfacesTrabalho/PlayerController.html" title="interface in trabalho.interfacestrabalho">PlayerController</a>&nbsp;controller)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Cria um novo jogador com nome, sala inicial e controller dados.</div>
 </div>
@@ -136,9 +136,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Map/Room.html" title="class in Trabalho.Map">Room</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#chooseNextMove(Trabalho.Map.Labyrinth,Trabalho.Game.GameState)" class="member-name-link">chooseNextMove</a><wbr>(<a href="../Map/Labyrinth.html" title="class in Trabalho.Map">Labyrinth</a>&nbsp;labyrinth,
- <a href="../Game/GameState.html" title="class in Trabalho.Game">GameState</a>&nbsp;state)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Map/Room.html" title="class in trabalho.map">Room</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#chooseNextMove(Trabalho.Map.Labyrinth,Trabalho.Game.GameState)" class="member-name-link">chooseNextMove</a><wbr>(<a href="../Map/Labyrinth.html" title="class in trabalho.map">Labyrinth</a>&nbsp;labyrinth,
+ <a href="../Game/GameState.html" title="class in trabalho.game">GameState</a>&nbsp;state)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Pergunta ao controller qual o próximo movimento.</div>
 </div>
@@ -152,12 +152,12 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Devolve o número de turnos em que o jogador ainda ficará bloqueado.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../interfacesTrabalho/PlayerController.html" title="interface in Trabalho.interfacesTrabalho">PlayerController</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../interfacesTrabalho/PlayerController.html" title="interface in trabalho.interfacestrabalho">PlayerController</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getController()" class="member-name-link">getController</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Devolve o <a href="../interfacesTrabalho/PlayerController.html" title="interface in Trabalho.interfacesTrabalho"><code>PlayerController</code></a> associado a este jogador.</div>
+<div class="block">Devolve o <a href="../interfacesTrabalho/PlayerController.html" title="interface in trabalho.interfacestrabalho"><code>PlayerController</code></a> associado a este jogador.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Map/Room.html" title="class in Trabalho.Map">Room</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Map/Room.html" title="class in trabalho.map">Room</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentRoom()" class="member-name-link">getCurrentRoom</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Devolve a sala atual do jogador.</div>
@@ -167,7 +167,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Devolve o nome do jogador.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PlayerStats.html" title="class in Trabalho.Players">PlayerStats</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PlayerStats.html" title="class in trabalho.players">PlayerStats</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStats()" class="member-name-link">getStats</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Devolve as estatísticas acumuladas deste jogador.</div>
@@ -193,7 +193,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Atualiza o número de turnos em que o jogador ficará bloqueado.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentRoom(Trabalho.Map.Room)" class="member-name-link">setCurrentRoom</a><wbr>(<a href="../Map/Room.html" title="class in Trabalho.Map">Room</a>&nbsp;currentRoom)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentRoom(Trabalho.Map.Room)" class="member-name-link">setCurrentRoom</a><wbr>(<a href="../Map/Room.html" title="class in trabalho.map">Room</a>&nbsp;currentRoom)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atualiza a sala atual do jogador.</div>
 </div>
@@ -223,8 +223,8 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(java.lang.String,Trabalho.Map.Room,Trabalho.interfacesTrabalho.PlayerController)">
 <h3>Player</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Player</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="../Map/Room.html" title="class in Trabalho.Map">Room</a>&nbsp;startRoom,
- <a href="../interfacesTrabalho/PlayerController.html" title="interface in Trabalho.interfacesTrabalho">PlayerController</a>&nbsp;controller)</span></div>
+ <a href="../Map/Room.html" title="class in trabalho.map">Room</a>&nbsp;startRoom,
+ <a href="../interfacesTrabalho/PlayerController.html" title="interface in trabalho.interfacestrabalho">PlayerController</a>&nbsp;controller)</span></div>
 <div class="block">Cria um novo jogador com nome, sala inicial e controller dados.
  <p>
  A sala inicial tem de ser do tipo <a href="../Map/RoomType.html#ENTRY"><code>RoomType.ENTRY</code></a>.</div>
@@ -256,14 +256,14 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getCurrentRoom()">
 <h3>getCurrentRoom</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Map/Room.html" title="class in Trabalho.Map">Room</a></span>&nbsp;<span class="element-name">getCurrentRoom</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Map/Room.html" title="class in trabalho.map">Room</a></span>&nbsp;<span class="element-name">getCurrentRoom</span>()</div>
 <div class="block">Devolve a sala atual do jogador.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="setCurrentRoom(Trabalho.Map.Room)">
 <h3>setCurrentRoom</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCurrentRoom</span><wbr><span class="parameters">(<a href="../Map/Room.html" title="class in Trabalho.Map">Room</a>&nbsp;currentRoom)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCurrentRoom</span><wbr><span class="parameters">(<a href="../Map/Room.html" title="class in trabalho.map">Room</a>&nbsp;currentRoom)</span></div>
 <div class="block">Atualiza a sala atual do jogador.
  <p>
  Também regista a sala nas estatísticas e na stack de movimentos.</div>
@@ -272,8 +272,8 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getController()">
 <h3>getController</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../interfacesTrabalho/PlayerController.html" title="interface in Trabalho.interfacesTrabalho">PlayerController</a></span>&nbsp;<span class="element-name">getController</span>()</div>
-<div class="block">Devolve o <a href="../interfacesTrabalho/PlayerController.html" title="interface in Trabalho.interfacesTrabalho"><code>PlayerController</code></a> associado a este jogador.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../interfacesTrabalho/PlayerController.html" title="interface in trabalho.interfacestrabalho">PlayerController</a></span>&nbsp;<span class="element-name">getController</span>()</div>
+<div class="block">Devolve o <a href="../interfacesTrabalho/PlayerController.html" title="interface in trabalho.interfacestrabalho"><code>PlayerController</code></a> associado a este jogador.</div>
 </section>
 </li>
 <li>
@@ -300,15 +300,15 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getStats()">
 <h3>getStats</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PlayerStats.html" title="class in Trabalho.Players">PlayerStats</a></span>&nbsp;<span class="element-name">getStats</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PlayerStats.html" title="class in trabalho.players">PlayerStats</a></span>&nbsp;<span class="element-name">getStats</span>()</div>
 <div class="block">Devolve as estatísticas acumuladas deste jogador.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="chooseNextMove(Trabalho.Map.Labyrinth,Trabalho.Game.GameState)">
 <h3>chooseNextMove</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Map/Room.html" title="class in Trabalho.Map">Room</a></span>&nbsp;<span class="element-name">chooseNextMove</span><wbr><span class="parameters">(<a href="../Map/Labyrinth.html" title="class in Trabalho.Map">Labyrinth</a>&nbsp;labyrinth,
- <a href="../Game/GameState.html" title="class in Trabalho.Game">GameState</a>&nbsp;state)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Map/Room.html" title="class in trabalho.map">Room</a></span>&nbsp;<span class="element-name">chooseNextMove</span><wbr><span class="parameters">(<a href="../Map/Labyrinth.html" title="class in trabalho.map">Labyrinth</a>&nbsp;labyrinth,
+ <a href="../Game/GameState.html" title="class in trabalho.game">GameState</a>&nbsp;state)</span></div>
 <div class="block">Pergunta ao controller qual o próximo movimento.
  <p>
  Se o jogador estiver bloqueado, permanece na sala atual.</div>
@@ -321,7 +321,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Indica se este jogador é controlado por um bot.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd><code>true</code> se o controller não for <a href="HumanController.html" title="class in Trabalho.Players"><code>HumanController</code></a></dd>
+<dd><code>true</code> se o controller não for <a href="HumanController.html" title="class in trabalho.players"><code>HumanController</code></a></dd>
 </dl>
 </section>
 </li>
