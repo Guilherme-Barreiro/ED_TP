@@ -40,7 +40,7 @@ public class QuestionPool {
     }
 
     /**
-     * Verifica se não existem perguntas nenhumas no pool,
+     * Verifica se não existem perguntas no pool,
      * nem disponíveis nem usadas.
      *
      * @return {@code true} se ambas as filas estiverem vazias,

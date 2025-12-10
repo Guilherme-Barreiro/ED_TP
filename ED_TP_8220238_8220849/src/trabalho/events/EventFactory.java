@@ -103,7 +103,7 @@ public class EventFactory {
      * usando a lógica base (dificuldade não é considerada).
      *
      * @param weight peso do corredor
-     * @return evento gerado ou {@code null} se não houver evento
+     * @return evento criado ou {@code null} se não houver evento
      */
     public static Event maybeCreateEvent(double weight) {
         return baseMaybeCreateEvent(weight);
@@ -117,7 +117,7 @@ public class EventFactory {
      *
      * @param weight     peso do corredor
      * @param difficulty dificuldade do jogo
-     * @return evento gerado (possivelmente alterado pela dificuldade) ou {@code null}
+     * @return evento criado (possivelmente alterado pela dificuldade) ou {@code null}
      * se não houver evento
      */
     public static Event maybeCreateEvent(double weight, Difficulty difficulty) {

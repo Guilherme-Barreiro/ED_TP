@@ -39,11 +39,7 @@ public class GameState {
     private boolean extraTurnThisTurn;
 
     private final Random random;
-    /**
-     * Indica se, neste turno, o jogador tem a opção de ficar parado
-     * (apenas quando começou o turno numa sala com alavanca, tentou
-     * uma alavanca e falhou).
-     */
+
     private boolean allowStayThisTurn;
 
     /**
@@ -151,7 +147,11 @@ public class GameState {
     public int getCurrentTurn() {
         return currentTurn;
     }
-
+    /**
+     * Devolve a dificuldade do jogo.
+     *
+     * @return dificuldade
+     */
     public Difficulty getDifficulty() {
         return difficulty;
     }

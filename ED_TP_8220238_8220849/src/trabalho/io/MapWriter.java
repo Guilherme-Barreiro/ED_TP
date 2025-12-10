@@ -164,8 +164,6 @@ public class MapWriter {
     /**
      * Pesquisa linear que encontra a posição associada à sala {@code r},
      * usando os arrays {@code rooms} e {@code positions}.
-     * <p>
-     * Não utiliza {@code Map} / {@code HashMap}, por restrição do enunciado.
      *
      * @param r         sala para a qual se pretende obter a posição
      * @param rooms     array de salas com layout conhecido
