@@ -38,7 +38,10 @@ public class MapEditorMenu {
         Labyrinth lab = new Labyrinth();
         boolean running = true;
 
-        SwingUtilities.invokeLater(() -> LabyrinthViewer.show(lab));
+        SwingUtilities.invokeLater(() -> {
+            LabyrinthViewer.resetLayout();
+            LabyrinthViewer.show(lab);
+        });
 
         while (running) {
             System.out.println("\n=== Editor de Mapas ===");

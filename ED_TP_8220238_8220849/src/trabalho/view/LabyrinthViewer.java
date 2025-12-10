@@ -55,6 +55,18 @@ public class LabyrinthViewer {
     }
 
     /**
+     * Limpa qualquer layout guardado (salas + posições) da última visualização.
+     * <p>
+     * Depois de chamar este método, a próxima chamada a
+     * {@link #show(Labyrinth)} volta a calcular automaticamente as posições
+     * das salas, em vez de reutilizar o layout anterior.
+     */
+    public static void resetLayout() {
+        lastRooms = null;
+        lastPositions = null;
+    }
+
+    /**
      * Mostra o labirinto numa nova janela com um layout específico,
      * fornecido através dos arrays de salas e posições.
      * <p>
