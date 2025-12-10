@@ -153,6 +153,13 @@ public class MultiplayerMenu {
 
     }
 
+    /**
+     * Pede interativamente ao utilizador que escolha
+     * um nível de dificuldade para o jogo.
+     *
+     * @param in {@link Scanner} já aberto, usado para ler a opção do utilizador
+     * @return dificuldade escolhida
+     */
     private static Difficulty escolherDificuldade(Scanner in) {
         while (true) {
             System.out.println("\nEscolhe a dificuldade:");

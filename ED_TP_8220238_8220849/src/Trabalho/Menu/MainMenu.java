@@ -125,6 +125,14 @@ public class MainMenu {
         }
     }
 
+    /**
+     * Abre o menu "Hall of Fame", que mostra estatísticas globais
+     * a partir dos relatórios de jogo gravados anteriormente.
+     * <p>
+     * Qualquer exceção gerada ao invocar o menu é apanhada
+     * e apresentada numa mensagem simples, sem interromper
+     * o funcionamento do programa principal.
+     */
     private static void verHallOfFame() {
         System.out.println("\n--- Hall of Fame ---");
         try {

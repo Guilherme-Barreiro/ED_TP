@@ -9,10 +9,24 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Menu responsável por construir e apresentar um "Hall of Fame"
+ * baseado nos relatórios JSON gerados pelos jogos anteriores.
+ * <p>
+ * Lê todos os ficheiros <code>.json</code> na pasta
+ * {@link #REPORTS_FOLDER}, acumula estatísticas globais por jogador
+ * (vitórias, enigmas certos/errados, número de jogos, etc.)
+ * e depois imprime um resumo agregando todos os relatórios.
+ */
 public class HallOfFameMenu {
 
     private static final String REPORTS_FOLDER = "src/Game Reports";
 
+    /**
+     * Ponto de entrada do menu "Hall of Fame".
+     *
+     * @param args argumentos de linha de comando (não usados)
+     */
     public static void main(String[] args) {
         File folder = new File(REPORTS_FOLDER);
         if (!folder.exists() || !folder.isDirectory()) {
@@ -49,8 +63,15 @@ public class HallOfFameMenu {
         stats.printSummary();
     }
 
+    /**
+     * Classe auxiliar que agrega estatísticas globais
+     * calculadas a partir de vários relatórios de jogo.
+     */
     private static class GlobalStats {
-
+        /**
+         * Estrutura interna que guarda estatísticas agregadas
+         * para um jogador específico ao longo de vários jogos.
+         */
         private static class PlayerGlobal {
             String name;
             int wins;
@@ -58,10 +79,21 @@ public class HallOfFameMenu {
             int totalWrong;
             int games;
 
+            /**
+             * Cria um registo global para o jogador com o nome indicado.
+             *
+             * @param name nome do jogador
+             */
             PlayerGlobal(String name) {
                 this.name = name;
             }
 
+            /**
+             * Calcula a taxa de acerto em enigmas para este jogador.
+             *
+             * @return proporção de respostas certas (entre 0 e 1),
+             * ou 0.0 se nunca respondeu a enigmas
+             */
             double accuracy() {
                 int total = totalCorrect + totalWrong;
                 if (total == 0) return 0.0;
@@ -75,6 +107,14 @@ public class HallOfFameMenu {
         private long longestGameTurns = -1;
         private String longestGameFile = null;
 
+        /**
+         * Procura um jogador no array interno pelo nome.
+         * Se não existir, cria um novo registo e adiciona-o.
+         *
+         * @param name nome do jogador
+         * @return instância de {@link PlayerGlobal} correspondente ao nome,
+         * ou {@code null} se o nome for {@code null}
+         */
         private PlayerGlobal getOrCreatePlayer(String name) {
             if (name == null) return null;
 
@@ -97,6 +137,12 @@ public class HallOfFameMenu {
             return pg;
         }
 
+        /**
+         * Processa um relatório JSON individual.
+         *
+         * @param root     objeto JSON raiz do relatório
+         * @param fileName nome do ficheiro de relatório (usado apenas para referência)
+         */
         public void processReport(JSONObject root, String fileName) {
             Object turnsRaw = root.get("turns");
             long turns = turnsRaw instanceof Number ? ((Number) turnsRaw).longValue() : -1;
@@ -145,6 +191,11 @@ public class HallOfFameMenu {
             }
         }
 
+        /**
+         * Imprime no ecrã um resumo das estatísticas globais obtidas,
+         *
+         * Se não existirem jogadores registados, indica que não há dados suficientes.
+         */
         public void printSummary() {
             if (playerCount == 0) {
                 System.out.println("Ainda não há dados suficientes.");
