@@ -98,7 +98,7 @@ public class MapSelectionMenu {
                     System.out.println("Mapa \"" + chosen.getName() + "\" carregado e validado com sucesso.");
                     return lab;
                 } else {
-                    System.out.println("Mapa inválido: pelo menos uma ENTRY não consegue chegar ao CENTER.");
+                    System.out.println("Mapa inválido: pelo menos uma ENTRY não consegue chegar ao CENTER considerando bloqueios e alavancas.");
                     System.out.println("Escolhe outro mapa.\n");
                 }
             } catch (IOException | ParseException e) {
@@ -116,7 +116,8 @@ public class MapSelectionMenu {
      *   <li>tem CENTER não nulo;</li>
      *   <li>tem pelo menos uma ENTRY;</li>
      *   <li>todas as ENTRY conseguem chegar ao CENTER, através dos corredores,
-     *       ignorando o estado de bloqueio.</li>
+     *       respeitando bloqueios, mas assumindo que o jogador consegue ativar
+     *       todas as alavancas a que tenha acesso.</li>
      * </ul>
      *
      * @param lab labirinto a validar
@@ -152,15 +153,54 @@ public class MapSelectionMenu {
             System.out.println("Mapa sem nenhuma sala ENTRY.");
             return false;
         }
+        
+        Iterator<Room> itEntries = entryRooms.iterator();
+        while (itEntries.hasNext()) {
+            Room entry = itEntries.next();
+            if (entry != null && entry.getType() == RoomType.ENTRY) {
+                boolean ok = canEntryReachCenterConsideringLevers(lab, entry, center);
+                if (!ok) {
+                    System.out.println(
+                            "Entrada com id " + entry.getId() +
+                                    " não tem caminho até ao CENTER, mesmo considerando alavancas."
+                    );
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Verifica se uma dada sala ENTRY consegue chegar ao CENTER,
+     * começando com os corredores no estado atual (locked/unlocked),
+     * mas assumindo que, sempre que chegar a uma sala com alavanca,
+     * consegue ativá-la e, na prática, desbloquear todos os corredores
+     * ligados a essa sala.
+     */
+    private static boolean canEntryReachCenterConsideringLevers(Labyrinth lab, Room entry, Room center) {
+        if (entry == null || center == null) {
+            return false;
+        }
 
         UnorderedListADT<Room> visitados = new ArrayUnorderedList<>();
+        UnorderedListADT<Room> leverActivatedRooms = new ArrayUnorderedList<>();
         QueueADT<Room> fila = new LinkedQueue<>();
 
-        visitados.addToRear(center);
-        fila.enqueue(center);
+        visitados.addToRear(entry);
+        fila.enqueue(entry);
 
         while (!fila.isEmpty()) {
             Room atual = fila.dequeue();
+
+            if (atual == center) {
+                return true;
+            }
+
+            if (atual.hasLever() && !contemSala(leverActivatedRooms, atual)) {
+                leverActivatedRooms.addToRear(atual);
+            }
 
             Iterator<Corridor> itCorr = lab.getCorridors().iterator();
             while (itCorr.hasNext()) {
@@ -173,28 +213,26 @@ public class MapSelectionMenu {
                     outro = c.getFrom();
                 }
 
-                if (outro != null && !contemSala(visitados, outro)) {
+                if (outro == null) {
+                    continue;
+                }
+
+                boolean extremidadeComLeverAtivada =
+                        contemSala(leverActivatedRooms, c.getFrom()) ||
+                                contemSala(leverActivatedRooms, c.getTo());
+
+                if (c.isLocked() && !extremidadeComLeverAtivada) {
+                    continue;
+                }
+
+                if (!contemSala(visitados, outro)) {
                     visitados.addToRear(outro);
                     fila.enqueue(outro);
                 }
             }
         }
 
-        Iterator<Room> itEntries = entryRooms.iterator();
-        while (itEntries.hasNext()) {
-            Room entry = itEntries.next();
-            if (entry != null && entry.getType() == RoomType.ENTRY) {
-                if (!contemSala(visitados, entry)) {
-                    System.out.println(
-                            "Entrada com id " + entry.getId() +
-                                    " não tem caminho até ao CENTER (mesmo ignorando locked)."
-                    );
-                    return false;
-                }
-            }
-        }
-
-        return true;
+        return false;
     }
 
     /**
