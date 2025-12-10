@@ -153,7 +153,7 @@ public class MapSelectionMenu {
             System.out.println("Mapa sem nenhuma sala ENTRY.");
             return false;
         }
-        
+
         Iterator<Room> itEntries = entryRooms.iterator();
         while (itEntries.hasNext()) {
             Room entry = itEntries.next();
