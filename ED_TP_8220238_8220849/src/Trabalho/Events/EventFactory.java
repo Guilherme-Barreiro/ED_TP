@@ -17,15 +17,26 @@ import java.util.Random;
  *     e eventos mais fortes ou caóticos
  *     (ex.: trocar jogadores, baralhar todos, saltar turnos).</li>
  * </ul>
+ * A dificuldade (EASY, NORMAL, HARD) pode atenuar ou reforçar
+ * alguns destes efeitos.
  */
 public class EventFactory {
     private static final Random random = new Random();
 
     /**
-     * Decide se há evento neste corredor, e se sim qual.
+     * Lógica base de geração de um evento em função do peso do corredor,
+     * sem considerar dificuldade.
+     * <p>
+     * Passos principais:
+     * <ol>
+     *     <li>Calcula a probabilidade de disparo do evento com base no peso.</li>
+     *     <li>Faz um lançamento aleatório; se falhar, devolve {@code null}.</li>
+     *     <li>Se disparar, escolhe um tipo de evento e intensidade apropriados
+     *     para a faixa de peso.</li>
+     * </ol>
      *
-     * @param weight peso do corredor (por ex. 1..5)
-     * @return Event ou null (se não acontecer nada)
+     * @param weight peso do corredor (por exemplo, 1..5)
+     * @return instância de {@link Event} ou {@code null} se não acontecer nada
      */
     private static Event baseMaybeCreateEvent(double weight) {
 
@@ -87,10 +98,28 @@ public class EventFactory {
         return new Event(type, intensity);
     }
 
+    /**
+     * Cria, de forma aleatória, um evento com base apenas no peso do corredor,
+     * usando a lógica base (dificuldade não é considerada).
+     *
+     * @param weight peso do corredor
+     * @return evento gerado ou {@code null} se não houver evento
+     */
     public static Event maybeCreateEvent(double weight) {
         return baseMaybeCreateEvent(weight);
     }
 
+    /**
+     * Cria, de forma aleatória, um evento com base no peso do corredor
+     * e na dificuldade de jogo.
+     * <p>
+     * A dificuldade afeta a probabilidade e/ou o tipo de certos eventos
+     *
+     * @param weight     peso do corredor
+     * @param difficulty dificuldade do jogo
+     * @return evento gerado (possivelmente alterado pela dificuldade) ou {@code null}
+     * se não houver evento
+     */
     public static Event maybeCreateEvent(double weight, Difficulty difficulty) {
         if (difficulty == null) {
             return baseMaybeCreateEvent(weight);

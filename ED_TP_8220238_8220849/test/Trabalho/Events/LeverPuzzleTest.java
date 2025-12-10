@@ -9,13 +9,13 @@ class LeverPuzzleTest {
     @Test
     void construtorValidaLimites() {
         assertThrows(IllegalArgumentException.class,
-                () -> new LeverPuzzle(0, 1)); // menos de 2 alavancas
+                () -> new LeverPuzzle(0, 1));
 
         assertThrows(IllegalArgumentException.class,
                 () -> new LeverPuzzle(-1, 3));
 
         assertThrows(IllegalArgumentException.class,
-                () -> new LeverPuzzle(3, 3)); // índices válidos: 0,1,2
+                () -> new LeverPuzzle(3, 3));
     }
 
     @Test
