@@ -134,16 +134,17 @@ public class MapEditorMenu {
                     room.setRiddle(dummyQ);
                 }
                 case "3" -> {
-                    int leverCount;
+                    int correctLeverIndex;
                     while (true) {
-                        System.out.print("Número de alavancas (2 a 4): ");
+                        System.out.print("Qual a alavanca correta (1 a 3): ");
                         String line = in.nextLine().trim();
                         try {
-                            leverCount = Integer.parseInt(line);
-                            if (leverCount >= 2 && leverCount <= 4) {
+                            int choice = Integer.parseInt(line);
+                            if (choice >= 1 && choice <= 3) {
+                                correctLeverIndex = choice - 1;
                                 break;
                             } else {
-                                System.out.println("Tem de ser um número entre 2 e 4.");
+                                System.out.println("Tem de ser um número entre 1 e 3.");
                             }
                         } catch (NumberFormatException e) {
                             System.out.println("Número inválido, tenta outra vez.");
@@ -151,7 +152,7 @@ public class MapEditorMenu {
                     }
 
                     trabalho.events.LeverPuzzle puzzle =
-                            new trabalho.events.LeverPuzzle(0, leverCount);
+                            new trabalho.events.LeverPuzzle(correctLeverIndex);
                     trabalho.events.Lever lever =
                             new trabalho.events.Lever(puzzle);
                     room.setLever(lever);
@@ -159,6 +160,7 @@ public class MapEditorMenu {
                 default -> {
                 }
             }
+
         }
 
         lab.addRoom(room);

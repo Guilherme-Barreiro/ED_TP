@@ -1,0 +1,180 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Entrada Norte",
+      "type": "ENTRY",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 120,
+      "y": 80
+    },
+    {
+      "id": 2,
+      "name": "Entrada Oeste",
+      "type": "ENTRY",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 80,
+      "y": 260
+    },
+    {
+      "id": 3,
+      "name": "Entrada Sul",
+      "type": "ENTRY",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 120,
+      "y": 440
+    },
+    {
+      "id": 4,
+      "name": "Corredor N1",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 240,
+      "y": 120
+    },
+    {
+      "id": 5,
+      "name": "Sala Enigma Norte",
+      "type": "NORMAL",
+      "hasRiddle": true,
+      "lever": null,
+      "x": 360,
+      "y": 150
+    },
+    {
+      "id": 6,
+      "name": "Sala Alavanca Norte",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": {
+        "correctIndex": 1
+      },
+      "x": 480,
+      "y": 150
+    },
+    {
+      "id": 7,
+      "name": "Cruzamento Central",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 480,
+      "y": 260
+    },
+    {
+      "id": 8,
+      "name": "Sala Enigma Sul",
+      "type": "NORMAL",
+      "hasRiddle": true,
+      "lever": null,
+      "x": 480,
+      "y": 370
+    },
+    {
+      "id": 9,
+      "name": "Corredor S1",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 260,
+      "y": 460
+    },
+    {
+      "id": 10,
+      "name": "Sala Alavanca Sul",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": {
+        "correctIndex": 0
+      },
+      "x": 360,
+      "y": 380
+    },
+    {
+      "id": 11,
+      "name": "Corredor Oeste",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": {
+        "correctIndex": 2
+      },
+      "x": 260,
+      "y": 260
+    },
+    {
+      "id": 12,
+      "name": "Sala Lateral Este",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": {
+        "correctIndex": 1
+      },
+      "x": 600,
+      "y": 220
+    },
+    {
+      "id": 13,
+      "name": "Sala Enigma Leste",
+      "type": "NORMAL",
+      "hasRiddle": true,
+      "lever": null,
+      "x": 600,
+      "y": 320
+    },
+    {
+      "id": 14,
+      "name": "Corredor Sul 2",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 360,
+      "y": 460
+    },
+    {
+      "id": 15,
+      "name": "Sala Intermédia Sul",
+      "type": "NORMAL",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 480,
+      "y": 460
+    },
+    {
+      "id": 16,
+      "name": "Centro",
+      "type": "CENTER",
+      "hasRiddle": false,
+      "lever": null,
+      "x": 720,
+      "y": 270
+    }
+  ],
+  "corridors": [
+    { "from": 1,  "to": 4,  "weight": 1.0, "locked": false },
+    { "from": 4,  "to": 5,  "weight": 2.0, "locked": false },
+    { "from": 5,  "to": 6,  "weight": 3.0, "locked": false },
+    { "from": 6,  "to": 7,  "weight": 4.0, "locked": true  },
+    { "from": 7,  "to": 12, "weight": 2.0, "locked": false },
+    { "from": 12, "to": 16, "weight": 3.0, "locked": true },
+
+    { "from": 2,  "to": 11, "weight": 1.0, "locked": false },
+    { "from": 11, "to": 4,  "weight": 2.0, "locked": false },
+    { "from": 11, "to": 7,  "weight": 2.0, "locked": true },
+
+    { "from": 3,  "to": 9,  "weight": 1.0, "locked": false },
+    { "from": 3,  "to": 10, "weight": 2.0, "locked": false },
+    { "from": 10, "to": 8,  "weight": 2.0, "locked": true },
+    { "from": 8,  "to": 7,  "weight": 3.0, "locked": false },
+
+    { "from": 9,  "to": 14, "weight": 3.0, "locked": false },
+    { "from": 14, "to": 15, "weight": 2.0, "locked": false },
+    { "from": 15, "to": 8,  "weight": 3.0, "locked": false },
+
+    { "from": 7,  "to": 13, "weight": 2.0, "locked": false },
+    { "from": 13, "to": 16, "weight": 4.0, "locked": false }
+  ]
+}

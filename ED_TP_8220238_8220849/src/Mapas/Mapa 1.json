@@ -58,7 +58,7 @@
       "id": 7,
       "name": "Sala 7",
       "type": "NORMAL",
-      "hasRiddle": false,
+      "hasRiddle": true,
       "lever": null,
       "x": 330,
       "y": 400
@@ -171,7 +171,7 @@
     { "from": 17, "to": 9,  "weight": 3.0,  "locked": true  },
     { "from": 17, "to": 13, "weight": 3.0,  "locked": false },
     { "from": 1,  "to": 2,  "weight": 1.0,  "locked": false },
-    { "from": 2,  "to": 3,  "weight": 3.0,  "locked": true  },
+    { "from": 2,  "to": 3,  "weight": 3.0,  "locked": false  },
     { "from": 4,  "to": 5,  "weight": 20.0,  "locked": false },
     { "from": 3,  "to": 4,  "weight": 3.0,  "locked": false },
     { "from": 5,  "to": 18, "weight": 10.0, "locked": false },
