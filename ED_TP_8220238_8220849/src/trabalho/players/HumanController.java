@@ -217,7 +217,7 @@ public class HumanController implements PlayerController {
         for (int i = 0; i < candidates.length; i++) {
             Player p = candidates[i];
             System.out.println("  " + i + " - " + p.getName() +
-                    " (sala " + (p.getCurrentRoom() != null ? p.getCurrentRoom().getId() : "null") + ")");
+                    " (" + (p.getCurrentRoom() != null ? p.getCurrentRoom().getName() : "null") + ")");
         }
 
         int choice = -1;
