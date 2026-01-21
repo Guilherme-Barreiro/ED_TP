@@ -1,5 +1,3 @@
-Projeto académico em Java focado na implementação e aplicação de estruturas de dados.
-
 # Estruturas de Dados — Trabalho Prático
 
 Projeto desenvolvido no âmbito da unidade curricular de **Estruturas de Dados**, com o objetivo de aplicar e implementar estruturas de dados fundamentais na resolução de um problema prático.
@@ -20,4 +18,4 @@ Desenvolver um jogo de labirinto competitivo baseado em turnos, onde os jogadore
 - JavaDoc
 
 ## Contexto académico
-Trabalho prático desenvolvido no ano letivo 2024/2025.
+Trabalho prático desenvolvido no ano letivo 2025/2026.
